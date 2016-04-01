@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15812B231CAE241A00F15CC6 /* ConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B221CAE241A00F15CC6 /* ConnectTests.swift */; };
+		15812B251CAE242600F15CC6 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B241CAE242600F15CC6 /* ApiTests.swift */; };
+		15812B271CAE246700F15CC6 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B261CAE246700F15CC6 /* TagCell.swift */; };
+		15812B341CAE2B3900F15CC6 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B331CAE2B3900F15CC6 /* Api.swift */; };
+		78B5098690405CDB2A326771 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8477E5E2299EF84F4FD6C00 /* Pods.framework */; };
 		7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FB91CAD7D4000958656 /* AppDelegate.swift */; };
 		7CA84FBC1CAD7D4000958656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FBB1CAD7D4000958656 /* ViewController.swift */; };
 		7CA84FBF1CAD7D4000958656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FBD1CAD7D4000958656 /* Main.storyboard */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15812B221CAE241A00F15CC6 /* ConnectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectTests.swift; sourceTree = "<group>"; };
+		15812B241CAE242600F15CC6 /* ApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
+		15812B261CAE246700F15CC6 /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		15812B331CAE2B3900F15CC6 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		6A9C112617DF89DCF53060AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7CA84FB61CAD7D4000958656 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA84FB91CAD7D4000958656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA84FBB1CAD7D4000958656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +59,8 @@
 		7CA84FD81CAD7D4000958656 /* StackOverflowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackOverflowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA84FDC1CAD7D4000958656 /* StackOverflowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUITests.swift; sourceTree = "<group>"; };
 		7CA84FDE1CAD7D4000958656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0ED35942B1E69CB3D92B5BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C8477E5E2299EF84F4FD6C00 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B5098690405CDB2A326771 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +89,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15812B281CAE246A00F15CC6 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				15812B261CAE246700F15CC6 /* TagCell.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		15812B291CAE24F600F15CC6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7CA84FC01CAD7D4000958656 /* StackOverflow.xcdatamodeld */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		15812B301CAE29DA00F15CC6 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				15812B331CAE2B3900F15CC6 /* Api.swift */,
+			);
+			name = api;
+			sourceTree = "<group>";
+		};
+		15B2A9D41CAE214100E4D493 /* appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7CA84FB91CAD7D4000958656 /* AppDelegate.swift */,
+			);
+			name = appdelegate;
+			sourceTree = "<group>";
+		};
+		15B2A9D51CAE214A00E4D493 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				15812B301CAE29DA00F15CC6 /* api */,
+				7CA84FBB1CAD7D4000958656 /* ViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		15B2A9D61CAE215100E4D493 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
+				7CA84FC31CAD7D4000958656 /* Assets.xcassets */,
+				7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */,
+			);
+			name = storyboard;
+			sourceTree = "<group>";
+		};
+		69D9FA44DC1DB5E43637FCD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8477E5E2299EF84F4FD6C00 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7CA84FAD1CAD7D4000958656 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +155,8 @@
 				7CA84FD01CAD7D4000958656 /* StackOverflowTests */,
 				7CA84FDB1CAD7D4000958656 /* StackOverflowUITests */,
 				7CA84FB71CAD7D4000958656 /* Products */,
+				C41AFC32CF7A6D0359157144 /* Pods */,
+				69D9FA44DC1DB5E43637FCD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +173,12 @@
 		7CA84FB81CAD7D4000958656 /* StackOverflow */ = {
 			isa = PBXGroup;
 			children = (
-				7CA84FB91CAD7D4000958656 /* AppDelegate.swift */,
-				7CA84FBB1CAD7D4000958656 /* ViewController.swift */,
-				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
-				7CA84FC31CAD7D4000958656 /* Assets.xcassets */,
-				7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */,
+				15B2A9D41CAE214100E4D493 /* appdelegate */,
+				15B2A9D51CAE214A00E4D493 /* controllers */,
+				15812B281CAE246A00F15CC6 /* views */,
+				15812B291CAE24F600F15CC6 /* model */,
+				15B2A9D61CAE215100E4D493 /* storyboard */,
 				7CA84FC81CAD7D4000958656 /* Info.plist */,
-				7CA84FC01CAD7D4000958656 /* StackOverflow.xcdatamodeld */,
 			);
 			path = StackOverflow;
 			sourceTree = "<group>";
@@ -115,6 +188,8 @@
 			children = (
 				7CA84FD11CAD7D4000958656 /* StackOverflowTests.swift */,
 				7CA84FD31CAD7D4000958656 /* Info.plist */,
+				15812B221CAE241A00F15CC6 /* ConnectTests.swift */,
+				15812B241CAE242600F15CC6 /* ApiTests.swift */,
 			);
 			path = StackOverflowTests;
 			sourceTree = "<group>";
@@ -128,6 +203,15 @@
 			path = StackOverflowUITests;
 			sourceTree = "<group>";
 		};
+		C41AFC32CF7A6D0359157144 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A9C112617DF89DCF53060AF /* Pods.debug.xcconfig */,
+				B0ED35942B1E69CB3D92B5BD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CA84FE11CAD7D4000958656 /* Build configuration list for PBXNativeTarget "StackOverflow" */;
 			buildPhases = (
+				38AC0F3D986ECD1BECF82C0D /* Check Pods Manifest.lock */,
 				7CA84FB21CAD7D4000958656 /* Sources */,
 				7CA84FB31CAD7D4000958656 /* Frameworks */,
 				7CA84FB41CAD7D4000958656 /* Resources */,
+				F862DEC0ACE6B2DC297B32F5 /* Embed Pods Frameworks */,
+				F2F7E7DF2221C6B4150103DB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,13 +341,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38AC0F3D986ECD1BECF82C0D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F2F7E7DF2221C6B4150103DB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F862DEC0ACE6B2DC297B32F5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7CA84FB21CAD7D4000958656 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15812B271CAE246700F15CC6 /* TagCell.swift in Sources */,
 				7CA84FBC1CAD7D4000958656 /* ViewController.swift in Sources */,
 				7CA84FC21CAD7D4000958656 /* StackOverflow.xcdatamodeld in Sources */,
+				15812B341CAE2B3900F15CC6 /* Api.swift in Sources */,
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +406,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15812B231CAE241A00F15CC6 /* ConnectTests.swift in Sources */,
+				15812B251CAE242600F15CC6 /* ApiTests.swift in Sources */,
 				7CA84FD21CAD7D4000958656 /* StackOverflowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +540,7 @@
 		};
 		7CA84FE21CAD7D4000958656 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A9C112617DF89DCF53060AF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StackOverflow/Info.plist;
@@ -413,6 +553,7 @@
 		};
 		7CA84FE31CAD7D4000958656 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0ED35942B1E69CB3D92B5BD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StackOverflow/Info.plist;
@@ -488,6 +629,7 @@
 				7CA84FE31CAD7D4000958656 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CA84FE41CAD7D4000958656 /* Build configuration list for PBXNativeTarget "StackOverflowTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +638,7 @@
 				7CA84FE61CAD7D4000958656 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CA84FE71CAD7D4000958656 /* Build configuration list for PBXNativeTarget "StackOverflowUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +647,7 @@
 				7CA84FE91CAD7D4000958656 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
