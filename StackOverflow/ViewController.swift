@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 struct Infos {
     let numberOfSections:Int = 1
@@ -16,13 +17,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableViewSO: UITableView!
     
-    var tags = NSArray()
+    var category = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        loadTags()
+        HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
+        
+        loadCategory()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,54 +38,53 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let tagCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! TagCell
         
-        tagCell.category.text = self.tags.objectAtIndex(indexPath.row) as? String
+        tagCell.category.text = self.category.objectAtIndex(indexPath.row) as? String
         
         return tagCell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let category = self.tags.objectAtIndex(indexPath.row)
-        print(category)
+        let category = self.category.objectAtIndex(indexPath.row)
+        print("category: \(category)")
+        
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let question = mainStoryboard.instantiateViewControllerWithIdentifier("questionController") as! QuestionController
+        question.tag = category as! String
+        tableViewSO.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        self.navigationController?.pushViewController(question, animated: true)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tags.count
+        return self.category.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return Infos().numberOfSections
     }
     
-    func loadTags() -> Void {
+    func loadCategory() -> Void {
         let api = Api()
         
         if api.getConnection() {
             
-            api.getCategoryWithClosure { (tags) in
-                if tags?.count > 0 {
-                    self.tags = tags!
+            api.getCategoryWithClosure { (category) in
+                if category?.count > 0 {
+                    HUD.hide(animated: true)
+                    self.category = category!
                     self.tableViewSO.reloadData()
                 }
             }
             
         } else {
             
-            let alertController = UIAlertController(title: "Network Error",
-                                                    message: "Check your network connection",
-                                                    preferredStyle: UIAlertControllerStyle.Alert)
-            
-            let okAction = UIAlertAction(title: "OK",
-                                         style: UIAlertActionStyle.Default,
-                                         handler: nil)
-            alertController.addAction(okAction)
-            
-            self.presentViewController(alertController,
-                                       animated: true,
-                                       completion: nil)
+            let connection = Network()
+            connection.checkNetwork(self)
             
         }
     }
-
+    
 }
 
 
