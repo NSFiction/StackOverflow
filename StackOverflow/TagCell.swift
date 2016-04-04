@@ -22,5 +22,9 @@ class TagCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func viewModel(title: String) {
+        category.text = title
+    }
 
 }

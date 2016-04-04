@@ -11,6 +11,8 @@ import PKHUD
 
 class QuestionController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let api = Api()
+    
     var tag:String = ""
     var arrQuestions = NSMutableArray()
     
@@ -18,10 +20,6 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        self.title = tag
-        
-        HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
         
         loadQuestions()
     }
@@ -36,18 +34,22 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
         
         let questionCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! QuestionCell
         
-        let info = arrQuestions.objectAtIndex(indexPath.row)
-        
-        questionCell.title.text = info.valueForKey("title") as? String
-        questionCell.vote.text  = info.valueForKey("score") as? String
-        questionCell.user.text  = info.valueForKey("display_name") as? String
-        questionCell.photoUser.imageFromUrl((info.valueForKey("profile_image") as? String)!)
+        let question = arrQuestions.objectAtIndex(indexPath.row) as! NSDictionary
+        questionCell.viewModel(question)
         
         return questionCell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if api.getConnection() {
+            callAnswerController(indexPath)
+        } else {
+            checkNetwork()
+        }
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,26 +60,38 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
         return Infos().numberOfSections
     }
     
+    func callAnswerController(indexPath: NSIndexPath) {
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let answerController = mainStoryboard.instantiateViewControllerWithIdentifier("answerController") as! AnswerController
+        
+        let question = arrQuestions.objectAtIndex(indexPath.row)
+        answerController.titleAnswer = question.valueForKey("title") as! String
+        answerController.question_id = question.valueForKey("question_id") as! Int
+        self.navigationController?.pushViewController(answerController, animated: true)
+    }
+    
     func loadQuestions() {
         
         let api = Api()
         
         if api.getConnection() {
+
+            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
             
             api.getTaggedWithClosure(tag, completion: { (result) in
                 if result.count > 0 {
-                    HUD.hide(animated: true)
                     self.arrQuestions = result
                     self.tableViewQuestion.reloadData()
                 }
+                HUD.hide(animated: true)
             })
-            
-        } else {
-            
-            let connection = Network()
-            connection.checkNetwork(self)
             
         }
     }
     
+    func checkNetwork() -> Void {
+        let connection = Network()
+        connection.checkNetwork(self)
+    }
 }

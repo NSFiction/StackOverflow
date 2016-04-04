@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PKHUD
 
 struct Infos {
     let numberOfSections:Int = 1
@@ -15,15 +14,14 @@ struct Infos {
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tableViewSO: UITableView!
+    let api = Api()
     
-    var category = NSArray()
+    var categoryDic = NSMutableDictionary()
+    var categoryArr = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
         
         loadCategory()
     }
@@ -38,53 +36,58 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let tagCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! TagCell
         
-        tagCell.category.text = self.category.objectAtIndex(indexPath.row) as? String
+        let title = self.categoryArr.objectAtIndex(indexPath.row) as! String
+        tagCell.viewModel(title)
         
         return tagCell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let category = self.category.objectAtIndex(indexPath.row)
-        print("category: \(category)")
         
-        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let question = mainStoryboard.instantiateViewControllerWithIdentifier("questionController") as! QuestionController
-        question.tag = category as! String
-        tableViewSO.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        self.navigationController?.pushViewController(question, animated: true)
+        if api.getConnection() {
+            callQuestionController(indexPath)
+        } else {
+            checkNetwork()
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.category.count
+        return self.categoryArr.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return Infos().numberOfSections
     }
     
-    func loadCategory() -> Void {
-        let api = Api()
+    func callQuestionController(indexPath: NSIndexPath) {
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if api.getConnection() {
-            
-            api.getCategoryWithClosure { (category) in
-                if category?.count > 0 {
-                    HUD.hide(animated: true)
-                    self.category = category!
-                    self.tableViewSO.reloadData()
-                }
-            }
-            
-        } else {
-            
-            let connection = Network()
-            connection.checkNetwork(self)
-            
-        }
+        let question = mainStoryboard.instantiateViewControllerWithIdentifier("questionController") as! QuestionController
+        
+        let category = categoryArr.objectAtIndex(indexPath.row) as? String
+        
+        question.title = category
+        question.tag = categoryDic.valueForKey(category!) as! String
+        
+        self.navigationController?.pushViewController(question, animated: true)
     }
     
+    func checkNetwork() -> Void {
+        let connection = Network()
+        connection.checkNetwork(self)
+    }
+
+    func loadCategory() {
+        categoryDic = ["iPhone" : "iphone",
+                       "Cocoa Touch" : "cocoa-touch",
+                       "UiKit" : "uikit",
+                       "Objective-C" : "objective-c",
+                       "Swift" : "swift"];
+        
+        categoryArr = categoryDic.allKeys
+    }
 }
 
 
