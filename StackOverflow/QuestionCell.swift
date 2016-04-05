@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class QuestionCell: UITableViewCell {
 
@@ -27,12 +28,22 @@ class QuestionCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func viewModel(info: NSDictionary) {
-        title.text = info.valueForKey("title") as? String
-        vote.text  = "\(info.valueForKey("score") as! Int)"
-        user.text  = info.valueForKey("display_name") as? String
-        photoUser.downloadedFrom(link: (info.valueForKey("profile_image") as? String)!,
-                                 contentMode: UIViewContentMode.ScaleToFill)
+    func viewModel(question info: NSDictionary,
+                            destination: Request.DownloadFileDestination,
+                            filePath: String) {
+        
+        let titleAux = info.valueForKey("title") as! String
+        let voteAux = "\(info.valueForKey("score") as! Int)"
+        let userAux = info.valueForKey("display_name") as! String
+        let profileAux = info.valueForKey("profile_image") as! String
+        
+        title.text = titleAux
+        vote.text  = voteAux
+        user.text  = userAux
+        
+        if profileAux.containsString("https") {
+            photoUser.downloadedFrom(profileAux, destination: destination, path: filePath)
+        }
     }
     
 }

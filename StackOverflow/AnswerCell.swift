@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AnswerCell: UITableViewCell {
 
@@ -24,10 +25,14 @@ class AnswerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func viewModel(info: NSDictionary) {
-        user.text  = info.valueForKey("display_name") as? String
-        photoUser.downloadedFrom(link: (info.valueForKey("profile_image") as? String)!,
-                                 contentMode: UIViewContentMode.ScaleToFill)
+    func viewModel(answer info: NSDictionary,
+                          destination: Request.DownloadFileDestination,
+                          filePath: String) {
+        
+        user.text = info.valueForKey("display_name") as? String
+        
+        let profile = (info.valueForKey("profile_image") as? String)
+        photoUser.downloadedFrom(profile!, destination: destination, path: filePath)
     }
 
 }

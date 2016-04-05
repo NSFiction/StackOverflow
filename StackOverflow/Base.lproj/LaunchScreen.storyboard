@@ -17,21 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StackOverflow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plP-Ul-154">
-                                <rect key="frame" x="237" y="289" width="126" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="oL2-BM-TcL">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="126" id="FY8-tc-5Mb"/>
-                                    <constraint firstAttribute="height" constant="21" id="dBS-7w-Ynh"/>
+                                    <constraint firstAttribute="height" constant="128" id="ZIf-Ie-Btz"/>
+                                    <constraint firstAttribute="width" constant="240" id="fIy-9L-SqC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="plP-Ul-154" firstAttribute="centerX" secondItem="k5I-uF-5Ii" secondAttribute="centerX" id="EFl-9b-Vqh"/>
-                            <constraint firstItem="plP-Ul-154" firstAttribute="centerY" secondItem="k5I-uF-5Ii" secondAttribute="centerY" id="gfP-j4-jBb"/>
+                            <constraint firstItem="oL2-BM-TcL" firstAttribute="centerY" secondItem="k5I-uF-5Ii" secondAttribute="centerY" id="5eo-US-BAN"/>
+                            <constraint firstItem="oL2-BM-TcL" firstAttribute="centerX" secondItem="k5I-uF-5Ii" secondAttribute="centerX" id="ihY-VF-fka"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,4 +37,7 @@
             <point key="canvasLocation" x="-953" y="443"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="448" height="145"/>
+    </resources>
 </document>

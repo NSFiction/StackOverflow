@@ -112,8 +112,8 @@
 		15812B281CAE246A00F15CC6 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				15F177211CB00E6B00E463B4 /* QuestionCell.swift */,
 				15812B261CAE246700F15CC6 /* TagCell.swift */,
+				15F177211CB00E6B00E463B4 /* QuestionCell.swift */,
 				159810AB1CB0BD4500569249 /* AnswerCell.swift */,
 			);
 			name = views;

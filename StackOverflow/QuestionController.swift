@@ -8,10 +8,14 @@
 
 import UIKit
 import PKHUD
+import Alamofire
 
 class QuestionController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let api = Api()
+    let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
+                                                                     domain: .UserDomainMask)
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
     
     var tag:String = ""
     var arrQuestions = NSMutableArray()
@@ -35,7 +39,7 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
         let questionCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! QuestionCell
         
         let question = arrQuestions.objectAtIndex(indexPath.row) as! NSDictionary
-        questionCell.viewModel(question)
+        questionCell.viewModel(question: question, destination: destination, filePath: filePath)
         
         return questionCell
     }
@@ -66,8 +70,7 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
         let answerController = mainStoryboard.instantiateViewControllerWithIdentifier("answerController") as! AnswerController
         
         let question = arrQuestions.objectAtIndex(indexPath.row)
-        answerController.titleAnswer = question.valueForKey("title") as! String
-        answerController.question_id = question.valueForKey("question_id") as! Int
+        answerController.dicAnswer = question as! NSDictionary
         self.navigationController?.pushViewController(answerController, animated: true)
     }
     

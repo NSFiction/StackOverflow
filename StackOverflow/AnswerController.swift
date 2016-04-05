@@ -8,25 +8,30 @@
 
 import UIKit
 import PKHUD
+import Alamofire
 
 class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var question_id = 0
+    let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
+                                                                     domain: .UserDomainMask)
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
     
+    var arrAnswer = NSArray()
+    var dicAnswer = NSDictionary()
+    
+    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var tableViewAnswer: UITableView!
-    
-    var arrAnswer = NSArray()
-    var titleAnswer = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        titleLabel.text = titleAnswer
+        titleLabel.text = dicAnswer.valueForKey("title") as? String
+        descriptionText.text = dicAnswer.valueForKey("body") as? String
         
-        loadAnswers()
+        loadAnswers(dicAnswer.valueForKey("question_id") as! Int)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,8 +45,8 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let answerCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! AnswerCell
         
-        let info = arrAnswer.objectAtIndex(indexPath.row) as! NSDictionary
-        answerCell.viewModel(info)
+        let answer = arrAnswer.objectAtIndex(indexPath.row) as! NSDictionary
+        answerCell.viewModel(answer: answer, destination: destination, filePath: filePath)
         
         return answerCell
         
@@ -55,7 +60,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return 1
     }
     
-    func loadAnswers() {
+    func loadAnswers(question_id: Int) {
         
         let api = Api()
         
@@ -66,8 +71,11 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
             api.getAnswersWithClosure(question_id, completion: { (result) in
                 if result.count > 0 {
                     self.arrAnswer = result
+                    self.countLabel.text = "\(result.count) Answer"
+                    self.tableViewAnswer.hidden = false
                     self.tableViewAnswer.reloadData()
                 } else {
+                    self.countLabel.hidden = true
                     self.tableViewAnswer.hidden = true
                 }
                 HUD.hide(animated: true)
