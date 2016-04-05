@@ -18,7 +18,7 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
     
     var tag:String = ""
-    var arrQuestions = NSMutableArray()
+    var arrQuestions = NSArray()
     
     @IBOutlet weak var tableViewQuestion: UITableView!
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
         
         loadQuestions()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,7 +38,7 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
         
         let questionCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! QuestionCell
         
-        let question = arrQuestions.objectAtIndex(indexPath.row) as! NSDictionary
+        let question = arrQuestions.objectAtIndex(indexPath.row) as! Question
         questionCell.viewModel(question: question, destination: destination, filePath: filePath)
         
         return questionCell
@@ -69,8 +69,8 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
         
         let answerController = mainStoryboard.instantiateViewControllerWithIdentifier("answerController") as! AnswerController
         
-        let question = arrQuestions.objectAtIndex(indexPath.row)
-        answerController.dicAnswer = question as! NSDictionary
+        let question = arrQuestions.objectAtIndex(indexPath.row) as! Question
+        answerController.question = question
         self.navigationController?.pushViewController(answerController, animated: true)
     }
     
@@ -84,13 +84,22 @@ class QuestionController: UIViewController, UITableViewDelegate, UITableViewData
             
             api.getTaggedWithClosure(tag, completion: { (result) in
                 if result.count > 0 {
-                    self.arrQuestions = result
+                    
+                    self.arrQuestions = self.allObjects(result)
                     self.tableViewQuestion.reloadData()
+                    
                 }
                 HUD.hide(animated: true)
             })
             
         }
+    }
+    
+    func allObjects(result: NSMutableArray) -> NSArray {
+        let coreDao = CoreDaoQuestion()
+        coreDao.validation(result)
+        
+        return coreDao.fetch()
     }
     
     func checkNetwork() -> Void {

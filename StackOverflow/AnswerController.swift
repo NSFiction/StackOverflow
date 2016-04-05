@@ -17,7 +17,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
     
     var arrAnswer = NSArray()
-    var dicAnswer = NSDictionary()
+    var question : Question?
     
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -28,10 +28,10 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        titleLabel.text = dicAnswer.valueForKey("title") as? String
-        descriptionText.text = dicAnswer.valueForKey("body") as? String
+        titleLabel.text = question!.title
+        descriptionText.text = question!.body
         
-        loadAnswers(dicAnswer.valueForKey("question_id") as! Int)
+        loadAnswers(question!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +45,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let answerCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! AnswerCell
         
-        let answer = arrAnswer.objectAtIndex(indexPath.row) as! NSDictionary
+        let answer = arrAnswer.objectAtIndex(indexPath.row) as! Answer
         answerCell.viewModel(answer: answer, destination: destination, filePath: filePath)
         
         return answerCell
@@ -60,7 +60,7 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return 1
     }
     
-    func loadAnswers(question_id: Int) {
+    func loadAnswers(question: Question) {
         
         let api = Api()
         
@@ -68,19 +68,32 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
             
-            api.getAnswersWithClosure(question_id, completion: { (result) in
+            api.getAnswersWithClosure(question.question_id as! Int, completion: { (result) in
                 if result.count > 0 {
-                    self.arrAnswer = result
+                    
                     self.countLabel.text = "\(result.count) Answer"
                     self.tableViewAnswer.hidden = false
+                    
+                    self.arrAnswer = self.allObjects(result)
                     self.tableViewAnswer.reloadData()
+                    
                 } else {
-                    self.countLabel.hidden = true
-                    self.tableViewAnswer.hidden = true
+                    self.hidden()
                 }
                 HUD.hide(animated: true)
             })
-            
         }
+    }
+    
+    func allObjects(result: NSMutableArray) -> NSArray {
+        let coreDao = CoreDaoAnswer()
+        coreDao.validation(result, question: question!)
+        
+        return coreDao.fetch()
+    }
+    
+    func hidden() {
+        self.countLabel.hidden = true
+        self.tableViewAnswer.hidden = true
     }
 }

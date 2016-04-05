@@ -25,14 +25,12 @@ class AnswerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func viewModel(answer info: NSDictionary,
+    func viewModel(answer object: Answer,
                           destination: Request.DownloadFileDestination,
                           filePath: String) {
         
-        user.text = info.valueForKey("display_name") as? String
-        
-        let profile = (info.valueForKey("profile_image") as? String)
-        photoUser.downloadedFrom(profile!, destination: destination, path: filePath)
+        user.text = object.user
+        photoUser.downloadedFrom(object.photoUser!, destination: destination, path: filePath)
     }
 
 }

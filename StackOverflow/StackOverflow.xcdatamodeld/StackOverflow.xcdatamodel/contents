@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Automatic">
-    <entity name="Answer" syncable="YES">
-        <attribute name="about" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="titlle" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="users" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" syncable="YES"/>
+    <entity name="Answer" representedClassName=".Answer" syncable="YES">
+        <attribute name="photoUser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="questionofanswert" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Question" inverseName="answerofquestion" inverseEntity="Question" syncable="YES"/>
     </entity>
-    <entity name="Question" syncable="YES">
+    <entity name="Question" representedClassName=".Question" syncable="YES">
         <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoUser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vote" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="answerofquestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Answer" inverseName="questionofanswert" inverseEntity="Answer" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Answer" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Question" positionX="-54" positionY="-9" width="128" height="105"/>
+        <element name="Answer" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Question" positionX="-54" positionY="-9" width="128" height="150"/>
     </elements>
 </model>
