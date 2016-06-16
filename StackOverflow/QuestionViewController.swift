@@ -1,5 +1,5 @@
 //
-//  QuestionController.swift
+//  QuestionViewController.swift
 //  StackOverflow
 //
 //  Created by Bruno Da luz on 02/04/16.
@@ -10,7 +10,7 @@ import UIKit
 import PKHUD
 import Alamofire
 
-class QuestionController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class QuestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let api = Api()
     let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,

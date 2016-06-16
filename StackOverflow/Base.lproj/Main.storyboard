@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8vV-ZC-f2D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8vV-ZC-f2D">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -25,7 +25,7 @@
         <!--StackOverflow-->
         <scene sceneID="quM-r8-Q1h">
             <objects>
-                <viewController id="wGi-fQ-kEI" customClass="ViewController" customModule="StackOverflow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wGi-fQ-kEI" customClass="CategoryViewController" customModule="StackOverflow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AOB-5T-h7f"/>
                         <viewControllerLayoutGuide type="bottom" id="sEt-vM-lIh"/>
@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="726" y="1682"/>
         </scene>
-        <!--Question Controller-->
+        <!--Question View Controller-->
         <scene sceneID="Tt7-SB-6Hs">
             <objects>
-                <viewController storyboardIdentifier="questionController" id="6n3-YH-TFH" customClass="QuestionController" customModule="StackOverflow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="questionController" id="6n3-YH-TFH" customClass="QuestionViewController" customModule="StackOverflow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="al6-wW-YcL"/>
                         <viewControllerLayoutGuide type="bottom" id="Wad-A8-2mW"/>
