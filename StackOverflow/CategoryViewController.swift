@@ -16,14 +16,12 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
     let api = Api()
 
-    var categoryDic = NSMutableDictionary()
-    var categoryArr = NSArray()
+    let categoryArr: NSArray = Constants.categories.allKeys
+    let categoryDic: NSDictionary = Constants.categories
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        loadCategory()
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,15 +75,5 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     func checkNetwork() -> Void {
         let connection = Network()
         connection.checkNetwork(self)
-    }
-
-    func loadCategory() {
-        categoryDic = ["iPhone" : "iphone",
-                       "Cocoa Touch" : "cocoa-touch",
-                       "UiKit" : "uikit",
-                       "Objective-C" : "objective-c",
-                       "Swift" : "swift"]
-
-        categoryArr = categoryDic.allKeys
     }
 }

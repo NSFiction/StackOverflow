@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15164C711D13B14300EE66F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15164C701D13B14300EE66F3 /* Constants.swift */; };
 		1533C2E91CB02C8200592EB5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2E81CB02C8200592EB5 /* Network.swift */; };
 		1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2EE1CB043A900592EB5 /* Image+Extension.swift */; };
 		15812B231CAE241A00F15CC6 /* ConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B221CAE241A00F15CC6 /* ConnectTests.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15164C701D13B14300EE66F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1533C2E81CB02C8200592EB5 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1533C2EE1CB043A900592EB5 /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		15812B221CAE241A00F15CC6 /* ConnectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectTests.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			children = (
 				15B2A9D41CAE214100E4D493 /* Classes */,
 				7CA84FB91CAD7D4000958656 /* AppDelegate.swift */,
+				15164C701D13B14300EE66F3 /* Constants.swift */,
 				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
 				7CA84FC31CAD7D4000958656 /* Assets.xcassets */,
 				7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */,
@@ -492,6 +495,7 @@
 				15F272E71CB3736900F2D668 /* Question+CoreDataProperties.swift in Sources */,
 				15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */,
 				15F272EC1CB37C9300F2D668 /* CoreDaoAnswer.swift in Sources */,
+				15164C711D13B14300EE66F3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
