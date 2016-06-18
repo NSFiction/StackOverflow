@@ -16,6 +16,9 @@ class QuestionCell: UITableViewCell {
     @IBOutlet weak var vote: UILabel!
     @IBOutlet weak var photoUser: UIImageView!
 
+    let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
+                                                                     domain: .UserDomainMask)
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,9 +31,7 @@ class QuestionCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func viewModel(question object: NSDictionary,
-                            destination: Request.DownloadFileDestination,
-                            filePath: String) {
+    func viewModel(question object: NSDictionary) {
 
         let titleAux = object.valueForKey("title") as! String
         let voteAux = "\(object.valueForKey("score")!)"
