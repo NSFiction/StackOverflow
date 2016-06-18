@@ -14,7 +14,7 @@ struct Infos {
 
 class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let api = Api()
+    let api = APIConsumer()
 
     let categoryArr: NSArray = Constants.categories.allKeys
     let categoryDic: NSDictionary = Constants.categories
@@ -44,10 +44,10 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        if api.getConnection() {
+        if Network.hasConnection {
             callQuestionController(indexPath)
         } else {
-            checkNetwork()
+            AboutConnection().alert(viewController: self)
         }
     }
 
@@ -72,8 +72,4 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationController?.pushViewController(question, animated: true)
     }
 
-    func checkNetwork() -> Void {
-        let connection = Network()
-        connection.checkNetwork(self)
-    }
 }

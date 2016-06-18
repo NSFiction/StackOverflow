@@ -12,10 +12,7 @@ import Alamofire
 
 class QuestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let api = Api()
-    let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
-                                                                     domain: .UserDomainMask)
-    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+    let api = QuestionAPI()
 
     var tag: String = ""
     var arrQuestions = NSArray()
@@ -39,7 +36,7 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
         let questionCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! QuestionCell
 
         let question = arrQuestions.objectAtIndex(indexPath.row) as! NSDictionary
-        questionCell.viewModel(question: question, destination: destination, filePath: filePath)
+        questionCell.viewModel(question: question)
 
         return questionCell
     }
@@ -48,12 +45,11 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        if api.getConnection() {
+        if Network.hasConnection {
             callAnswerController(indexPath)
         } else {
-            checkNetwork()
+            AboutConnection().alert(viewController: self)
         }
-
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,27 +72,27 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
 
     func loadQuestions() {
 
-        let api = Api()
-
-        if api.getConnection() {
+        if Network.hasConnection {
 
             HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
-            api.getTaggedWithClosure(tag, completion: { (result) in
-                if result.count > 0 {
+            api.consume(category: tag, completion: { (result) in
 
-                    self.arrQuestions = result
+                switch result {
+                case .Success(let value):
+                    self.arrQuestions = value
                     self.tableViewQuestion.reloadData()
+                    break
 
+                case .Failure(_):
+                    // test
+                    break
                 }
+
                 HUD.hide(animated: true)
+
             })
 
         }
-    }
-
-    func checkNetwork() -> Void {
-        let connection = Network()
-        connection.checkNetwork(self)
     }
 }
