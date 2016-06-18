@@ -20,16 +20,9 @@
 		15DDFCCD1D12590D00E262B6 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DDFCCB1D12590D00E262B6 /* PKHUD.framework */; };
 		15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */; };
 		15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F177211CB00E6B00E463B4 /* QuestionCell.swift */; };
-		15F272E71CB3736900F2D668 /* Question+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F272E51CB3736900F2D668 /* Question+CoreDataProperties.swift */; };
-		15F272E81CB3736900F2D668 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F272E61CB3736900F2D668 /* Question.swift */; };
-		15F272EA1CB37C7C00F2D668 /* CoreDaoQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F272E91CB37C7C00F2D668 /* CoreDaoQuestion.swift */; };
-		15F272EC1CB37C9300F2D668 /* CoreDaoAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F272EB1CB37C9300F2D668 /* CoreDaoAnswer.swift */; };
-		15F272EF1CB37FB400F2D668 /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F272ED1CB37FB400F2D668 /* Answer+CoreDataProperties.swift */; };
-		15F272F01CB37FB400F2D668 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F272EE1CB37FB400F2D668 /* Answer.swift */; };
 		7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FB91CAD7D4000958656 /* AppDelegate.swift */; };
 		7CA84FBC1CAD7D4000958656 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FBB1CAD7D4000958656 /* CategoryViewController.swift */; };
 		7CA84FBF1CAD7D4000958656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FBD1CAD7D4000958656 /* Main.storyboard */; };
-		7CA84FC21CAD7D4000958656 /* StackOverflow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FC01CAD7D4000958656 /* StackOverflow.xcdatamodeld */; };
 		7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC31CAD7D4000958656 /* Assets.xcassets */; };
 		7CA84FC71CAD7D4000958656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */; };
 		7CA84FD21CAD7D4000958656 /* StackOverflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FD11CAD7D4000958656 /* StackOverflowTests.swift */; };
@@ -67,12 +60,6 @@
 		15DDFCCB1D12590D00E262B6 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = "../../../Library/Developer/Xcode/DerivedData/StackOverflow-dcfqfpuavnrpxqciuogxcafepjld/Build/Products/Debug-iphonesimulator/PKHUD/PKHUD.framework"; sourceTree = "<group>"; };
 		15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		15F177211CB00E6B00E463B4 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
-		15F272E51CB3736900F2D668 /* Question+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Question+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		15F272E61CB3736900F2D668 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		15F272E91CB37C7C00F2D668 /* CoreDaoQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDaoQuestion.swift; sourceTree = "<group>"; };
-		15F272EB1CB37C9300F2D668 /* CoreDaoAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDaoAnswer.swift; sourceTree = "<group>"; };
-		15F272ED1CB37FB400F2D668 /* Answer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		15F272EE1CB37FB400F2D668 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		3306939C11C7F235273A59F4 /* Pods-StackOverflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflow/Pods-StackOverflow.debug.xcconfig"; sourceTree = "<group>"; };
 		6A9C112617DF89DCF53060AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +67,6 @@
 		7CA84FB91CAD7D4000958656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA84FBB1CAD7D4000958656 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		7CA84FBE1CAD7D4000958656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7CA84FC11CAD7D4000958656 /* StackOverflow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StackOverflow.xcdatamodel; sourceTree = "<group>"; };
 		7CA84FC31CAD7D4000958656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CA84FC61CAD7D4000958656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CA84FC81CAD7D4000958656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,19 +159,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		15812B291CAE24F600F15CC6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				15F272E41CB36CB800F2D668 /* Dao */,
-				15F272E51CB3736900F2D668 /* Question+CoreDataProperties.swift */,
-				15F272E61CB3736900F2D668 /* Question.swift */,
-				15F272ED1CB37FB400F2D668 /* Answer+CoreDataProperties.swift */,
-				15F272EE1CB37FB400F2D668 /* Answer.swift */,
-				7CA84FC01CAD7D4000958656 /* StackOverflow.xcdatamodeld */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		15B2A9D41CAE214100E4D493 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +166,6 @@
 				1533C2F01CB043B000592EB5 /* Extension */,
 				15B2A9D51CAE214A00E4D493 /* Modules */,
 				15812B281CAE246A00F15CC6 /* View */,
-				15812B291CAE24F600F15CC6 /* Model */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -206,15 +178,6 @@
 				15164C6F1D13AD5500EE66F3 /* Answer */,
 			);
 			name = Modules;
-			sourceTree = "<group>";
-		};
-		15F272E41CB36CB800F2D668 /* Dao */ = {
-			isa = PBXGroup;
-			children = (
-				15F272E91CB37C7C00F2D668 /* CoreDaoQuestion.swift */,
-				15F272EB1CB37C9300F2D668 /* CoreDaoAnswer.swift */,
-			);
-			name = Dao;
 			sourceTree = "<group>";
 		};
 		69D9FA44DC1DB5E43637FCD4 /* Frameworks */ = {
@@ -479,22 +442,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				15812B271CAE246700F15CC6 /* TagCell.swift in Sources */,
-				15F272E81CB3736900F2D668 /* Question.swift in Sources */,
 				7CA84FBC1CAD7D4000958656 /* CategoryViewController.swift in Sources */,
 				1533C2E91CB02C8200592EB5 /* Network.swift in Sources */,
 				159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */,
-				15F272EF1CB37FB400F2D668 /* Answer+CoreDataProperties.swift in Sources */,
-				15F272EA1CB37C7C00F2D668 /* CoreDaoQuestion.swift in Sources */,
-				15F272F01CB37FB400F2D668 /* Answer.swift in Sources */,
-				7CA84FC21CAD7D4000958656 /* StackOverflow.xcdatamodeld in Sources */,
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,
 				15812B341CAE2B3900F15CC6 /* Api.swift in Sources */,
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,
 				1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */,
 				159810AA1CB0BD2E00569249 /* AnswerController.swift in Sources */,
-				15F272E71CB3736900F2D668 /* Question+CoreDataProperties.swift in Sources */,
 				15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */,
-				15F272EC1CB37C9300F2D668 /* CoreDaoAnswer.swift in Sources */,
 				15164C711D13B14300EE66F3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -751,19 +707,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7CA84FC01CAD7D4000958656 /* StackOverflow.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7CA84FC11CAD7D4000958656 /* StackOverflow.xcdatamodel */,
-			);
-			currentVersion = 7CA84FC11CAD7D4000958656 /* StackOverflow.xcdatamodel */;
-			path = StackOverflow.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7CA84FAE1CAD7D4000958656 /* Project object */;
 }

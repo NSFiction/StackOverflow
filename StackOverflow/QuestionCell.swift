@@ -15,8 +15,8 @@ class QuestionCell: UITableViewCell {
     @IBOutlet weak var user: UILabel!
     @IBOutlet weak var vote: UILabel!
     @IBOutlet weak var photoUser: UIImageView!
-    
-    
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,22 +28,22 @@ class QuestionCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func viewModel(question object: Question,
+    func viewModel(question object: String,
                             destination: Request.DownloadFileDestination,
                             filePath: String) {
-        
-        let titleAux = object.title
-        let voteAux = "\(object.vote as! Int)"
-        let userAux = object.user
-        let profileAux = object.photoUser
-        
-        title.text = titleAux
-        vote.text  = voteAux
-        user.text  = userAux
-        
-        if profileAux!.containsString("https") {
-            photoUser.downloadedFrom(profileAux!, destination: destination, path: filePath)
+
+//        let titleAux = object.title
+//        let voteAux = "\(object.vote as Int)"
+//        let userAux = object.user
+//        let profileAux = object.photoUser
+
+//        title.text = titleAux
+//        vote.text  = voteAux
+//        user.text  = userAux
+
+        if object.containsString("https") {
+            photoUser.downloadedFrom(object, destination: destination, path: filePath)
         }
     }
-    
+
 }
