@@ -1,29 +1,14 @@
 //
-//  Network.swift
+//  CheckNetwork.swift
 //  StackOverflow
 //
-//  Created by Bruno Da luz on 02/04/16.
+//  Created by Bruno Da luz on 6/18/16.
 //  Copyright © 2016 Bruno da Luz. All rights reserved.
 //
 
 import Foundation
-import UIKit
+import Alamofire
 
-class Network {
-
-    func checkNetwork(controller: UIViewController) {
-        let alertController = UIAlertController(title: "Network Error",
-                                                message: "Check your network connection",
-                                                preferredStyle: UIAlertControllerStyle.Alert)
-
-        let okAction = UIAlertAction(title: "OK",
-                                     style: UIAlertActionStyle.Default,
-                                     handler: nil)
-        alertController.addAction(okAction)
-
-        controller.presentViewController(alertController,
-                                         animated: true,
-                                         completion: nil)
-    }
-
+struct Network {
+    static let hasConnection = (NetworkReachabilityManager()?.isReachable)!
 }

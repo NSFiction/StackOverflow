@@ -11,12 +11,6 @@ import Alamofire
 
 class APIConsumer {
 
-    func getConnection() -> Bool {
-        let manager = NetworkReachabilityManager()
-        let status = (manager?.isReachable)!
-        return status
-    }
-
     func getAnswersWithClosure(question_id: Int, completion: (result: NSMutableArray) -> Void) {
 
         let tagged = "https://api.stackexchange.com/2.2/questions/\(question_id)/answers?order=desc&sort=activity&site=stackoverflow"

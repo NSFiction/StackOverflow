@@ -45,12 +45,9 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        if api.getConnection() {
+        if Network.hasConnection {
             callAnswerController(indexPath)
-        } else {
-            checkNetwork()
         }
-
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,7 +70,7 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
 
     func loadQuestions() {
 
-        if api.getConnection() {
+        if Network.hasConnection {
 
             HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
@@ -95,10 +92,5 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
             })
 
         }
-    }
-
-    func checkNetwork() -> Void {
-        let connection = Network()
-        connection.checkNetwork(self)
     }
 }

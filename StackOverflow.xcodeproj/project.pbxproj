@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15164C711D13B14300EE66F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15164C701D13B14300EE66F3 /* Constants.swift */; };
-		1533C2E91CB02C8200592EB5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2E81CB02C8200592EB5 /* Network.swift */; };
+		1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */; };
 		1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2EE1CB043A900592EB5 /* Image+Extension.swift */; };
 		15812B231CAE241A00F15CC6 /* ConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B221CAE241A00F15CC6 /* ConnectTests.swift */; };
 		15812B271CAE246700F15CC6 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B261CAE246700F15CC6 /* TagCell.swift */; };
@@ -19,6 +19,7 @@
 		15C313CD1D14F5250024F9DD /* QuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313CC1D14F5250024F9DD /* QuestionTests.swift */; };
 		15C313CF1D14F8E10024F9DD /* QuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */; };
 		15C313D11D14FFBB0024F9DD /* Result+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313D01D14FFBB0024F9DD /* Result+Enum.swift */; };
+		15C313D31D1500F30024F9DD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313D21D1500F30024F9DD /* Network.swift */; };
 		15DDFCCC1D12590D00E262B6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DDFCCA1D12590D00E262B6 /* Alamofire.framework */; };
 		15DDFCCD1D12590D00E262B6 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DDFCCB1D12590D00E262B6 /* PKHUD.framework */; };
 		15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */; };
@@ -51,7 +52,7 @@
 
 /* Begin PBXFileReference section */
 		15164C701D13B14300EE66F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		1533C2E81CB02C8200592EB5 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAboutConnection.swift; sourceTree = "<group>"; };
 		1533C2EE1CB043A900592EB5 /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		15812B221CAE241A00F15CC6 /* ConnectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectTests.swift; sourceTree = "<group>"; };
 		15812B261CAE246700F15CC6 /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		15C313CC1D14F5250024F9DD /* QuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTests.swift; sourceTree = "<group>"; };
 		15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAPI.swift; sourceTree = "<group>"; };
 		15C313D01D14FFBB0024F9DD /* Result+Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Result+Enum.swift"; sourceTree = "<group>"; };
+		15C313D21D1500F30024F9DD /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		15DDFCCA1D12590D00E262B6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/StackOverflow-dcfqfpuavnrpxqciuogxcafepjld/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		15DDFCCB1D12590D00E262B6 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = "../../../Library/Developer/Xcode/DerivedData/StackOverflow-dcfqfpuavnrpxqciuogxcafepjld/Build/Products/Debug-iphonesimulator/PKHUD/PKHUD.framework"; sourceTree = "<group>"; };
 		15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -117,10 +119,10 @@
 		15164C6C1D13ACFF00EE66F3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1533C2E81CB02C8200592EB5 /* Network.swift */,
 				15812B331CAE2B3900F15CC6 /* APIConsumer.swift */,
 				15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */,
 				15C313D01D14FFBB0024F9DD /* Result+Enum.swift */,
+				15C313D21D1500F30024F9DD /* Network.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -160,6 +162,7 @@
 		15812B281CAE246A00F15CC6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */,
 				15812B261CAE246700F15CC6 /* TagCell.swift */,
 				15F177211CB00E6B00E463B4 /* QuestionCell.swift */,
 				159810AB1CB0BD4500569249 /* AnswerCell.swift */,
@@ -453,10 +456,11 @@
 				15812B271CAE246700F15CC6 /* TagCell.swift in Sources */,
 				7CA84FBC1CAD7D4000958656 /* CategoryViewController.swift in Sources */,
 				15C313CF1D14F8E10024F9DD /* QuestionAPI.swift in Sources */,
-				1533C2E91CB02C8200592EB5 /* Network.swift in Sources */,
+				1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */,
 				159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */,
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,
 				15812B341CAE2B3900F15CC6 /* APIConsumer.swift in Sources */,
+				15C313D31D1500F30024F9DD /* Network.swift in Sources */,
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,
 				1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */,
 				159810AA1CB0BD2E00569249 /* AnswerController.swift in Sources */,

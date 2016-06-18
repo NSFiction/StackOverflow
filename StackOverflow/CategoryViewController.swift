@@ -44,11 +44,9 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        if api.getConnection() {
+        if Network.hasConnection {
             callQuestionController(indexPath)
-        } else {
-            checkNetwork()
-        }
+        } 
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,8 +70,4 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationController?.pushViewController(question, animated: true)
     }
 
-    func checkNetwork() -> Void {
-        let connection = Network()
-        connection.checkNetwork(self)
-    }
 }
