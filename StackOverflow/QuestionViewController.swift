@@ -25,7 +25,7 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-//        loadQuestions()
+        loadQuestions()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,8 +38,8 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
 
         let questionCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! QuestionCell
 
-//        let question = arrQuestions.objectAtIndex(indexPath.row) as! Question
-//        questionCell.viewModel(question: question, destination: destination, filePath: filePath)
+        let question = arrQuestions.objectAtIndex(indexPath.row) as! NSDictionary
+        questionCell.viewModel(question: question, destination: destination, filePath: filePath)
 
         return questionCell
     }
@@ -74,33 +74,26 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
 //        self.navigationController?.pushViewController(answerController, animated: true)
     }
 
-//    func loadQuestions() {
-//
-//        let api = Api()
-//
-//        if api.getConnection() {
-//
-//            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
-//
-//            api.getTaggedWithClosure(tag, completion: { (result) in
-//                if result.count > 0 {
-//
-//                    self.arrQuestions = self.allObjects(result)
-//                    self.tableViewQuestion.reloadData()
-//
-//                }
-//                HUD.hide(animated: true)
-//            })
-//
-//        }
-//    }
+    func loadQuestions() {
 
-//    func allObjects(result: NSMutableArray) -> NSArray {
-//        let coreDao = CoreDaoQuestion()
-//        coreDao.validation(result)
-//
-//        return coreDao.fetch()
-//    }
+        let api = Api()
+
+        if api.getConnection() {
+
+            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
+
+            api.getTaggedWithClosure(tag, completion: { (result) in
+                if result.count > 0 {
+
+                    self.arrQuestions = result
+                    self.tableViewQuestion.reloadData()
+
+                }
+                HUD.hide(animated: true)
+            })
+
+        }
+    }
 
     func checkNetwork() -> Void {
         let connection = Network()

@@ -28,21 +28,21 @@ class QuestionCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func viewModel(question object: String,
+    func viewModel(question object: NSDictionary,
                             destination: Request.DownloadFileDestination,
                             filePath: String) {
 
-//        let titleAux = object.title
-//        let voteAux = "\(object.vote as Int)"
-//        let userAux = object.user
-//        let profileAux = object.photoUser
+        let titleAux = object.valueForKey("title") as! String
+        let voteAux = "\(object.valueForKey("score")!)"
+        let userAux = object.valueForKey("display_name") as! String
+        let profileAux = object.valueForKey("profile_image") as! String
 
-//        title.text = titleAux
-//        vote.text  = voteAux
-//        user.text  = userAux
+        title.text = titleAux
+        vote.text  = voteAux
+        user.text  = userAux
 
-        if object.containsString("https") {
-            photoUser.downloadedFrom(object, destination: destination, path: filePath)
+        if profileAux.containsString("https") {
+            photoUser.downloadedFrom(profileAux, destination: destination, path: filePath)
         }
     }
 

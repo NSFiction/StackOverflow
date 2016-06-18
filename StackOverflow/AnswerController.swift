@@ -15,22 +15,21 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
     let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
                                                                      domain: .UserDomainMask)
     let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-    
+
     var arrAnswer = NSArray()
-//    var question : Question?
-    
+
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var tableViewAnswer: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+
 //        titleLabel.text = question!.title
 //        descriptionText.text = question!.body
-//        
+//
 //        loadAnswers(question!)
     }
 
@@ -40,43 +39,43 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell:String = "Cell"
-        
+
+        let cell: String = "Cell"
+
         let answerCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! AnswerCell
-        
+
 //        let answer = arrAnswer.objectAtIndex(indexPath.row) as! Answer
 //        answerCell.viewModel(answer: answer, destination: destination, filePath: filePath)
-        
+
         return answerCell
-        
+
     }
-    
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrAnswer.count
     }
-    
+
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
+
 //    func loadAnswers(question: Question) {
-//        
+//
 //        let api = Api()
-//        
+//
 //        if api.getConnection() {
-//            
+//
 //            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
-//            
+//
 //            api.getAnswersWithClosure(question.question_id as! Int, completion: { (result) in
 //                if result.count > 0 {
-//                    
+//
 //                    self.countLabel.text = "\(result.count) Answer"
 //                    self.tableViewAnswer.hidden = false
-//                    
+//
 ////                    self.arrAnswer = self.allObjects(result)
 //                    self.tableViewAnswer.reloadData()
-//                    
+//
 //                } else {
 //                    self.hidden()
 //                }
