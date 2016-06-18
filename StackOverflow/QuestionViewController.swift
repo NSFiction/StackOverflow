@@ -47,6 +47,8 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
 
         if Network.hasConnection {
             callAnswerController(indexPath)
+        } else {
+            AboutConnection().alert(viewController: self)
         }
     }
 

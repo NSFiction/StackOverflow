@@ -46,7 +46,9 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
         if Network.hasConnection {
             callQuestionController(indexPath)
-        } 
+        } else {
+            AboutConnection().alert(viewController: self)
+        }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
