@@ -1,8 +1,21 @@
+def common_pods
+ pod 'Alamofire'
+ pod 'PKHUD'
+ pod 'XCGLogger', '~> 3.2'
+end
+
 platform :ios, '8.0'
 use_frameworks!
 inhibit_all_warnings!
 
+xcodeproj 'StackOverflow.xcodeproj'
+
 target :StackOverflow do
- pod 'Alamofire', '~> 3.0'
- pod "PKHUD"
+ common_pods
+end
+
+post_install do |installer|
+ installer.pods_project.targets.each do |target|
+  puts "#{target.name}"
+ end
 end

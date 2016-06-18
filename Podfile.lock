@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (3.4.1)
   - PKHUD (3.1.0)
+  - XCGLogger (3.3)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
+  - Alamofire
   - PKHUD
+  - XCGLogger (~> 3.2)
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
+  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
-PODFILE CHECKSUM: 72830114f7a4d87de5335c6c613abb196f43ece2
+PODFILE CHECKSUM: 85acd2ad99e05b3681d5fc65a4a1d25fad827cb0
 
 COCOAPODS: 1.0.0
