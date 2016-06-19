@@ -28,7 +28,7 @@ class QuestionTests: BaseCaseTest {
 
     /* requisite:
      *
-     *    Consume API Question w/ 20 max
+     *    Consume API Question w/ max of 20
      *
      */
 

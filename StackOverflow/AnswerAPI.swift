@@ -1,5 +1,5 @@
 //
-//  APIConsumer.swift
+//  AnswerAPI.swift
 //  StackOverflow
 //
 //  Created by Bruno Da luz on 01/04/16.
@@ -9,15 +9,26 @@
 import Foundation
 import Alamofire
 
-class APIConsumer {
+class AnswerAPI {
 
-    func getAnswersWithClosure(question_id: Int, completion: (result: NSMutableArray) -> Void) {
+    func consume(question_id: Int, completion: Result<NSMutableArray> -> Void) {
 
-        let tagged = "https://api.stackexchange.com/2.2/questions/\(question_id)/answers?order=desc&sort=activity&site=stackoverflow"
+        let URL = "https://api.stackexchange.com/2.2/questions/\(question_id)/answers?order=desc&sort=activity&site=stackoverflow"
 
-        Alamofire.request(.GET, tagged).responseJSON { response in
+        Alamofire.request(.GET, URL).response { (request, response, data, error) in
 
-            let json = response.result.value as! NSDictionary
+            guard error == nil else {
+                completion(.Failure(error))
+                return
+            }
+
+            guard response?.statusCode == 200 else {
+                completion(.Failure(error))
+                return
+            }
+
+            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+
             let items = json.valueForKey("items") as! NSArray
 
             let questions = NSMutableArray()
@@ -40,7 +51,7 @@ class APIConsumer {
                 }
                 questions.addObject(objects)
             }
-            completion(result: questions)
+            completion(.Success(questions))
         }
     }
 
