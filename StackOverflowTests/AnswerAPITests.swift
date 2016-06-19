@@ -1,8 +1,8 @@
 //
-//  QuestionTests.swift
+//  AnswerAPITests.swift
 //  StackOverflow
 //
-//  Created by Bruno Da luz on 6/18/16.
+//  Created by Bruno Da luz on 6/19/16.
 //  Copyright © 2016 Bruno da Luz. All rights reserved.
 //
 
@@ -11,37 +11,30 @@ import Alamofire
 
 @testable import StackOverflow
 
-class QuestionTests: BaseCaseTest {
+class AnswerAPITests: BaseCaseTest {
 
     /* requisite:
      *
      *    Check Connection
      *
      */
-
     func testCheckConnection() {
-
         // assert
-        XCTAssertTrue((NetworkReachabilityManager()?.isReachable)!, "Check your connection and try again !!!")
-
+        XCTAssertTrue(Network.hasConnection, "Check your connection and try again !!!")
     }
 
     /* requisite:
      *
-     *    Consume API Question w/ max of 20
+     *    Consume API
      *
      */
-
-    func testConsumingAPI_Question() {
-
-        let expectation = expectationWithDescription("request should succeed")
-
+    func testConsumingAPI_Answer() {
         // arrange
-        let api = QuestionAPI()
+        let expectation = expectationWithDescription("should receiver succeed")
 
         // act
-        api.consume(category: "Swift") { (result) in
-
+        let api = AnswerAPI()
+        api.consume(questionID: 37908269) { (result) in
             // assert
             switch result {
             case .Success(let value):
@@ -55,8 +48,10 @@ class QuestionTests: BaseCaseTest {
             }
 
             expectation.fulfill()
-
         }
+        // assert
+        expectation.fulfill()
+
 
         waitForExpectationsWithTimeout(timeout, handler: nil)
     }
