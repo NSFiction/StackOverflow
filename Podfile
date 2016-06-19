@@ -14,6 +14,10 @@ target :StackOverflow do
  common_pods
 end
 
+target :StackOverflowTests do
+ common_pods
+end
+
 post_install do |installer|
  installer.pods_project.targets.each do |target|
   puts "#{target.name}"

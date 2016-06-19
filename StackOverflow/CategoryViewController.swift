@@ -14,7 +14,7 @@ struct Infos {
 
 class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let api = APIConsumer()
+    let api = AnswerAPI()
 
     let categoryArr: NSArray = Constants.categories.allKeys
     let categoryDic: NSDictionary = Constants.categories
