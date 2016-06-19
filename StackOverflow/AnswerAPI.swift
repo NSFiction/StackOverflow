@@ -11,7 +11,7 @@ import Alamofire
 
 class AnswerAPI {
 
-    func consume(question_id: Int, completion: Result<NSMutableArray> -> Void) {
+    func consume(questionID question_id: Int, completion: Result<NSMutableArray> -> Void) {
 
         let URL = "https://api.stackexchange.com/2.2/questions/\(question_id)/answers?order=desc&sort=activity&site=stackoverflow"
 

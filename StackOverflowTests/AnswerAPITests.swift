@@ -34,7 +34,21 @@ class AnswerAPITests: BaseCaseTest {
 
         // act
         let api = AnswerAPI()
+        api.consume(questionID: 37908269) { (result) in
+            // assert
+            switch result {
+            case .Success(let value):
+                XCTAssertNotNil(value)
+                print(value)
+                break
 
+            case .Failure(_):
+                XCTFail("Failure!!!")
+                break
+            }
+
+            expectation.fulfill()
+        }
         // assert
         expectation.fulfill()
 
