@@ -61,7 +61,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
     func callQuestionController(indexPath: NSIndexPath) {
 
-        let storyboard = UIStoryboard(name: UIStoryboard.Storyboard.Question.rawValue, bundle: nil)
+        let storyboard = UIStoryboard.storyboard(.Question)
         let identifier = "QuestionController"
         let question = storyboard.instantiateViewControllerWithIdentifier(identifier) as! QuestionViewController
 

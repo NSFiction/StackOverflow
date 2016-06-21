@@ -14,4 +14,8 @@ extension UIStoryboard {
         case Question
         case Answer
     }
+
+    class func storyboard(storyboard: Storyboard, bundle: NSBundle? = nil) -> UIStoryboard {
+        return UIStoryboard(name: storyboard.rawValue, bundle: bundle)
+    }
 }
