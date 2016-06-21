@@ -377,7 +377,7 @@
 				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Bruno da Luz";
+				ORGANIZATIONNAME = nFiction;
 				TargetAttributes = {
 					7CA84FB51CAD7D4000958656 = {
 						CreatedOnToolsVersion = 7.3;
