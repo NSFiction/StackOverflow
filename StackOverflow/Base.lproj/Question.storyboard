@@ -9,7 +9,7 @@
         <!--Question View Controller-->
         <scene sceneID="Tt7-SB-6Hs">
             <objects>
-                <viewController storyboardIdentifier="QuestionController" id="6n3-YH-TFH" customClass="QuestionViewController" customModule="StackOverflow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionViewController" id="6n3-YH-TFH" customClass="QuestionViewController" customModule="StackOverflow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="al6-wW-YcL"/>
                         <viewControllerLayoutGuide type="bottom" id="Wad-A8-2mW"/>
