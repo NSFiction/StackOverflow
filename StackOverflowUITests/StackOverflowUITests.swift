@@ -3,7 +3,7 @@
 //  StackOverflowUITests
 //
 //  Created by Bruno da Luz on 3/31/16.
-//  Copyright © 2016 Bruno da Luz. All rights reserved.
+//  Copyright © 2016 nFiction. All rights reserved.
 //
 
 import XCTest
