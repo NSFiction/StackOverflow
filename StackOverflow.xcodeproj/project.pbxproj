@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		150B0CD01D16FC31005D1A7A /* AnswerAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150B0CCF1D16FC31005D1A7A /* AnswerAPITests.swift */; };
+		151185FC1D18BE480031A18B /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151185FB1D18BE480031A18B /* Storyboard+Extension.swift */; };
+		151185FF1D18C2CF0031A18B /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151185FD1D18C2CF0031A18B /* Question.storyboard */; };
+		151186011D18C2E80031A18B /* Answer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151186001D18C2E80031A18B /* Answer.storyboard */; };
+		151186041D18CC6F0031A18B /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */; };
+		151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151186051D18CE850031A18B /* UIViewController+Extension.swift */; };
 		15164C711D13B14300EE66F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15164C701D13B14300EE66F3 /* Constants.swift */; };
 		1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */; };
 		1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2EE1CB043A900592EB5 /* Image+Extension.swift */; };
@@ -56,6 +61,11 @@
 /* Begin PBXFileReference section */
 		0FF7EBEB02CAE75E8F9B5B69 /* Pods-StackOverflowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowTests/Pods-StackOverflowTests.release.xcconfig"; sourceTree = "<group>"; };
 		150B0CCF1D16FC31005D1A7A /* AnswerAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerAPITests.swift; sourceTree = "<group>"; };
+		151185FB1D18BE480031A18B /* Storyboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
+		151185FE1D18C2CF0031A18B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Question.storyboard; sourceTree = "<group>"; };
+		151186001D18C2E80031A18B /* Answer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Answer.storyboard; sourceTree = "<group>"; };
+		151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		151186051D18CE850031A18B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		15164C701D13B14300EE66F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAboutConnection.swift; sourceTree = "<group>"; };
 		1533C2EE1CB043A900592EB5 /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
@@ -125,6 +135,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		151186021D18C2FE0031A18B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
+				151186001D18C2E80031A18B /* Answer.storyboard */,
+				151185FD1D18C2CF0031A18B /* Question.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		15164C6C1D13ACFF00EE66F3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +152,7 @@
 				15C313D21D1500F30024F9DD /* Network.swift */,
 				15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */,
 				15C313D01D14FFBB0024F9DD /* Result+Enum.swift */,
+				151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -164,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				1533C2EE1CB043A900592EB5 /* Image+Extension.swift */,
+				151185FB1D18BE480031A18B /* Storyboard+Extension.swift */,
+				151186051D18CE850031A18B /* UIViewController+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -238,9 +261,9 @@
 			isa = PBXGroup;
 			children = (
 				15B2A9D41CAE214100E4D493 /* Classes */,
+				151186021D18C2FE0031A18B /* Storyboard */,
 				7CA84FB91CAD7D4000958656 /* AppDelegate.swift */,
 				15164C701D13B14300EE66F3 /* Constants.swift */,
-				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
 				7CA84FC31CAD7D4000958656 /* Assets.xcassets */,
 				7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */,
 				7CA84FC81CAD7D4000958656 /* Info.plist */,
@@ -396,6 +419,8 @@
 			files = (
 				7CA84FC71CAD7D4000958656 /* LaunchScreen.storyboard in Resources */,
 				7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */,
+				151186011D18C2E80031A18B /* Answer.storyboard in Resources */,
+				151185FF1D18C2CF0031A18B /* Question.storyboard in Resources */,
 				7CA84FBF1CAD7D4000958656 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,14 +539,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151186041D18CC6F0031A18B /* StoryboardIdentifiable.swift in Sources */,
 				15812B271CAE246700F15CC6 /* TagCell.swift in Sources */,
 				7CA84FBC1CAD7D4000958656 /* CategoryViewController.swift in Sources */,
 				15C313CF1D14F8E10024F9DD /* QuestionAPI.swift in Sources */,
+				151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */,
 				1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */,
 				159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */,
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,
 				15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */,
 				15C313D31D1500F30024F9DD /* Network.swift in Sources */,
+				151185FC1D18BE480031A18B /* Storyboard+Extension.swift in Sources */,
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,
 				1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */,
 				159810AA1CB0BD2E00569249 /* AnswerController.swift in Sources */,
@@ -567,6 +595,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		151185FD1D18C2CF0031A18B /* Question.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				151185FE1D18C2CF0031A18B /* Base */,
+			);
+			name = Question.storyboard;
+			sourceTree = "<group>";
+		};
 		7CA84FBD1CAD7D4000958656 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
