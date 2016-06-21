@@ -62,7 +62,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     func callQuestionController(indexPath: NSIndexPath) {
 
         let storyboard = UIStoryboard.storyboard(.Question)
-        let identifier = "QuestionController"
+        let identifier = QuestionViewController.storyboardIdentifier
         let question = storyboard.instantiateViewControllerWithIdentifier(identifier) as! QuestionViewController
 
         let category = categoryArr.objectAtIndex(indexPath.row) as? String
