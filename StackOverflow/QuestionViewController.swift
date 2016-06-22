@@ -46,7 +46,7 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         if Network.hasConnection {
-            callAnswerController(indexPath)
+            callAnswerViewController(indexPath)
         } else {
             AboutConnection().alert(viewController: self)
         }
@@ -60,14 +60,12 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
         return Infos().numberOfSections
     }
 
-    func callAnswerController(indexPath: NSIndexPath) {
-//        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//        let answerController = mainStoryboard.instantiateViewControllerWithIdentifier("answerController") as! AnswerController
-//
-//        let question = arrQuestions.objectAtIndex(indexPath.row) as! Question
-//        answerController.question = question
-//        self.navigationController?.pushViewController(answerController, animated: true)
+    func callAnswerViewController(indexPath: NSIndexPath) {
+        let storyboard = UIStoryboard.storyboard(.Answer)
+        let identifier = AnswerViewController.storyboardIdentifier
+        let answerController = storyboard.instantiateViewControllerWithIdentifier(identifier) as! AnswerViewController
+
+        self.navigationController?.pushViewController(answerController, animated: true)
     }
 
     func loadQuestions() {

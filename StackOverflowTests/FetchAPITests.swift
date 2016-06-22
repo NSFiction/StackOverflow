@@ -1,43 +1,32 @@
 //
-//  AnswerAPITests.swift
+//  FetchAPITests.swift
 //  StackOverflow
 //
-//  Created by Bruno Da luz on 6/19/16.
+//  Created by Bruno da Luz on 6/21/16.
 //  Copyright © 2016 nFiction. All rights reserved.
 //
 
 import XCTest
-import Alamofire
 
 @testable import StackOverflow
 
-class AnswerAPITests: BaseCaseTest {
+class FetchAPITests: BaseCaseTest {
 
     /* requisite:
      *
-     *    Check Connection
+     *    fetch api with function generic
      *
      */
-    func testCheckConnection() {
-        // assert
-        XCTAssertTrue(Network.hasConnection, "Check your connection and try again !!!")
-    }
+    func testFetchAPI_Answer() {
 
-    /* requisite:
-     *
-     *    Consume API
-     *
-     */
-    func testConsumingAPI_Answer() {
+        let expectation = expectationWithDescription("request should succeed")
+
         // arrange
-        let expectation = expectationWithDescription("should receiver succeed")
+        let consumeAPI = ConsumeAnswer()
+        let question_id = 37956419//11227809
 
         // act
-        let answerApi = AnswerAPI()
-        let question_id = 37956419
-
-        // act
-        answerApi.consume(object: question_id) { (result) in
+        consumeAPI.fetch(question_id) { (result) in
             switch result {
             case .Success(let value):
                 XCTAssertNotNil(value)

@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1434" y="1681"/>
         </scene>
-        <!--AnswerController-->
+        <!--AnswerViewController-->
         <scene sceneID="2eo-04-ztV">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="AnswerController" storyboardName="Answer" referencedIdentifier="AnswerController" id="b6k-Nf-QTb" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="AnswerViewController" storyboardName="Answer" referencedIdentifier="AnswerViewController" id="b6k-Nf-QTb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIk-vi-6ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2134" y="1681"/>

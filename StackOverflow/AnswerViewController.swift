@@ -1,5 +1,5 @@
 //
-//  AnswerController.swift
+//  AnswerViewController.swift
 //  StackOverflow
 //
 //  Created by Bruno Da luz on 02/04/16.
@@ -10,11 +10,13 @@ import UIKit
 import PKHUD
 import Alamofire
 
-class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
+    private let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
                                                                      domain: .UserDomainMask)
-    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+    private let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+                                                       .UserDomainMask,
+                                                       true)[0]
 
     var arrAnswer = NSArray()
 
@@ -30,7 +32,8 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
 //        titleLabel.text = question!.title
 //        descriptionText.text = question!.body
 //
-//        loadAnswers(question!)
+        let question_id = 37956419
+        loadAnswers(question_id)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +51,6 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
 //        answerCell.viewModel(answer: answer, destination: destination, filePath: filePath)
 
         return answerCell
-
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,30 +61,32 @@ class AnswerController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return 1
     }
 
-//    func loadAnswers(question: Question) {
-//
-//        let api = Api()
-//
-//        if api.getConnection() {
-//
-//            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
-//
-//            api.getAnswersWithClosure(question.question_id as! Int, completion: { (result) in
-//                if result.count > 0 {
-//
-//                    self.countLabel.text = "\(result.count) Answer"
-//                    self.tableViewAnswer.hidden = false
-//
-////                    self.arrAnswer = self.allObjects(result)
-//                    self.tableViewAnswer.reloadData()
-//
-//                } else {
-//                    self.hidden()
-//                }
-//                HUD.hide(animated: true)
-//            })
-//        }
-//    }
+    func loadAnswers(question_id: Int) {
+        if Network.hasConnection {
+            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 999.0)
+
+            let consume = ConsumeAnswer()
+            consume.fetch(question_id, callback: { (result) in
+
+                HUD.hide(animated: true)
+
+                switch result {
+                case .Success(let value):
+                    self.countLabel.text = "\(value.count) Answer"
+                    self.tableViewAnswer.hidden = false
+                    self.tableViewAnswer.reloadData()
+                    break
+
+                case .Failure(_):
+                    self.hidden()
+                    break
+                }
+            })
+
+        } else {
+            // alert about check network
+        }
+    }
 
     func hidden() {
         self.countLabel.hidden = true
