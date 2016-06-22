@@ -68,7 +68,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         let category = categoryArr.objectAtIndex(indexPath.row) as? String
 
         question.title = category
-        question.tag = categoryDic.valueForKey(category!) as! String
+        question.category = categoryDic.valueForKey(category!) as! String
 
         self.navigationController?.pushViewController(question, animated: true)
     }

@@ -12,9 +12,7 @@ import Alamofire
 
 class QuestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let api = QuestionAPI()
-
-    var tag: String = ""
+    var category: String = ""
     var arrQuestions = NSArray()
 
     @IBOutlet weak var tableViewQuestion: UITableView!
@@ -69,12 +67,13 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func loadQuestions() {
-
         if Network.hasConnection {
-
             HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
-            api.consume(category: tag, completion: { (result) in
+            let consume = ConsumeQuestion()
+            consume.fetch(category, callback: { (result) in
+
+                HUD.hide(animated: true)
 
                 switch result {
                 case .Success(let value):
@@ -86,9 +85,6 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
                     // test
                     break
                 }
-
-                HUD.hide(animated: true)
-
             })
 
         }
