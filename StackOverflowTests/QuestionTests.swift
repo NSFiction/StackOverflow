@@ -40,7 +40,7 @@ class QuestionTests: BaseCaseTest {
         let api = QuestionAPI()
 
         // act
-        api.consume(category: "Swift") { (result) in
+        api.consume(object: "Swift") { (result) in
 
             // assert
             switch result {

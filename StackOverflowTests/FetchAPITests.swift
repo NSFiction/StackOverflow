@@ -14,7 +14,7 @@ class FetchAPITests: BaseCaseTest {
 
     /* requisite:
      *
-     *    fetch api with function generic
+     *    Answer - fetch api with function generic
      *
      */
     func testFetchAPI_Answer() {
@@ -29,6 +29,45 @@ class FetchAPITests: BaseCaseTest {
         consumeAPI.fetch(question_id) { (result) in
             switch result {
             case .Success(let value):
+
+                // assert
+                XCTAssertNotNil(value)
+
+                print(value)
+
+                expectation.fulfill()
+
+                break
+
+            case .Failure(let error):
+                XCTFail("an occured error !!! \(error)")
+                expectation.fulfill()
+                break
+            }
+        }
+
+        waitForExpectationsWithTimeout(timeout, handler: nil)
+    }
+
+    /* requisite:
+     *
+     *    Question - fetch api with function generic
+     *
+     */
+    func testFetchAPI_Question() {
+
+        let expectation = expectationWithDescription("request should succeed")
+
+        // arrange
+        let consumeAPI = ConsumeQuestion()
+        let category = "Swift"
+
+        // act
+        consumeAPI.fetch(category) { (result) in
+            switch result {
+            case .Success(let value):
+
+                // assert
                 XCTAssertNotNil(value)
 
                 print(value)
