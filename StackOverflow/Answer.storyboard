@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Answer Controller-->
+        <!--Answer View Controller-->
         <scene sceneID="bNY-pk-bdd">
             <objects>
-                <viewController storyboardIdentifier="AnswerController" id="Gs5-MX-vTY" customClass="AnswerController" customModule="StackOverflow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnswerViewController" id="Gs5-MX-vTY" customClass="AnswerViewController" customModule="StackOverflow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jE3-OY-lL0"/>
                         <viewControllerLayoutGuide type="bottom" id="tAo-fp-f4d"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="S0l-Xy-ZP4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="S0l-Xy-ZP4">
                                 <rect key="frame" x="20" y="0.0" width="560" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Jja-3z-53v"/>
