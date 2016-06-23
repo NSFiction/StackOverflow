@@ -1,4 +1,4 @@
-![](https://travis-ci.org/nFiction/StackOverflow.svg?branch=master)
+![](https://travis-ci.org/nFiction/StackOverflow.svg?branch=develop)
 # StackOverflow - iOS
 
 The app is down for maintenance.
