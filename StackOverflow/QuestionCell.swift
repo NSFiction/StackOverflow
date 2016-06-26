@@ -33,17 +33,13 @@ class QuestionCell: UITableViewCell {
 
     func viewModel(question object: NSDictionary) {
 
-        let titleAux = object.valueForKey("title") as! String
-        let voteAux = "\(object.valueForKey("score")!)"
-        let userAux = object.valueForKey("display_name") as! String
-        let profileAux = object.valueForKey("profile_image") as! String
+        title.text = object.valueForKey("title") as! String
+        vote.text  = "\(object.valueForKey("score")!)"
+        user.text  = object.valueForKey("display_name") as! String
 
-        title.text = titleAux
-        vote.text  = voteAux
-        user.text  = userAux
-
-        if profileAux.containsString("https") {
-            photoUser.downloadedFrom(profileAux, destination: destination, path: filePath)
+        let profile = object.valueForKey("profile_image") as! String
+        if profile.containsString("https") {
+            photoUser.downloadedFrom(profile, destination: destination, path: filePath)
         }
     }
 

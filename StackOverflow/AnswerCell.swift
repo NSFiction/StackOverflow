@@ -13,7 +13,11 @@ class AnswerCell: UITableViewCell {
 
     @IBOutlet weak var photoUser: UIImageView!
     @IBOutlet weak var user: UILabel!
-    
+
+    let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
+                                                                     domain: .UserDomainMask)
+    let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,12 +28,10 @@ class AnswerCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func viewModel(answer object: String,
-                          destination: Request.DownloadFileDestination,
-                          filePath: String) {
-        
-        photoUser.downloadedFrom(object, destination: destination, path: filePath)
+
+    func viewModel(answer object: NSDictionary) {
+        let profileImage = object.valueForKey("profile_image") as! String
+        photoUser.downloadedFrom(profileImage, destination: destination, path: filePath)
     }
 
 }

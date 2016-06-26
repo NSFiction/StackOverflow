@@ -13,10 +13,10 @@ import Alamofire
 class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
-                                                                     domain: .UserDomainMask)
+                                                                             domain: .UserDomainMask)
     private let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-                                                       .UserDomainMask,
-                                                       true)[0]
+                                                               .UserDomainMask,
+                                                               true)[0]
 
     var arrAnswer = NSArray()
 
@@ -47,8 +47,8 @@ class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         let answerCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! AnswerCell
 
-//        let answer = arrAnswer.objectAtIndex(indexPath.row) as! Answer
-//        answerCell.viewModel(answer: answer, destination: destination, filePath: filePath)
+        let answer = arrAnswer.objectAtIndex(indexPath.row) as! NSDictionary
+        answerCell.viewModel(answer: answer)
 
         return answerCell
     }
@@ -72,6 +72,7 @@ class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
                 switch result {
                 case .Success(let value):
+                    self.arrAnswer = value
                     self.countLabel.text = "\(value.count) Answer"
                     self.tableViewAnswer.hidden = false
                     self.tableViewAnswer.reloadData()
