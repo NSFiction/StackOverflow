@@ -8,16 +8,10 @@
 
 import UIKit
 
-struct Infos {
-    let numberOfSections: Int = 1
-}
-
 class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let api = AnswerAPI()
-
-    let categoryArr: NSArray = Constants.categories.allKeys
-    let categoryDic: NSDictionary = Constants.categories
+    let categoryArr: NSArray = Constants.CATEGORIES.allKeys
+    let categoryDic: NSDictionary = Constants.CATEGORIES
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +50,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Infos().numberOfSections
+        return 1
     }
 
     func callQuestionController(indexPath: NSIndexPath) {

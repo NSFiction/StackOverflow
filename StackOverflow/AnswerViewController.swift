@@ -13,12 +13,13 @@ import Alamofire
 class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
-                                                                     domain: .UserDomainMask)
+                                                                             domain: .UserDomainMask)
     private let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-                                                       .UserDomainMask,
-                                                       true)[0]
+                                                               .UserDomainMask,
+                                                               true)[0]
 
     var arrAnswer = NSArray()
+    var dicInfo = NSDictionary()
 
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -29,11 +30,11 @@ class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-//        titleLabel.text = question!.title
-//        descriptionText.text = question!.body
-//
-        let question_id = 37956419
-        loadAnswers(question_id)
+        titleLabel.text = dicInfo.valueForKey("title") as? String
+        descriptionText.text = dicInfo.valueForKey("body") as? String
+
+        let question_id = dicInfo.valueForKey("question_id") as? Int
+        loadAnswers(question_id!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,8 +48,8 @@ class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         let answerCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! AnswerCell
 
-//        let answer = arrAnswer.objectAtIndex(indexPath.row) as! Answer
-//        answerCell.viewModel(answer: answer, destination: destination, filePath: filePath)
+        let answer = arrAnswer.objectAtIndex(indexPath.row) as! NSDictionary
+        answerCell.viewModel(answer: answer)
 
         return answerCell
     }
@@ -72,6 +73,7 @@ class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
                 switch result {
                 case .Success(let value):
+                    self.arrAnswer = value
                     self.countLabel.text = "\(value.count) Answer"
                     self.tableViewAnswer.hidden = false
                     self.tableViewAnswer.reloadData()

@@ -55,14 +55,15 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Infos().numberOfSections
+        return 1
     }
 
     func callAnswerViewController(indexPath: NSIndexPath) {
         let storyboard = UIStoryboard.storyboard(.Answer)
         let identifier = AnswerViewController.storyboardIdentifier
         let answerController = storyboard.instantiateViewControllerWithIdentifier(identifier) as! AnswerViewController
-
+        let question = arrQuestions.objectAtIndex(indexPath.row) as! NSDictionary
+        answerController.dicInfo = question
         self.navigationController?.pushViewController(answerController, animated: true)
     }
 
