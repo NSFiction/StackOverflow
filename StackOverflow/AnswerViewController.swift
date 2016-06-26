@@ -19,6 +19,7 @@ class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                                                true)[0]
 
     var arrAnswer = NSArray()
+    var dicInfo = NSDictionary()
 
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -29,11 +30,11 @@ class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-//        titleLabel.text = question!.title
-//        descriptionText.text = question!.body
-//
-        let question_id = 37956419
-        loadAnswers(question_id)
+        titleLabel.text = dicInfo.valueForKey("title") as? String
+        descriptionText.text = dicInfo.valueForKey("body") as? String
+
+        let question_id = dicInfo.valueForKey("question_id") as? Int
+        loadAnswers(question_id!)
     }
 
     override func didReceiveMemoryWarning() {
