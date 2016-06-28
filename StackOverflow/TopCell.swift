@@ -1,5 +1,5 @@
 //
-//  asasdTableViewCell.swift
+//  TopCell.swift
 //  StackOverflow
 //
 //  Created by Bruno da Luz on 6/26/16.
@@ -8,9 +8,13 @@
 
 import UIKit
 
-class asasdTableViewCell: UITableViewCell {
+class TopCell: UITableViewCell {
 
-    @IBOutlet weak var asdasd: UILabel!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var votes: UILabel!
+    @IBOutlet weak var answers: UILabel!
+    @IBOutlet weak var view: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -16,8 +16,6 @@ class QuestionCell: UITableViewCell {
     @IBOutlet weak var vote: UILabel!
     @IBOutlet weak var photoUser: UIImageView!
 
-
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
