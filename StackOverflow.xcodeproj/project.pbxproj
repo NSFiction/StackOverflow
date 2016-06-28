@@ -13,6 +13,8 @@
 		151186011D18C2E80031A18B /* Answer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151186001D18C2E80031A18B /* Answer.storyboard */; };
 		151186041D18CC6F0031A18B /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */; };
 		151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151186051D18CE850031A18B /* UIViewController+Extension.swift */; };
+		1511FAF21D20A48C008B339F /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511FAF11D20A48C008B339F /* TopViewController.swift */; };
+		1511FAF61D20A7B6008B339F /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511FAF51D20A7B6008B339F /* TopCell.swift */; };
 		15164C711D13B14300EE66F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15164C701D13B14300EE66F3 /* Constants.swift */; };
 		1522F3AA1D1A0DCD005F8626 /* FetchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3A91D1A0DCD005F8626 /* FetchAPI.swift */; };
 		1522F3AC1D1A0EB1005F8626 /* FetchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */; };
@@ -70,6 +72,8 @@
 		151186001D18C2E80031A18B /* Answer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Answer.storyboard; sourceTree = "<group>"; };
 		151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
 		151186051D18CE850031A18B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		1511FAF11D20A48C008B339F /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		1511FAF51D20A7B6008B339F /* TopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		15164C701D13B14300EE66F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1522F3A91D1A0DCD005F8626 /* FetchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPI.swift; sourceTree = "<group>"; };
 		1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPITests.swift; sourceTree = "<group>"; };
@@ -162,6 +166,14 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		1511FAEE1D20A2E1008B339F /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				1511FAF11D20A48C008B339F /* TopViewController.swift */,
+			);
+			name = Top;
+			sourceTree = "<group>";
+		};
 		15164C6C1D13ACFF00EE66F3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +229,7 @@
 				15812B261CAE246700F15CC6 /* TagCell.swift */,
 				15F177211CB00E6B00E463B4 /* QuestionCell.swift */,
 				159810AB1CB0BD4500569249 /* AnswerCell.swift */,
+				1511FAF51D20A7B6008B339F /* TopCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -235,6 +248,7 @@
 		15B2A9D51CAE214A00E4D493 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1511FAEE1D20A2E1008B339F /* Top */,
 				15164C6D1D13AD4800EE66F3 /* Category */,
 				15164C6E1D13AD4E00EE66F3 /* Question */,
 				15164C6F1D13AD5500EE66F3 /* Answer */,
@@ -401,6 +415,7 @@
 				TargetAttributes = {
 					7CA84FB51CAD7D4000958656 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = DPQ7HP686J;
 					};
 					7CA84FCC1CAD7D4000958656 = {
 						CreatedOnToolsVersion = 7.3;
@@ -571,6 +586,7 @@
 				15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */,
 				15C313D31D1500F30024F9DD /* Network.swift in Sources */,
 				151185FC1D18BE480031A18B /* Storyboard+Extension.swift in Sources */,
+				1511FAF21D20A48C008B339F /* TopViewController.swift in Sources */,
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,
 				1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */,
 				159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */,
@@ -578,6 +594,7 @@
 				15164C711D13B14300EE66F3 /* Constants.swift in Sources */,
 				1522F3AA1D1A0DCD005F8626 /* FetchAPI.swift in Sources */,
 				1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */,
+				1511FAF61D20A7B6008B339F /* TopCell.swift in Sources */,
 				15C313D11D14FFBB0024F9DD /* Result+Enum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,12 +751,15 @@
 			baseConfigurationReference = B6AB233FB0AFA43436EB9CB2 /* Pods-StackOverflow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = StackOverflow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -748,12 +768,15 @@
 			baseConfigurationReference = 361EE060A2AAD2046D8D49B9 /* Pods-StackOverflow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = StackOverflow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

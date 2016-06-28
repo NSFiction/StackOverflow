@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CategoryViewController: UITableViewController {
 
     let categoryArr: NSArray = Constants.CATEGORIES.allKeys
     let categoryDic: NSDictionary = Constants.CATEGORIES
@@ -23,7 +23,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: String = "Cell"
 
         let tagCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! TagCell
@@ -34,7 +34,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         return tagCell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
@@ -45,11 +45,11 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categoryArr.count
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
