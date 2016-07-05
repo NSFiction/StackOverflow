@@ -1,17 +1,17 @@
 //
-//  QuestionAPI.swift
+//  CategoryAPI.swift
 //  StackOverflow
 //
-//  Created by Bruno da Luz on 6/18/16.
+//  Created by Bruno da Luz on 7/4/16.
 //  Copyright © 2016 nFiction. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class QuestionAPI: FetchAPI {
-    func consume<T>(object object: T, callback: Result<NSArray> -> ()) {
-        let URL = "https://api.stackexchange.com/2.2/questions?pagesize=20&order=desc&sort=activity&tagged=\(object)&site=stackoverflow&filter=!9YdnSIN18"
+class CategoryAPI {
+    func consume(callback: Result<NSArray> -> ()) {
+        let URL = "https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&site=stackoverflow"
 
         Alamofire.request(.GET, URL).response { (request, response, data, error) in
 
@@ -32,9 +32,7 @@ class QuestionAPI: FetchAPI {
                     return
             }
 
-            callback(.Success(jSON.valueForKey("items") as! NSArray))
+            callback(.Success(jSON.objectForKey("items")?.valueForKey("name") as! NSArray))
         }
-
     }
-
 }
