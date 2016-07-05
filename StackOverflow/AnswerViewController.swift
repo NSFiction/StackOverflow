@@ -12,6 +12,12 @@ import Alamofire
 
 class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    private let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
+                                                                             domain: .UserDomainMask)
+    private let filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+                                                               .UserDomainMask,
+                                                               true)[0]
+
     var arrAnswer = NSArray()
     var dicInfo = NSDictionary()
 
