@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class CategoryAPI {
-    func consume(callback: Result<NSArray> -> ()) {
+    func consume(callback: Result<NSDictionary> -> ()) {
         let URL = "https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&site=stackoverflow"
 
         Alamofire.request(.GET, URL).response { (request, response, data, error) in
@@ -32,7 +32,7 @@ class CategoryAPI {
                     return
             }
 
-            callback(.Success(jSON.objectForKey("items")?.valueForKey("name") as! NSArray))
+            callback(.Success(jSON))
         }
     }
 }
