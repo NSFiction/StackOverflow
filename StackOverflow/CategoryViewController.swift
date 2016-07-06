@@ -7,20 +7,19 @@
 //
 
 import UIKit
+import PKHUD
 
 class CategoryViewController: UITableViewController {
 
-    let categoryArr: NSArray = Constants.CATEGORIES.allKeys
-    let categoryDic: NSDictionary = Constants.CATEGORIES
+    var categories = NSArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loadCategories()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -28,7 +27,7 @@ class CategoryViewController: UITableViewController {
 
         let tagCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! TagCell
 
-        let title = self.categoryArr.objectAtIndex(indexPath.row) as! String
+        let title = self.categories[indexPath.row] as! String
         tagCell.viewModel(title)
 
         return tagCell
@@ -46,7 +45,7 @@ class CategoryViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categoryArr.count
+        return self.categories.count
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -59,12 +58,35 @@ class CategoryViewController: UITableViewController {
         let identifier = QuestionViewController.storyboardIdentifier
         let question = storyboard.instantiateViewControllerWithIdentifier(identifier) as! QuestionViewController
 
-        let category = categoryArr.objectAtIndex(indexPath.row) as? String
-
+        let category = categories[indexPath.row] as! String
         question.title = category
-        question.category = categoryDic.valueForKey(category!) as! String
+        question.category = category
 
         self.navigationController?.pushViewController(question, animated: true)
+    }
+
+    func loadCategories() {
+        if Network.hasConnection {
+            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
+
+            let consume = ConsumeCategory()
+            consume.fetch({ (result) in
+
+                HUD.hide(animated: true)
+
+                switch result {
+                case .Success(let value):
+                    self.categories = value
+                    self.tableView.reloadData()
+                    break
+
+                case .Failure(_):
+                    // test
+                    break
+                }
+            })
+
+        }
     }
 
 }
