@@ -8,7 +8,6 @@
 
 import UIKit
 import PKHUD
-import Alamofire
 
 class QuestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -18,8 +17,6 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableViewQuestion: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
         loadQuestions()
     }
 
@@ -55,14 +52,15 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Infos().numberOfSections
+        return 1
     }
 
     func callAnswerViewController(indexPath: NSIndexPath) {
         let storyboard = UIStoryboard.storyboard(.Answer)
         let identifier = AnswerViewController.storyboardIdentifier
         let answerController = storyboard.instantiateViewControllerWithIdentifier(identifier) as! AnswerViewController
-
+        let question = arrQuestions.objectAtIndex(indexPath.row) as! NSDictionary
+        answerController.dicInfo = question
         self.navigationController?.pushViewController(answerController, animated: true)
     }
 

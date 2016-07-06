@@ -7,40 +7,33 @@
 //
 
 import UIKit
+import PKHUD
 
-struct Infos {
-    let numberOfSections: Int = 1
-}
+class CategoryViewController: UITableViewController {
 
-class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    let api = AnswerAPI()
-
-    let categoryArr: NSArray = Constants.categories.allKeys
-    let categoryDic: NSDictionary = Constants.categories
+    var categories = NSArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loadCategories()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: String = "Cell"
 
         let tagCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! TagCell
 
-        let title = self.categoryArr.objectAtIndex(indexPath.row) as! String
+        let title = self.categories[indexPath.row] as! String
         tagCell.viewModel(title)
 
         return tagCell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
@@ -51,12 +44,12 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categoryArr.count
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.categories.count
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Infos().numberOfSections
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
 
     func callQuestionController(indexPath: NSIndexPath) {
@@ -65,12 +58,35 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         let identifier = QuestionViewController.storyboardIdentifier
         let question = storyboard.instantiateViewControllerWithIdentifier(identifier) as! QuestionViewController
 
-        let category = categoryArr.objectAtIndex(indexPath.row) as? String
-
+        let category = categories[indexPath.row] as! String
         question.title = category
-        question.category = categoryDic.valueForKey(category!) as! String
+        question.category = category
 
         self.navigationController?.pushViewController(question, animated: true)
+    }
+
+    func loadCategories() {
+        if Network.hasConnection {
+            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
+
+            let consume = ConsumeCategory()
+            consume.fetch({ (result) in
+
+                HUD.hide(animated: true)
+
+                switch result {
+                case .Success(let value):
+                    self.categories = value
+                    self.tableView.reloadData()
+                    break
+
+                case .Failure(_):
+                    // test
+                    break
+                }
+            })
+
+        }
     }
 
 }
