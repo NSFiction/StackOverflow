@@ -58,10 +58,9 @@ class CategoryViewController: UITableViewController {
         let identifier = QuestionViewController.storyboardIdentifier
         let question = storyboard.instantiateViewControllerWithIdentifier(identifier) as! QuestionViewController
 
-//        let category = categoryArr.objectAtIndex(indexPath.row) as? String
-//
-//        question.title = category
-//        question.category = categoryDic.valueForKey(category!) as! String
+        let category = categories[indexPath.row] as! String
+        question.title = category
+        question.category = category
 
         self.navigationController?.pushViewController(question, animated: true)
     }
