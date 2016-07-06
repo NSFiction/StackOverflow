@@ -13,6 +13,7 @@ class QuestionAPI: FetchAPI {
     func consume<T>(object object: T, callback: Result<NSArray> -> ()) {
         let URL = "https://api.stackexchange.com/2.2/questions?pagesize=20&order=desc&sort=activity&tagged=\(object)&site=stackoverflow&filter=!9YdnSIN18"
 
+
         Alamofire.request(.GET, URL).response { (request, response, data, error) in
 
             guard error == nil else {
