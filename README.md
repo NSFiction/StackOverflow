@@ -1,8 +1,8 @@
 # StackOverflow - iOS
 
-This is an old project in Swift.
+![](https://travis-ci.org/nFiction/StackOverflow.svg?branch=develop)
+[![Twitter](https://img.shields.io/badge/twitter-@brunodlz-red.svg?style=flat)](https://twitter.com/brunodlz)
 
-This time, the app is down for maintenance.
+## License
 
-
-![ScreenShot](http://hmti.ft.unand.ac.id/wp-content/uploads/2015/08/iStock_000017473858Small1-300x300.jpg)
+StackOverflow iOS is released under the [MIT License](LICENSE.md).

@@ -396,7 +396,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="410-U2-meV" rowHeight="80" style="IBUITableViewCellStyleDefault" id="jCw-dd-5RU" customClass="TagCell" customModule="StackOverflow" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jCw-dd-5RU" id="WMB-0c-Riq">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="79"/>
