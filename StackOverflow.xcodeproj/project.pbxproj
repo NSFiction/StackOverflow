@@ -28,6 +28,7 @@
 		15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */; };
 		159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810A91CB0BD2E00569249 /* AnswerViewController.swift */; };
 		159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810AB1CB0BD4500569249 /* AnswerCell.swift */; };
+		159FC8B11D346C3E00A1EA2B /* CategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8B01D346C3E00A1EA2B /* CategoryAPI.swift */; };
 		15C313CB1D14E5D00024F9DD /* BaseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313CA1D14E5D00024F9DD /* BaseCaseTest.swift */; };
 		15C313CD1D14F5250024F9DD /* QuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313CC1D14F5250024F9DD /* QuestionTests.swift */; };
 		15C313CF1D14F8E10024F9DD /* QuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */; };
@@ -88,6 +89,7 @@
 		15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
 		159810A91CB0BD2E00569249 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		159810AB1CB0BD4500569249 /* AnswerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
+		159FC8B01D346C3E00A1EA2B /* CategoryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
 		15C313CA1D14E5D00024F9DD /* BaseCaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaseTest.swift; sourceTree = "<group>"; };
 		15C313CC1D14F5250024F9DD /* QuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTests.swift; sourceTree = "<group>"; };
 		15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAPI.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */,
 				15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */,
+				159FC8B01D346C3E00A1EA2B /* CategoryAPI.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,
 				15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */,
 				15C313D31D1500F30024F9DD /* Network.swift in Sources */,
+				159FC8B11D346C3E00A1EA2B /* CategoryAPI.swift in Sources */,
 				151185FC1D18BE480031A18B /* Storyboard+Extension.swift in Sources */,
 				1511FAF21D20A48C008B339F /* TopViewController.swift in Sources */,
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,
