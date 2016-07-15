@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  TagViewController.swift
 //  StackOverflow
 //
 //  Created by Bruno da Luz on 3/31/16.
@@ -9,12 +9,15 @@
 import UIKit
 import PKHUD
 
-class CategoryViewController: UITableViewController {
+class TagViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var tableView: UITableView!
 
     var categories = NSArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         loadCategories()
     }
 
@@ -22,7 +25,7 @@ class CategoryViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: String = "Cell"
 
         let tagCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! TagCell
@@ -33,7 +36,7 @@ class CategoryViewController: UITableViewController {
         return tagCell
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
@@ -44,11 +47,11 @@ class CategoryViewController: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categories.count
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
@@ -69,7 +72,7 @@ class CategoryViewController: UITableViewController {
         if Network.hasConnection {
             HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
-            let consume = ConsumeCategory()
+            let consume = ConsumeTag()
             consume.fetch({ (result) in
 
                 HUD.hide(animated: true)

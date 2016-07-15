@@ -38,7 +38,7 @@ class ConsumeQuestion {
             let body = value.valueForKey("body")
             let score = value.valueForKey("score")
             let question_id = value.valueForKey("question_id")
-            
+
             profile.setValue(title, forKeyPath: "title")
             profile.setValue(body, forKeyPath: "body")
             profile.setValue(score as? Int, forKeyPath: "score")

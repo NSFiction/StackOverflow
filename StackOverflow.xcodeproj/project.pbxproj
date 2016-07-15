@@ -16,7 +16,7 @@
 		1511FAF21D20A48C008B339F /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511FAF11D20A48C008B339F /* TopViewController.swift */; };
 		1511FAF61D20A7B6008B339F /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511FAF51D20A7B6008B339F /* TopCell.swift */; };
 		15164C711D13B14300EE66F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15164C701D13B14300EE66F3 /* Constants.swift */; };
-		151A761C1D2CB5E50022C9D8 /* ConsumeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A761B1D2CB5E50022C9D8 /* ConsumeCategory.swift */; };
+		151A761C1D2CB5E50022C9D8 /* ConsumeTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */; };
 		1522F3AA1D1A0DCD005F8626 /* FetchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3A91D1A0DCD005F8626 /* FetchAPI.swift */; };
 		1522F3AC1D1A0EB1005F8626 /* FetchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */; };
 		1522F3AE1D1A1865005F8626 /* ConsumeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */; };
@@ -28,7 +28,7 @@
 		15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */; };
 		159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810A91CB0BD2E00569249 /* AnswerViewController.swift */; };
 		159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810AB1CB0BD4500569249 /* AnswerCell.swift */; };
-		159FC8B11D346C3E00A1EA2B /* CategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8B01D346C3E00A1EA2B /* CategoryAPI.swift */; };
+		159FC8B11D346C3E00A1EA2B /* TagAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8B01D346C3E00A1EA2B /* TagAPI.swift */; };
 		15C313CB1D14E5D00024F9DD /* BaseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313CA1D14E5D00024F9DD /* BaseCaseTest.swift */; };
 		15C313CD1D14F5250024F9DD /* QuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313CC1D14F5250024F9DD /* QuestionTests.swift */; };
 		15C313CF1D14F8E10024F9DD /* QuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */; };
@@ -40,7 +40,7 @@
 		15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F177211CB00E6B00E463B4 /* QuestionCell.swift */; };
 		67D9581A157D3B65BA72F6C1 /* Pods_StackOverflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */; };
 		7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FB91CAD7D4000958656 /* AppDelegate.swift */; };
-		7CA84FBC1CAD7D4000958656 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FBB1CAD7D4000958656 /* CategoryViewController.swift */; };
+		7CA84FBC1CAD7D4000958656 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FBB1CAD7D4000958656 /* TagViewController.swift */; };
 		7CA84FBF1CAD7D4000958656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FBD1CAD7D4000958656 /* Main.storyboard */; };
 		7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC31CAD7D4000958656 /* Assets.xcassets */; };
 		7CA84FC71CAD7D4000958656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */; };
@@ -77,7 +77,7 @@
 		1511FAF11D20A48C008B339F /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		1511FAF51D20A7B6008B339F /* TopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		15164C701D13B14300EE66F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		151A761B1D2CB5E50022C9D8 /* ConsumeCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeCategory.swift; sourceTree = "<group>"; };
+		151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeTag.swift; sourceTree = "<group>"; };
 		1522F3A91D1A0DCD005F8626 /* FetchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPI.swift; sourceTree = "<group>"; };
 		1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPITests.swift; sourceTree = "<group>"; };
 		1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeAnswer.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
 		159810A91CB0BD2E00569249 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		159810AB1CB0BD4500569249 /* AnswerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
-		159FC8B01D346C3E00A1EA2B /* CategoryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
+		159FC8B01D346C3E00A1EA2B /* TagAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagAPI.swift; sourceTree = "<group>"; };
 		15C313CA1D14E5D00024F9DD /* BaseCaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCaseTest.swift; sourceTree = "<group>"; };
 		15C313CC1D14F5250024F9DD /* QuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTests.swift; sourceTree = "<group>"; };
 		15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAPI.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA84FB61CAD7D4000958656 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA84FB91CAD7D4000958656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7CA84FBB1CAD7D4000958656 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		7CA84FBB1CAD7D4000958656 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		7CA84FBE1CAD7D4000958656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CA84FC31CAD7D4000958656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CA84FC61CAD7D4000958656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			children = (
 				15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */,
 				15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */,
-				159FC8B01D346C3E00A1EA2B /* CategoryAPI.swift */,
+				159FC8B01D346C3E00A1EA2B /* TagAPI.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -192,12 +192,12 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		15164C6D1D13AD4800EE66F3 /* Category */ = {
+		15164C6D1D13AD4800EE66F3 /* Tag */ = {
 			isa = PBXGroup;
 			children = (
-				7CA84FBB1CAD7D4000958656 /* CategoryViewController.swift */,
+				7CA84FBB1CAD7D4000958656 /* TagViewController.swift */,
 			);
-			name = Category;
+			name = Tag;
 			sourceTree = "<group>";
 		};
 		15164C6E1D13AD4E00EE66F3 /* Question */ = {
@@ -221,7 +221,7 @@
 			children = (
 				1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */,
 				1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */,
-				151A761B1D2CB5E50022C9D8 /* ConsumeCategory.swift */,
+				151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */,
 			);
 			name = Consume;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				1511FAEE1D20A2E1008B339F /* Top */,
-				15164C6D1D13AD4800EE66F3 /* Category */,
+				15164C6D1D13AD4800EE66F3 /* Tag */,
 				15164C6E1D13AD4E00EE66F3 /* Question */,
 				15164C6F1D13AD5500EE66F3 /* Answer */,
 			);
@@ -591,16 +591,16 @@
 				1522F3AE1D1A1865005F8626 /* ConsumeAnswer.swift in Sources */,
 				151186041D18CC6F0031A18B /* StoryboardIdentifiable.swift in Sources */,
 				15812B271CAE246700F15CC6 /* TagCell.swift in Sources */,
-				7CA84FBC1CAD7D4000958656 /* CategoryViewController.swift in Sources */,
+				7CA84FBC1CAD7D4000958656 /* TagViewController.swift in Sources */,
 				15C313CF1D14F8E10024F9DD /* QuestionAPI.swift in Sources */,
 				151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */,
 				1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */,
 				159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */,
-				151A761C1D2CB5E50022C9D8 /* ConsumeCategory.swift in Sources */,
+				151A761C1D2CB5E50022C9D8 /* ConsumeTag.swift in Sources */,
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,
 				15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */,
 				15C313D31D1500F30024F9DD /* Network.swift in Sources */,
-				159FC8B11D346C3E00A1EA2B /* CategoryAPI.swift in Sources */,
+				159FC8B11D346C3E00A1EA2B /* TagAPI.swift in Sources */,
 				151185FC1D18BE480031A18B /* Storyboard+Extension.swift in Sources */,
 				1511FAF21D20A48C008B339F /* TopViewController.swift in Sources */,
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,

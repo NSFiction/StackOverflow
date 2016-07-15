@@ -1,5 +1,5 @@
 //
-//  ConsumeCategory.swift
+//  ConsumeTag.swift
 //  StackOverflow
 //
 //  Created by Bruno da Luz on 7/6/16.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class ConsumeCategory {
+class ConsumeTag {
 
     func fetch(callback: Result<NSArray> -> ()) {
 
-        let categoryAPI = CategoryAPI()
-        categoryAPI.consume() { (result) in
+        let tagAPI = TagAPI()
+        tagAPI.consume() { (result) in
             switch result {
             case .Success(let value):
 
