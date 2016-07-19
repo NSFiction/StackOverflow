@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  TagViewController.swift
 //  StackOverflow
 //
 //  Created by Bruno da Luz on 3/31/16.
@@ -9,12 +9,18 @@
 import UIKit
 import PKHUD
 
-class CategoryViewController: UITableViewController {
+class TagViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
 
     var categories = NSArray()
+    var searchActive: Bool = false
+    var filtered: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         loadCategories()
     }
 
@@ -22,19 +28,24 @@ class CategoryViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: String = "Cell"
 
         let tagCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! TagCell
 
-        let title = self.categories[indexPath.row] as! String
+        var title = ""
+        if searchActive {
+            title = self.filtered[indexPath.row]
+        } else {
+            title = self.categories[indexPath.row] as! String
+        }
+
         tagCell.viewModel(title)
 
         return tagCell
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         if Network.hasConnection {
@@ -44,16 +55,18 @@ class CategoryViewController: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchActive {
+            return filtered.count
+        }
         return self.categories.count
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
     func callQuestionController(indexPath: NSIndexPath) {
-
         let storyboard = UIStoryboard.storyboard(.Question)
         let identifier = QuestionViewController.storyboardIdentifier
         let question = storyboard.instantiateViewControllerWithIdentifier(identifier) as! QuestionViewController
@@ -65,11 +78,43 @@ class CategoryViewController: UITableViewController {
         self.navigationController?.pushViewController(question, animated: true)
     }
 
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true
+    }
+
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false
+    }
+
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false
+    }
+
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false
+        self.searchBar.resignFirstResponder()
+    }
+
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        let category = self.categories.filter({ (text) -> Bool in
+            let tmp: NSString = text as! NSString
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        filtered = category as! [String]
+        if (filtered.count == 0) {
+            searchActive = false
+        } else {
+            searchActive = true
+        }
+        self.tableView.reloadData()
+    }
+
     func loadCategories() {
         if Network.hasConnection {
             HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
-            let consume = ConsumeCategory()
+            let consume = ConsumeTag()
             consume.fetch({ (result) in
 
                 HUD.hide(animated: true)

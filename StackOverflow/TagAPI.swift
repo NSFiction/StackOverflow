@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class CategoryAPI {
+class TagAPI {
     func consume(callback: Result<NSDictionary> -> ()) {
         let URL = "https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&site=stackoverflow"
 
