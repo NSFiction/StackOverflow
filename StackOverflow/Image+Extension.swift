@@ -20,12 +20,9 @@ extension UIImageView {
                     resumeDataString = NSString(data: data, encoding: NSUTF8StringEncoding) {
                     print("Resume Data: \(resumeDataString)")
                 } else {
-
                     let pathComponent = response!.suggestedFilename
                     let filePath = "\(path)/\(pathComponent!)"
-
                     self.image = UIImage(contentsOfFile: filePath)
-
                 }
         }
     }
