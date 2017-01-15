@@ -361,12 +361,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CA84FE11CAD7D4000958656 /* Build configuration list for PBXNativeTarget "StackOverflow" */;
 			buildPhases = (
-				38AC0F3D986ECD1BECF82C0D /* 📦 Check Pods Manifest.lock */,
+				38AC0F3D986ECD1BECF82C0D /* [CP] Check Pods Manifest.lock */,
 				7CA84FB21CAD7D4000958656 /* Sources */,
 				7CA84FB31CAD7D4000958656 /* Frameworks */,
 				7CA84FB41CAD7D4000958656 /* Resources */,
-				F862DEC0ACE6B2DC297B32F5 /* 📦 Embed Pods Frameworks */,
-				F2F7E7DF2221C6B4150103DB /* 📦 Copy Pods Resources */,
+				F862DEC0ACE6B2DC297B32F5 /* [CP] Embed Pods Frameworks */,
+				F2F7E7DF2221C6B4150103DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -381,12 +381,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CA84FE41CAD7D4000958656 /* Build configuration list for PBXNativeTarget "StackOverflowTests" */;
 			buildPhases = (
-				B1E1143C6173CD5AD01F0FD0 /* 📦 Check Pods Manifest.lock */,
+				B1E1143C6173CD5AD01F0FD0 /* [CP] Check Pods Manifest.lock */,
 				7CA84FC91CAD7D4000958656 /* Sources */,
 				7CA84FCA1CAD7D4000958656 /* Frameworks */,
 				7CA84FCB1CAD7D4000958656 /* Resources */,
-				4E7F2CDCFD9A8544DB6F1448 /* 📦 Embed Pods Frameworks */,
-				B3A56360AC2CFFD7A01F67EA /* 📦 Copy Pods Resources */,
+				4E7F2CDCFD9A8544DB6F1448 /* [CP] Embed Pods Frameworks */,
+				B3A56360AC2CFFD7A01F67EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -424,7 +424,7 @@
 			attributes = {
 				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = nFiction;
 				TargetAttributes = {
 					7CA84FB51CAD7D4000958656 = {
@@ -491,29 +491,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		38AC0F3D986ECD1BECF82C0D /* 📦 Check Pods Manifest.lock */ = {
+		38AC0F3D986ECD1BECF82C0D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4E7F2CDCFD9A8544DB6F1448 /* 📦 Embed Pods Frameworks */ = {
+		4E7F2CDCFD9A8544DB6F1448 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,29 +521,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverflowTests/Pods-StackOverflowTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1E1143C6173CD5AD01F0FD0 /* 📦 Check Pods Manifest.lock */ = {
+		B1E1143C6173CD5AD01F0FD0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B3A56360AC2CFFD7A01F67EA /* 📦 Copy Pods Resources */ = {
+		B3A56360AC2CFFD7A01F67EA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,14 +551,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverflowTests/Pods-StackOverflowTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2F7E7DF2221C6B4150103DB /* 📦 Copy Pods Resources */ = {
+		F2F7E7DF2221C6B4150103DB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,14 +566,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverflow/Pods-StackOverflow-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F862DEC0ACE6B2DC297B32F5 /* 📦 Embed Pods Frameworks */ = {
+		F862DEC0ACE6B2DC297B32F5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,8 +693,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -738,8 +740,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -758,6 +762,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -766,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6AB233FB0AFA43436EB9CB2 /* Pods-StackOverflow.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -776,6 +782,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -783,6 +790,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 361EE060A2AAD2046D8D49B9 /* Pods-StackOverflow.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -793,6 +801,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -800,6 +809,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F7B605070D1C3D577AF29F9 /* Pods-StackOverflowTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = StackOverflowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -813,6 +823,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0FF7EBEB02CAE75E8F9B5B69 /* Pods-StackOverflowTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = StackOverflowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
