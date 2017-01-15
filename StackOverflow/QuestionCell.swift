@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 import Alamofire
 
 class QuestionCell: UITableViewCell {
@@ -21,7 +22,7 @@ class QuestionCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -29,16 +30,14 @@ class QuestionCell: UITableViewCell {
 
     func viewModel(question object: NSDictionary) {
 
-        title.text = object.valueForKey("title") as? String
-        vote.text  = "\(object.valueForKey("score")!)"
-        user.text  = object.valueForKey("display_name") as? String
+        title.text = object.value(forKey: "title") as? String
+        vote.text  = "\(object.value(forKey: "score")!)"
+        user.text  = object.value(forKey: "display_name") as? String
 
-        let profile = object.valueForKey("profile_image") as! String
-        if profile.containsString("https") {
-            photoUser.downloadedFrom(profile,
-                                     destination: Constants.DESTINATION,
-                                     path: Constants.FILEPATH)
-        }
+        let profile = object.value(forKey: "profile_image") as! String
+        
+        let url = URL(string: profile)!
+        photoUser.af_setImage(withURL: url)
     }
 
 }

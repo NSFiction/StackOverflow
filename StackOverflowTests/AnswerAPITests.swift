@@ -30,7 +30,7 @@ class AnswerAPITests: BaseCaseTest {
      */
     func testConsumingAPI_Answer() {
         // arrange
-        let expectation = expectationWithDescription("should receiver succeed")
+        let expectation = self.expectation(description: "should receiver succeed")
 
         // act
         let answerApi = AnswerAPI()
@@ -55,7 +55,7 @@ class AnswerAPITests: BaseCaseTest {
             }
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(timeout: timeout, handler: nil)
     }
 
 }

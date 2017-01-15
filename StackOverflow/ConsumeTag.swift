@@ -10,20 +10,20 @@ import Foundation
 
 class ConsumeTag {
 
-    func fetch(callback: Result<NSArray> -> ()) {
+    func fetch(_ callback: @escaping (Result<NSArray>) -> ()) {
 
         let tagAPI = TagAPI()
         tagAPI.consume() { (result) in
             switch result {
-            case .Success(let value):
+            case .success(let value):
 
-                let categories = value.objectForKey("items")?.valueForKey("name") as! NSArray
-                callback(.Success(categories))
+                let categories = (value["items"] as AnyObject).value(forKey: "name") as! NSArray
+                callback(.success(categories))
 
                 break
 
-            case .Failure(let error):
-                callback(.Failure(error))
+            case .failure(let error):
+                callback(.failure(error))
                 break
             }
         }

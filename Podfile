@@ -1,10 +1,11 @@
 def common_pods
- pod 'Alamofire'
- pod 'PKHUD'
- pod 'XCGLogger', '~> 3.2'
+ pod 'Alamofire', '~> 4.0'
+ pod 'AlamofireImage', '~> 3.1'
+ pod 'PKHUD', '~> 4.0'
+ pod 'XCGLogger', '~> 4.0.0'
 end
 
-platform :ios, '8.0'
+platform :ios, '9.2'
 use_frameworks!
 inhibit_all_warnings!
 
@@ -19,7 +20,9 @@ target :StackOverflowTests do
 end
 
 post_install do |installer|
- installer.pods_project.targets.each do |target|
-  puts "#{target.name}"
- end
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0'
+    end
+  end
 end

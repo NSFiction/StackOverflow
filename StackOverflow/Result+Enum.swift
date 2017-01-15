@@ -8,15 +8,11 @@
 
 import Foundation
 
+enum JSONError: Error {
+    case description(String)
+}
+
 enum Result<T> {
-    case Success(T)
-    case Failure(NSError?)
-
-    init(value: T) {
-        self = .Success(value)
-    }
-
-    init(error: NSError?) {
-        self = .Failure(error)
-    }
+    case success(T)
+    case failure(JSONError)
 }
