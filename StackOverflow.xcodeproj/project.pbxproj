@@ -15,7 +15,6 @@
 		151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151186051D18CE850031A18B /* UIViewController+Extension.swift */; };
 		1511FAF21D20A48C008B339F /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511FAF11D20A48C008B339F /* TopViewController.swift */; };
 		1511FAF61D20A7B6008B339F /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511FAF51D20A7B6008B339F /* TopCell.swift */; };
-		15164C711D13B14300EE66F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15164C701D13B14300EE66F3 /* Constants.swift */; };
 		151A761C1D2CB5E50022C9D8 /* ConsumeTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */; };
 		1522F3AA1D1A0DCD005F8626 /* FetchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3A91D1A0DCD005F8626 /* FetchAPI.swift */; };
 		1522F3AC1D1A0EB1005F8626 /* FetchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */; };
@@ -76,7 +75,6 @@
 		151186051D18CE850031A18B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1511FAF11D20A48C008B339F /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		1511FAF51D20A7B6008B339F /* TopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
-		15164C701D13B14300EE66F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeTag.swift; sourceTree = "<group>"; };
 		1522F3A91D1A0DCD005F8626 /* FetchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPI.swift; sourceTree = "<group>"; };
 		1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPITests.swift; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 				15B2A9D41CAE214100E4D493 /* Classes */,
 				151186021D18C2FE0031A18B /* Storyboard */,
 				7CA84FB91CAD7D4000958656 /* AppDelegate.swift */,
-				15164C701D13B14300EE66F3 /* Constants.swift */,
 				7CA84FC31CAD7D4000958656 /* Assets.xcassets */,
 				7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */,
 				7CA84FC81CAD7D4000958656 /* Info.plist */,
@@ -430,13 +427,16 @@
 					7CA84FB51CAD7D4000958656 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = DPQ7HP686J;
+						LastSwiftMigration = 0820;
 					};
 					7CA84FCC1CAD7D4000958656 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = 7CA84FB51CAD7D4000958656;
 					};
 					7CA84FD71CAD7D4000958656 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = 7CA84FB51CAD7D4000958656;
 					};
 				};
@@ -607,7 +607,6 @@
 				1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */,
 				159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */,
 				15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */,
-				15164C711D13B14300EE66F3 /* Constants.swift in Sources */,
 				1522F3AA1D1A0DCD005F8626 /* FetchAPI.swift in Sources */,
 				1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */,
 				1511FAF61D20A7B6008B339F /* TopCell.swift in Sources */,
@@ -782,7 +781,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -801,7 +800,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -815,6 +814,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StackOverflow.app/StackOverflow";
 			};
 			name = Debug;
@@ -829,6 +829,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StackOverflow.app/StackOverflow";
 			};
 			name = Release;
@@ -840,6 +841,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflowUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = StackOverflow;
 			};
 			name = Debug;
@@ -851,6 +853,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflowUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = StackOverflow;
 			};
 			name = Release;

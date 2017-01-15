@@ -10,6 +10,6 @@ import XCTest
 
 class BaseCaseTest: XCTestCase {
 
-    let timeout: NSTimeInterval = 60.0
+    let timeout: TimeInterval = 60.0
 
 }

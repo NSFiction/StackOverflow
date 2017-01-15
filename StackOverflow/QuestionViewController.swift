@@ -25,20 +25,20 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: String = "Cell"
 
-        let questionCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! QuestionCell
+        let questionCell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! QuestionCell
 
-        let question = arrQuestions.objectAtIndex(indexPath.row) as! NSDictionary
+        let question = arrQuestions.object(at: indexPath.row) as! NSDictionary
         questionCell.viewModel(question: question)
 
         return questionCell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
 
         if Network.hasConnection {
             callAnswerViewController(indexPath)
@@ -47,26 +47,26 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrQuestions.count
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    func callAnswerViewController(indexPath: NSIndexPath) {
+    func callAnswerViewController(_ indexPath: IndexPath) {
         let storyboard = UIStoryboard.storyboard(.Answer)
         let identifier = AnswerViewController.storyboardIdentifier
-        let answerController = storyboard.instantiateViewControllerWithIdentifier(identifier) as! AnswerViewController
-        let question = arrQuestions.objectAtIndex(indexPath.row) as! NSDictionary
+        let answerController = storyboard.instantiateViewController(withIdentifier: identifier) as! AnswerViewController
+        let question = arrQuestions.object(at: indexPath.row) as! NSDictionary
         answerController.dicInfo = question
         self.navigationController?.pushViewController(answerController, animated: true)
     }
 
     func loadQuestions() {
         if Network.hasConnection {
-            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
+            HUD.flash(.labeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
             let consume = ConsumeQuestion()
             consume.fetch(category, callback: { (result) in
@@ -74,12 +74,12 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
                 HUD.hide(animated: true)
 
                 switch result {
-                case .Success(let value):
+                case .success(let value):
                     self.arrQuestions = value
                     self.tableViewQuestion.reloadData()
                     break
 
-                case .Failure(_):
+                case .failure(_):
                     // test
                     break
                 }

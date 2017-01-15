@@ -7,31 +7,55 @@
 //
 
 import Foundation
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class ConsumeAnswer {
 
-    func fetch(question_id: Int, callback: Result<NSMutableArray> -> ()) {
+    func fetch(_ question_id: Int, callback: @escaping (Result<NSMutableArray>) -> ()) {
 
         let answerAPI = AnswerAPI()
         answerAPI.consume(object: question_id) { (result) in
             switch result {
-            case .Success(let value):
-                callback(.Success(self.validation(json: value)))
+            case .success(let value):
+                callback(.success(self.validation(json: value)))
                 break
 
-            case .Failure(let error):
-                callback(.Failure(error))
+            case .failure(let error):
+                callback(.failure(error))
                 break
             }
         }
     }
 
-    private func validation(json json: NSArray) -> NSMutableArray {
+    fileprivate func validation(json: NSArray) -> NSMutableArray {
         let questions = NSMutableArray()
         let profile = NSMutableDictionary()
 
-        for (_, value) in json.enumerate() {
-            let owner = value.valueForKey("owner") as! NSDictionary
+        for (_, value) in json.enumerated() {
+            let owner = (value as AnyObject).value(forKey: "owner") as! NSDictionary
 
             let display_name = self.getDisplayName(owner)
             let profile_image = self.getProfileName(owner)
@@ -39,28 +63,28 @@ class ConsumeAnswer {
             profile.setValue(display_name, forKeyPath: "display_name")
             profile.setValue(profile_image, forKeyPath: "profile_image")
 
-            questions.addObject(profile)
+            questions.add(profile)
         }
         return questions
     }
 
-    private func getDisplayName(value: NSDictionary) -> String {
+    fileprivate func getDisplayName(_ value: NSDictionary) -> String {
         let owner = value
 
-        if (owner.valueForKeyPath("display_name")) != nil {
-            if owner.valueForKey("display_name")?.length > 0 {
-                return owner.valueForKey("display_name") as! String
+        if (owner.value(forKeyPath: "display_name")) != nil {
+            if (owner.value(forKey: "display_name") as AnyObject).length > 0 {
+                return owner.value(forKey: "display_name") as! String
             }
         }
         return ""
     }
 
-    private func getProfileName(value: NSDictionary) -> String {
+    fileprivate func getProfileName(_ value: NSDictionary) -> String {
         let owner = value
 
-        if (owner.valueForKeyPath("profile_image")) != nil {
-            if (owner.valueForKey("profile_image")?.length > 0) {
-                return owner.valueForKey("profile_image") as! String
+        if (owner.value(forKeyPath: "profile_image")) != nil {
+            if ((owner.value(forKey: "profile_image") as AnyObject).length > 0) {
+                return owner.value(forKey: "profile_image") as! String
             }
         }
         return ""
