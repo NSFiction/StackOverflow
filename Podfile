@@ -1,5 +1,6 @@
 def common_pods
  pod 'Alamofire', '~> 4.0'
+ pod 'AlamofireImage', '~> 3.1'
  pod 'PKHUD', '~> 4.0'
  pod 'XCGLogger', '~> 4.0.0'
 end
