@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 import Alamofire
 
 class QuestionCell: UITableViewCell {
@@ -34,11 +35,9 @@ class QuestionCell: UITableViewCell {
         user.text  = object.value(forKey: "display_name") as? String
 
         let profile = object.value(forKey: "profile_image") as! String
-        if profile.contains("https") {
-            photoUser.downloadedFrom(profile,
-                                     destination: Constants.DESTINATION,
-                                     path: Constants.FILEPATH)
-        }
+        
+        let url = URL(string: profile)!
+        photoUser.af_setImage(withURL: url)
     }
 
 }

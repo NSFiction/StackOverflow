@@ -66,7 +66,7 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
 
     func loadQuestions() {
         if Network.hasConnection {
-            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
+            HUD.flash(.labeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
             let consume = ConsumeQuestion()
             consume.fetch(category, callback: { (result) in

@@ -10,29 +10,39 @@ import Foundation
 import Alamofire
 
 class TagAPI {
-    func consume(_ callback: @escaping (Result<NSDictionary>) -> ()) {
-        let URL = "https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&site=stackoverflow"
+    func consume(_ callback: @escaping (Result<[String:AnyObject]>) -> ()) {
+        let link = "https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&site=stackoverflow"
 
-        Alamofire.request(.GET, URL).response { (request, response, data, error) in
-
-            guard error == nil else {
-                callback(.Failure(error))
-                return
-            }
-
-            guard response?.statusCode == 200 else {
-                callback(.Failure(error))
-                return
-            }
-
-            guard let jSONData = data,
-                let jSONObject = try? NSJSONSerialization.JSONObjectWithData(jSONData, options: []),
-                let jSON = jSONObject as? NSDictionary else {
-                    callback(.Failure(error))
+        let url = URL(string: link)!
+        
+        Alamofire.request(url, method: .get).validate(statusCode: 200..<500).responseJSON { (response) in
+            switch response.result {
+            case .success(let JSON):
+                
+                let statusCode = response.response!.statusCode
+                
+                guard statusCode == 200 else {
+                    callback(.failure(.description(response.debugDescription)))
                     return
+                }
+                
+                guard let json = JSON as? [String:AnyObject] else {
+                    if response.result.isSuccess {
+                        callback(.success(["":"" as AnyObject]))
+                        return
+                    }
+                    
+                    callback(.failure(.description("")))
+                    return
+                }
+                
+                callback(.success(json))
+                break
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+                break
             }
-
-            callback(.Success(jSON))
         }
     }
 }

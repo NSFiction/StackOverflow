@@ -9,7 +9,7 @@
 import UIKit
 import XCGLogger
 
-let logger = XCGLogger.defaultInstance()
+let logger = XCGLogger.default
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        logger.setup(.Debug, showLogIdentifier: false, showFunctionName: false, showThreadName: false, showLogLevel: false, showFileNames: false, showLineNumbers: true, showDate: false, writeToFile: nil, fileLogLevel: .Debug)
+        logger.setup(level: .debug,
+                     showLogIdentifier: false,
+                     showFunctionName: false,
+                     showThreadName: false,
+                     showLevel: false,
+                     showFileNames: false,
+                     showLineNumbers: true,
+                     showDate: false,
+                     writeToFile: nil,
+                     fileLevel: .debug)
 
         return true
     }

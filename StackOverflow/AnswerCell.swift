@@ -29,9 +29,9 @@ class AnswerCell: UITableViewCell {
         self.user.text = object.value(forKey: "display_name") as? String
         let profileImage = object.value(forKey: "profile_image") as! String
 
-        photoUser.downloadedFrom(profileImage,
-                                 destination: Constants.DESTINATION,
-                                 path: Constants.FILEPATH)
+        if let url = URL(string: profileImage) {
+            photoUser.downloadedFrom(url)
+        }
     }
 
 }
