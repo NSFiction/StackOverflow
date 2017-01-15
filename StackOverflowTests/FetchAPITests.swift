@@ -19,7 +19,7 @@ class FetchAPITests: BaseCaseTest {
      */
     func testFetchAPI_Answer() {
 
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(description: "request should succeed")
 
         // arrange
         let consumeAPI = ConsumeAnswer()
@@ -46,7 +46,7 @@ class FetchAPITests: BaseCaseTest {
             }
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(timeout: timeout, handler: nil)
     }
 
     /* requisite:
@@ -56,7 +56,7 @@ class FetchAPITests: BaseCaseTest {
      */
     func testFetchAPI_Question() {
 
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(description: "request should succeed")
 
         // arrange
         let consumeAPI = ConsumeQuestion()
@@ -83,7 +83,7 @@ class FetchAPITests: BaseCaseTest {
             }
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(timeout: timeout, handler: nil)
     }
 
 }

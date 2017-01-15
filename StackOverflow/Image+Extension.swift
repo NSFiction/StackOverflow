@@ -11,13 +11,13 @@ import UIKit
 import Alamofire
 
 extension UIImageView {
-    func downloadedFrom(link: String, destination: Request.DownloadFileDestination, path: String) {
+    func downloadedFrom(_ link: String, destination: Request.DownloadFileDestination, path: String) {
 
         Alamofire.download(.GET, link, destination: destination)
             .response { _, response, data, _ in
                 if let
                     data = data,
-                    resumeDataString = NSString(data: data, encoding: NSUTF8StringEncoding) {
+                    let resumeDataString = NSString(data: data, encoding: NSUTF8StringEncoding) {
                     print("Resume Data: \(resumeDataString)")
                 } else {
                     let pathComponent = response!.suggestedFilename

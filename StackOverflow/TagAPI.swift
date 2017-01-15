@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class TagAPI {
-    func consume(callback: Result<NSDictionary> -> ()) {
+    func consume(_ callback: @escaping (Result<NSDictionary>) -> ()) {
         let URL = "https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&site=stackoverflow"
 
         Alamofire.request(.GET, URL).response { (request, response, data, error) in

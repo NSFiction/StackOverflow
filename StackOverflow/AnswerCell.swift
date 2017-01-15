@@ -19,15 +19,15 @@ class AnswerCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
     func viewModel(answer object: NSDictionary) {
-        self.user.text = object.valueForKey("display_name") as? String
-        let profileImage = object.valueForKey("profile_image") as! String
+        self.user.text = object.value(forKey: "display_name") as? String
+        let profileImage = object.value(forKey: "profile_image") as! String
 
         photoUser.downloadedFrom(profileImage,
                                  destination: Constants.DESTINATION,

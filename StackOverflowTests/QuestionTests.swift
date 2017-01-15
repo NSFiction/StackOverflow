@@ -34,7 +34,7 @@ class QuestionTests: BaseCaseTest {
 
     func testConsumingAPI_Question() {
 
-        let expectation = expectationWithDescription("request should succeed")
+        let expectation = self.expectation(description: "request should succeed")
 
         // arrange
         let api = QuestionAPI()
@@ -58,7 +58,7 @@ class QuestionTests: BaseCaseTest {
 
         }
 
-        waitForExpectationsWithTimeout(timeout, handler: nil)
+        waitForExpectations(timeout: timeout, handler: nil)
     }
 
 }

@@ -9,14 +9,14 @@
 import Foundation
 
 enum Result<T> {
-    case Success(T)
-    case Failure(NSError?)
+    case success(T)
+    case failure(NSError?)
 
     init(value: T) {
-        self = .Success(value)
+        self = .success(value)
     }
 
     init(error: NSError?) {
-        self = .Failure(error)
+        self = .failure(error)
     }
 }

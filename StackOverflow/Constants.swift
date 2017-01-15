@@ -12,5 +12,5 @@ import Alamofire
 class Constants {
     static let DESTINATION = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory,
                                                                                domain: .UserDomainMask)
-    static let FILEPATH = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+    static let FILEPATH = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 }

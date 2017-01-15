@@ -28,10 +28,10 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.didReceiveMemoryWarning()
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: String = "Cell"
 
-        let tagCell = tableView.dequeueReusableCellWithIdentifier(cell, forIndexPath: indexPath) as! TagCell
+        let tagCell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! TagCell
 
         var title = ""
         if searchActive {
@@ -45,8 +45,8 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return tagCell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
 
         if Network.hasConnection {
             callQuestionController(indexPath)
@@ -55,21 +55,21 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
         }
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchActive {
             return filtered.count
         }
         return self.categories.count
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    func callQuestionController(indexPath: NSIndexPath) {
+    func callQuestionController(_ indexPath: IndexPath) {
         let storyboard = UIStoryboard.storyboard(.Question)
         let identifier = QuestionViewController.storyboardIdentifier
-        let question = storyboard.instantiateViewControllerWithIdentifier(identifier) as! QuestionViewController
+        let question = storyboard.instantiateViewController(withIdentifier: identifier) as! QuestionViewController
 
         let category = categories[indexPath.row] as! String
         question.title = category
@@ -78,27 +78,27 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.navigationController?.pushViewController(question, animated: true)
     }
 
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true
     }
 
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchActive = false
     }
 
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
     }
 
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
         self.searchBar.resignFirstResponder()
     }
 
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let category = self.categories.filter({ (text) -> Bool in
             let tmp: NSString = text as! NSString
-            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             return range.location != NSNotFound
         })
         filtered = category as! [String]
@@ -112,7 +112,7 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     func loadCategories() {
         if Network.hasConnection {
-            HUD.flash(.LabeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
+            HUD.flash(.labeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
             let consume = ConsumeTag()
             consume.fetch({ (result) in
@@ -120,12 +120,12 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 HUD.hide(animated: true)
 
                 switch result {
-                case .Success(let value):
+                case .success(let value):
                     self.categories = value
                     self.tableView.reloadData()
                     break
 
-                case .Failure(_):
+                case .failure(_):
                     // test
                     break
                 }

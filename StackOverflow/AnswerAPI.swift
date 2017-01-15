@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class AnswerAPI: FetchAPI {
-    func consume<T>(object object: T, callback: Result<NSArray> -> ()) {
+    func consume<T>(object: T, callback: @escaping (Result<NSArray>) -> ()) {
         let URL = "https://api.stackexchange.com/2.2/questions/\(object)/answers?order=desc&sort=activity&site=stackoverflow"
 
         Alamofire.request(.GET, URL).response { (request, response, data, error) in
