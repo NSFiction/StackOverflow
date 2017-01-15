@@ -1,7 +1,7 @@
 def common_pods
- pod 'Alamofire', '~> 3.5.1'
- pod 'PKHUD'
- pod 'XCGLogger', '~> 3.2'
+ pod 'Alamofire', '~> 4.0'
+ pod 'PKHUD', '~> 4.0'
+ pod 'XCGLogger', '~> 4.0.0'
 end
 
 platform :ios, '9.2'
@@ -21,7 +21,7 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['SWIFT_VERSION'] = '2.3'
+      config.build_settings['SWIFT_VERSION'] = '3.0'
     end
   end
 end
