@@ -152,11 +152,12 @@
 		151186021D18C2FE0031A18B /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
 				151186001D18C2E80031A18B /* Answer.storyboard */,
+				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
 				151185FD1D18C2CF0031A18B /* Question.storyboard */,
 			);
 			name = Storyboard;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		151186091D18EA590031A18B /* API */ = {
@@ -167,6 +168,7 @@
 				159FC8B01D346C3E00A1EA2B /* TagAPI.swift */,
 			);
 			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		1511FAEE1D20A2E1008B339F /* Top */ = {
@@ -175,19 +177,21 @@
 				1511FAF11D20A48C008B339F /* TopViewController.swift */,
 			);
 			name = Top;
+			path = Top;
 			sourceTree = "<group>";
 		};
 		15164C6C1D13ACFF00EE66F3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				151A761A1D2CB5BC0022C9D8 /* Consume */,
 				151186091D18EA590031A18B /* API */,
+				151A761A1D2CB5BC0022C9D8 /* Consume */,
+				1522F3A91D1A0DCD005F8626 /* FetchAPI.swift */,
 				15C313D21D1500F30024F9DD /* Network.swift */,
 				15C313D01D14FFBB0024F9DD /* Result+Enum.swift */,
 				151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */,
-				1522F3A91D1A0DCD005F8626 /* FetchAPI.swift */,
 			);
 			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		15164C6D1D13AD4800EE66F3 /* Tag */ = {
@@ -196,6 +200,7 @@
 				7CA84FBB1CAD7D4000958656 /* TagViewController.swift */,
 			);
 			name = Tag;
+			path = Tag;
 			sourceTree = "<group>";
 		};
 		15164C6E1D13AD4E00EE66F3 /* Question */ = {
@@ -204,6 +209,7 @@
 				15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */,
 			);
 			name = Question;
+			path = Question;
 			sourceTree = "<group>";
 		};
 		15164C6F1D13AD5500EE66F3 /* Answer */ = {
@@ -212,6 +218,7 @@
 				159810A91CB0BD2E00569249 /* AnswerViewController.swift */,
 			);
 			name = Answer;
+			path = Answer;
 			sourceTree = "<group>";
 		};
 		151A761A1D2CB5BC0022C9D8 /* Consume */ = {
@@ -222,6 +229,7 @@
 				151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */,
 			);
 			name = Consume;
+			path = Consume;
 			sourceTree = "<group>";
 		};
 		1533C2F01CB043B000592EB5 /* Extension */ = {
@@ -232,18 +240,20 @@
 				151186051D18CE850031A18B /* UIViewController+Extension.swift */,
 			);
 			name = Extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		15812B281CAE246A00F15CC6 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */,
-				15812B261CAE246700F15CC6 /* TagCell.swift */,
-				15F177211CB00E6B00E463B4 /* QuestionCell.swift */,
 				159810AB1CB0BD4500569249 /* AnswerCell.swift */,
+				15F177211CB00E6B00E463B4 /* QuestionCell.swift */,
+				15812B261CAE246700F15CC6 /* TagCell.swift */,
 				1511FAF51D20A7B6008B339F /* TopCell.swift */,
 			);
 			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		15B2A9D41CAE214100E4D493 /* Classes */ = {
@@ -255,17 +265,19 @@
 				15812B281CAE246A00F15CC6 /* View */,
 			);
 			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		15B2A9D51CAE214A00E4D493 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				1511FAEE1D20A2E1008B339F /* Top */,
-				15164C6D1D13AD4800EE66F3 /* Tag */,
-				15164C6E1D13AD4E00EE66F3 /* Question */,
 				15164C6F1D13AD5500EE66F3 /* Answer */,
+				15164C6E1D13AD4E00EE66F3 /* Question */,
+				15164C6D1D13AD4800EE66F3 /* Tag */,
+				1511FAEE1D20A2E1008B339F /* Top */,
 			);
 			name = Modules;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		69D9FA44DC1DB5E43637FCD4 /* Frameworks */ = {
@@ -283,12 +295,12 @@
 		7CA84FAD1CAD7D4000958656 = {
 			isa = PBXGroup;
 			children = (
+				69D9FA44DC1DB5E43637FCD4 /* Frameworks */,
+				C41AFC32CF7A6D0359157144 /* Pods */,
+				7CA84FB71CAD7D4000958656 /* Products */,
 				7CA84FB81CAD7D4000958656 /* StackOverflow */,
 				7CA84FD01CAD7D4000958656 /* StackOverflowTests */,
 				7CA84FDB1CAD7D4000958656 /* StackOverflowUITests */,
-				7CA84FB71CAD7D4000958656 /* Products */,
-				C41AFC32CF7A6D0359157144 /* Pods */,
-				69D9FA44DC1DB5E43637FCD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -309,8 +321,8 @@
 				151186021D18C2FE0031A18B /* Storyboard */,
 				7CA84FB91CAD7D4000958656 /* AppDelegate.swift */,
 				7CA84FC31CAD7D4000958656 /* Assets.xcassets */,
-				7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */,
 				7CA84FC81CAD7D4000958656 /* Info.plist */,
+				7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */,
 			);
 			path = StackOverflow;
 			sourceTree = "<group>";
@@ -318,13 +330,13 @@
 		7CA84FD01CAD7D4000958656 /* StackOverflowTests */ = {
 			isa = PBXGroup;
 			children = (
-				15C313CA1D14E5D00024F9DD /* BaseCaseTest.swift */,
-				7CA84FD11CAD7D4000958656 /* StackOverflowTests.swift */,
-				7CA84FD31CAD7D4000958656 /* Info.plist */,
-				15812B221CAE241A00F15CC6 /* ConnectTests.swift */,
-				15C313CC1D14F5250024F9DD /* QuestionTests.swift */,
 				150B0CCF1D16FC31005D1A7A /* AnswerAPITests.swift */,
+				15C313CA1D14E5D00024F9DD /* BaseCaseTest.swift */,
+				15812B221CAE241A00F15CC6 /* ConnectTests.swift */,
 				1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */,
+				7CA84FD31CAD7D4000958656 /* Info.plist */,
+				15C313CC1D14F5250024F9DD /* QuestionTests.swift */,
+				7CA84FD11CAD7D4000958656 /* StackOverflowTests.swift */,
 			);
 			path = StackOverflowTests;
 			sourceTree = "<group>";
@@ -332,8 +344,8 @@
 		7CA84FDB1CAD7D4000958656 /* StackOverflowUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7CA84FDC1CAD7D4000958656 /* StackOverflowUITests.swift */,
 				7CA84FDE1CAD7D4000958656 /* Info.plist */,
+				7CA84FDC1CAD7D4000958656 /* StackOverflowUITests.swift */,
 			);
 			path = StackOverflowUITests;
 			sourceTree = "<group>";
@@ -657,6 +669,7 @@
 				151185FE1D18C2CF0031A18B /* Base */,
 			);
 			name = Question.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7CA84FBD1CAD7D4000958656 /* Main.storyboard */ = {
@@ -665,6 +678,7 @@
 				7CA84FBE1CAD7D4000958656 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */ = {
@@ -673,6 +687,7 @@
 				7CA84FC61CAD7D4000958656 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

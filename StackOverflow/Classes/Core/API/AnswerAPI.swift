@@ -1,30 +1,19 @@
-//
-//  QuestionAPI.swift
-//  StackOverflow
-//
-//  Created by Bruno da Luz on 6/18/16.
-//  Copyright © 2016 nFiction. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 
-class QuestionAPI: FetchAPI {
+class AnswerAPI: FetchAPI {
     func consume<T>(object: T, callback: @escaping (Result<NSArray>) -> ()) {
-        let link = "https://api.stackexchange.com/2.2/questions?pagesize=20&order=desc&sort=activity&tagged=\(object)&site=stackoverflow&filter=!9YdnSIN18"
+        let link = "https://api.stackexchange.com/2.2/questions/\(object)/answers?order=desc&sort=activity&site=stackoverflow"
 
         let url = URL(string: link)
-
+        
         Alamofire.request(url!, method: .get)
             .validate(statusCode: 200..<500)
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let JSON):
                     
-                    let statusCode = response.response!.statusCode
-                    
-                    guard statusCode == 200 else {
-                        callback(.failure(.description(response.debugDescription)))
+                    guard response.response?.statusCode == 200 else {
                         return
                     }
                     
@@ -46,7 +35,5 @@ class QuestionAPI: FetchAPI {
                     break
                 }
         }
-
     }
-
 }
