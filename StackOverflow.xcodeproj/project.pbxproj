@@ -40,7 +40,6 @@
 		67D9581A157D3B65BA72F6C1 /* Pods_StackOverflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */; };
 		7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FB91CAD7D4000958656 /* AppDelegate.swift */; };
 		7CA84FBC1CAD7D4000958656 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FBB1CAD7D4000958656 /* TagViewController.swift */; };
-		7CA84FBF1CAD7D4000958656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FBD1CAD7D4000958656 /* Main.storyboard */; };
 		7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC31CAD7D4000958656 /* Assets.xcassets */; };
 		7CA84FC71CAD7D4000958656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */; };
 		7CA84FD21CAD7D4000958656 /* StackOverflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FD11CAD7D4000958656 /* StackOverflowTests.swift */; };
@@ -104,7 +103,6 @@
 		7CA84FB61CAD7D4000958656 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA84FB91CAD7D4000958656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA84FBB1CAD7D4000958656 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		7CA84FBE1CAD7D4000958656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CA84FC31CAD7D4000958656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CA84FC61CAD7D4000958656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CA84FC81CAD7D4000958656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				151186001D18C2E80031A18B /* Answer.storyboard */,
-				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
 				151185FD1D18C2CF0031A18B /* Question.storyboard */,
 			);
 			path = Storyboard;
@@ -470,7 +467,6 @@
 				7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */,
 				151186011D18C2E80031A18B /* Answer.storyboard in Resources */,
 				151185FF1D18C2CF0031A18B /* Question.storyboard in Resources */,
-				7CA84FBF1CAD7D4000958656 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,15 +653,6 @@
 				151185FE1D18C2CF0031A18B /* Base */,
 			);
 			name = Question.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-		7CA84FBD1CAD7D4000958656 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7CA84FBE1CAD7D4000958656 /* Base */,
-			);
-			name = Main.storyboard;
 			path = .;
 			sourceTree = "<group>";
 		};
