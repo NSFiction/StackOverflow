@@ -156,7 +156,6 @@
 				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
 				151185FD1D18C2CF0031A18B /* Question.storyboard */,
 			);
-			name = Storyboard;
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
@@ -167,7 +166,6 @@
 				15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */,
 				159FC8B01D346C3E00A1EA2B /* TagAPI.swift */,
 			);
-			name = API;
 			path = API;
 			sourceTree = "<group>";
 		};
@@ -176,7 +174,6 @@
 			children = (
 				1511FAF11D20A48C008B339F /* TopViewController.swift */,
 			);
-			name = Top;
 			path = Top;
 			sourceTree = "<group>";
 		};
@@ -190,7 +187,6 @@
 				15C313D01D14FFBB0024F9DD /* Result+Enum.swift */,
 				151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */,
 			);
-			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};
@@ -199,7 +195,6 @@
 			children = (
 				7CA84FBB1CAD7D4000958656 /* TagViewController.swift */,
 			);
-			name = Tag;
 			path = Tag;
 			sourceTree = "<group>";
 		};
@@ -208,7 +203,6 @@
 			children = (
 				15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */,
 			);
-			name = Question;
 			path = Question;
 			sourceTree = "<group>";
 		};
@@ -217,7 +211,6 @@
 			children = (
 				159810A91CB0BD2E00569249 /* AnswerViewController.swift */,
 			);
-			name = Answer;
 			path = Answer;
 			sourceTree = "<group>";
 		};
@@ -228,7 +221,6 @@
 				1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */,
 				151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */,
 			);
-			name = Consume;
 			path = Consume;
 			sourceTree = "<group>";
 		};
@@ -239,7 +231,6 @@
 				151185FB1D18BE480031A18B /* Storyboard+Extension.swift */,
 				151186051D18CE850031A18B /* UIViewController+Extension.swift */,
 			);
-			name = Extension;
 			path = Extension;
 			sourceTree = "<group>";
 		};
@@ -252,7 +243,6 @@
 				15812B261CAE246700F15CC6 /* TagCell.swift */,
 				1511FAF51D20A7B6008B339F /* TopCell.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -264,7 +254,6 @@
 				15B2A9D51CAE214A00E4D493 /* Modules */,
 				15812B281CAE246A00F15CC6 /* View */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -276,7 +265,6 @@
 				15164C6D1D13AD4800EE66F3 /* Tag */,
 				1511FAEE1D20A2E1008B339F /* Top */,
 			);
-			name = Modules;
 			path = Modules;
 			sourceTree = "<group>";
 		};
@@ -793,7 +781,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
+				PRODUCT_BUNDLE_IDENTIFIER = nsfiction.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -812,7 +800,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
+				PRODUCT_BUNDLE_IDENTIFIER = nsfiction.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
