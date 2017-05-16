@@ -38,6 +38,7 @@
 		15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */; };
 		15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F177211CB00E6B00E463B4 /* QuestionCell.swift */; };
 		67D9581A157D3B65BA72F6C1 /* Pods_StackOverflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */; };
+		7CA247B21ECA7F7F00987DCA /* FlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA247B11ECA7F7F00987DCA /* FlowManager.swift */; };
 		7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FB91CAD7D4000958656 /* AppDelegate.swift */; };
 		7CA84FBC1CAD7D4000958656 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FBB1CAD7D4000958656 /* TagViewController.swift */; };
 		7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC31CAD7D4000958656 /* Assets.xcassets */; };
@@ -100,6 +101,7 @@
 		361EE060A2AAD2046D8D49B9 /* Pods-StackOverflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflow.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflow/Pods-StackOverflow.release.xcconfig"; sourceTree = "<group>"; };
 		6A9C112617DF89DCF53060AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CA247B11ECA7F7F00987DCA /* FlowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowManager.swift; sourceTree = "<group>"; };
 		7CA84FB61CAD7D4000958656 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA84FB91CAD7D4000958656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA84FBB1CAD7D4000958656 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -261,6 +263,7 @@
 				15164C6E1D13AD4E00EE66F3 /* Question */,
 				15164C6D1D13AD4800EE66F3 /* Tag */,
 				1511FAEE1D20A2E1008B339F /* Top */,
+				7CA247B11ECA7F7F00987DCA /* FlowManager.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				15C313CF1D14F8E10024F9DD /* QuestionAPI.swift in Sources */,
 				151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */,
 				1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */,
+				7CA247B21ECA7F7F00987DCA /* FlowManager.swift in Sources */,
 				159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */,
 				151A761C1D2CB5E50022C9D8 /* ConsumeTag.swift in Sources */,
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,

@@ -1,12 +1,9 @@
-import UIKit
 import XCGLogger
 
 let logger = XCGLogger.default
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -21,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      writeToFile: nil,
                      fileLevel: .debug)
 
+        let manager = FlowManager()
+        manager.start()
+        
         return true
     }
 
