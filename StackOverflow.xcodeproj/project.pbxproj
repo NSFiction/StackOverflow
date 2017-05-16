@@ -23,7 +23,6 @@
 		1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */; };
 		1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2EE1CB043A900592EB5 /* Image+Extension.swift */; };
 		15812B231CAE241A00F15CC6 /* ConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B221CAE241A00F15CC6 /* ConnectTests.swift */; };
-		15812B271CAE246700F15CC6 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B261CAE246700F15CC6 /* TagCell.swift */; };
 		15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */; };
 		159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810A91CB0BD2E00569249 /* AnswerViewController.swift */; };
 		159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810AB1CB0BD4500569249 /* AnswerCell.swift */; };
@@ -39,6 +38,7 @@
 		15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F177211CB00E6B00E463B4 /* QuestionCell.swift */; };
 		67D9581A157D3B65BA72F6C1 /* Pods_StackOverflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */; };
 		7CA247B21ECA7F7F00987DCA /* FlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA247B11ECA7F7F00987DCA /* FlowManager.swift */; };
+		7CA3A5C71ECA8EED00DBD35F /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3A5C61ECA8EED00DBD35F /* MainNavigationController.swift */; };
 		7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FB91CAD7D4000958656 /* AppDelegate.swift */; };
 		7CA84FBC1CAD7D4000958656 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FBB1CAD7D4000958656 /* TagViewController.swift */; };
 		7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC31CAD7D4000958656 /* Assets.xcassets */; };
@@ -83,7 +83,6 @@
 		1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAboutConnection.swift; sourceTree = "<group>"; };
 		1533C2EE1CB043A900592EB5 /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		15812B221CAE241A00F15CC6 /* ConnectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectTests.swift; sourceTree = "<group>"; };
-		15812B261CAE246700F15CC6 /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
 		159810A91CB0BD2E00569249 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		159810AB1CB0BD4500569249 /* AnswerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		6A9C112617DF89DCF53060AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA247B11ECA7F7F00987DCA /* FlowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowManager.swift; sourceTree = "<group>"; };
+		7CA3A5C61ECA8EED00DBD35F /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		7CA84FB61CAD7D4000958656 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA84FB91CAD7D4000958656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA84FBB1CAD7D4000958656 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -239,7 +239,6 @@
 				1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */,
 				159810AB1CB0BD4500569249 /* AnswerCell.swift */,
 				15F177211CB00E6B00E463B4 /* QuestionCell.swift */,
-				15812B261CAE246700F15CC6 /* TagCell.swift */,
 				1511FAF51D20A7B6008B339F /* TopCell.swift */,
 			);
 			path = View;
@@ -264,6 +263,7 @@
 				15164C6D1D13AD4800EE66F3 /* Tag */,
 				1511FAEE1D20A2E1008B339F /* Top */,
 				7CA247B11ECA7F7F00987DCA /* FlowManager.swift */,
+				7CA3A5C61ECA8EED00DBD35F /* MainNavigationController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -589,7 +589,6 @@
 			files = (
 				1522F3AE1D1A1865005F8626 /* ConsumeAnswer.swift in Sources */,
 				151186041D18CC6F0031A18B /* StoryboardIdentifiable.swift in Sources */,
-				15812B271CAE246700F15CC6 /* TagCell.swift in Sources */,
 				7CA84FBC1CAD7D4000958656 /* TagViewController.swift in Sources */,
 				15C313CF1D14F8E10024F9DD /* QuestionAPI.swift in Sources */,
 				151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */,
@@ -606,6 +605,7 @@
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,
 				1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */,
 				159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */,
+				7CA3A5C71ECA8EED00DBD35F /* MainNavigationController.swift in Sources */,
 				15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */,
 				1522F3AA1D1A0DCD005F8626 /* FetchAPI.swift in Sources */,
 				1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */,

@@ -2,16 +2,16 @@ import UIKit
 
 final class FlowManager {
     
-    let window = UIWindow(frame: UIScreen.main.bounds)
+    private var window: UIWindow
     
-    func start() {
-        showTag()
-        window.makeKeyAndVisible()
+    init() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window.makeKeyAndVisible()
     }
-    
-    private func showTag() {
+
+    func start() {
         let tagController = TagViewController()
-        let navigation = UINavigationController(rootViewController: tagController)
-        window.rootViewController = navigation
+        let navigationController = MainNavigationController(rootViewController: tagController)
+        self.window.rootViewController = navigationController
     }
 }
