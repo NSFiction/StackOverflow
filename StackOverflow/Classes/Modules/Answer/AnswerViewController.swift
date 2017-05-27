@@ -14,18 +14,12 @@ class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
         titleLabel.text = dicInfo.value(forKey: "title") as? String
         descriptionText.text = dicInfo.value(forKey: "body") as? String
 
         let question_id = dicInfo.value(forKey: "question_id") as? Int
         loadAnswers(question_id!)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

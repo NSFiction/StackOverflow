@@ -23,7 +23,6 @@
 		1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */; };
 		1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2EE1CB043A900592EB5 /* Image+Extension.swift */; };
 		15812B231CAE241A00F15CC6 /* ConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B221CAE241A00F15CC6 /* ConnectTests.swift */; };
-		15812B271CAE246700F15CC6 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B261CAE246700F15CC6 /* TagCell.swift */; };
 		15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */; };
 		159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810A91CB0BD2E00569249 /* AnswerViewController.swift */; };
 		159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810AB1CB0BD4500569249 /* AnswerCell.swift */; };
@@ -38,9 +37,10 @@
 		15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */; };
 		15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F177211CB00E6B00E463B4 /* QuestionCell.swift */; };
 		67D9581A157D3B65BA72F6C1 /* Pods_StackOverflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */; };
+		7CA247B21ECA7F7F00987DCA /* FlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA247B11ECA7F7F00987DCA /* FlowManager.swift */; };
+		7CA3A5C71ECA8EED00DBD35F /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3A5C61ECA8EED00DBD35F /* MainNavigationController.swift */; };
 		7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FB91CAD7D4000958656 /* AppDelegate.swift */; };
 		7CA84FBC1CAD7D4000958656 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FBB1CAD7D4000958656 /* TagViewController.swift */; };
-		7CA84FBF1CAD7D4000958656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FBD1CAD7D4000958656 /* Main.storyboard */; };
 		7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC31CAD7D4000958656 /* Assets.xcassets */; };
 		7CA84FC71CAD7D4000958656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA84FC51CAD7D4000958656 /* LaunchScreen.storyboard */; };
 		7CA84FD21CAD7D4000958656 /* StackOverflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA84FD11CAD7D4000958656 /* StackOverflowTests.swift */; };
@@ -83,7 +83,6 @@
 		1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAboutConnection.swift; sourceTree = "<group>"; };
 		1533C2EE1CB043A900592EB5 /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		15812B221CAE241A00F15CC6 /* ConnectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectTests.swift; sourceTree = "<group>"; };
-		15812B261CAE246700F15CC6 /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
 		159810A91CB0BD2E00569249 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		159810AB1CB0BD4500569249 /* AnswerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
@@ -101,10 +100,11 @@
 		361EE060A2AAD2046D8D49B9 /* Pods-StackOverflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflow.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflow/Pods-StackOverflow.release.xcconfig"; sourceTree = "<group>"; };
 		6A9C112617DF89DCF53060AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CA247B11ECA7F7F00987DCA /* FlowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowManager.swift; sourceTree = "<group>"; };
+		7CA3A5C61ECA8EED00DBD35F /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		7CA84FB61CAD7D4000958656 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA84FB91CAD7D4000958656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA84FBB1CAD7D4000958656 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		7CA84FBE1CAD7D4000958656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CA84FC31CAD7D4000958656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CA84FC61CAD7D4000958656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CA84FC81CAD7D4000958656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,10 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				151186001D18C2E80031A18B /* Answer.storyboard */,
-				7CA84FBD1CAD7D4000958656 /* Main.storyboard */,
 				151185FD1D18C2CF0031A18B /* Question.storyboard */,
 			);
-			name = Storyboard;
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
@@ -167,7 +165,6 @@
 				15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */,
 				159FC8B01D346C3E00A1EA2B /* TagAPI.swift */,
 			);
-			name = API;
 			path = API;
 			sourceTree = "<group>";
 		};
@@ -176,7 +173,6 @@
 			children = (
 				1511FAF11D20A48C008B339F /* TopViewController.swift */,
 			);
-			name = Top;
 			path = Top;
 			sourceTree = "<group>";
 		};
@@ -190,7 +186,6 @@
 				15C313D01D14FFBB0024F9DD /* Result+Enum.swift */,
 				151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */,
 			);
-			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};
@@ -199,7 +194,6 @@
 			children = (
 				7CA84FBB1CAD7D4000958656 /* TagViewController.swift */,
 			);
-			name = Tag;
 			path = Tag;
 			sourceTree = "<group>";
 		};
@@ -208,7 +202,6 @@
 			children = (
 				15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */,
 			);
-			name = Question;
 			path = Question;
 			sourceTree = "<group>";
 		};
@@ -217,7 +210,6 @@
 			children = (
 				159810A91CB0BD2E00569249 /* AnswerViewController.swift */,
 			);
-			name = Answer;
 			path = Answer;
 			sourceTree = "<group>";
 		};
@@ -228,7 +220,6 @@
 				1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */,
 				151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */,
 			);
-			name = Consume;
 			path = Consume;
 			sourceTree = "<group>";
 		};
@@ -239,7 +230,6 @@
 				151185FB1D18BE480031A18B /* Storyboard+Extension.swift */,
 				151186051D18CE850031A18B /* UIViewController+Extension.swift */,
 			);
-			name = Extension;
 			path = Extension;
 			sourceTree = "<group>";
 		};
@@ -249,10 +239,8 @@
 				1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */,
 				159810AB1CB0BD4500569249 /* AnswerCell.swift */,
 				15F177211CB00E6B00E463B4 /* QuestionCell.swift */,
-				15812B261CAE246700F15CC6 /* TagCell.swift */,
 				1511FAF51D20A7B6008B339F /* TopCell.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -264,7 +252,6 @@
 				15B2A9D51CAE214A00E4D493 /* Modules */,
 				15812B281CAE246A00F15CC6 /* View */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -275,8 +262,9 @@
 				15164C6E1D13AD4E00EE66F3 /* Question */,
 				15164C6D1D13AD4800EE66F3 /* Tag */,
 				1511FAEE1D20A2E1008B339F /* Top */,
+				7CA247B11ECA7F7F00987DCA /* FlowManager.swift */,
+				7CA3A5C61ECA8EED00DBD35F /* MainNavigationController.swift */,
 			);
-			name = Modules;
 			path = Modules;
 			sourceTree = "<group>";
 		};
@@ -482,7 +470,6 @@
 				7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */,
 				151186011D18C2E80031A18B /* Answer.storyboard in Resources */,
 				151185FF1D18C2CF0031A18B /* Question.storyboard in Resources */,
-				7CA84FBF1CAD7D4000958656 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +502,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4E7F2CDCFD9A8544DB6F1448 /* [CP] Embed Pods Frameworks */ = {
@@ -545,7 +532,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B3A56360AC2CFFD7A01F67EA /* [CP] Copy Pods Resources */ = {
@@ -602,11 +589,11 @@
 			files = (
 				1522F3AE1D1A1865005F8626 /* ConsumeAnswer.swift in Sources */,
 				151186041D18CC6F0031A18B /* StoryboardIdentifiable.swift in Sources */,
-				15812B271CAE246700F15CC6 /* TagCell.swift in Sources */,
 				7CA84FBC1CAD7D4000958656 /* TagViewController.swift in Sources */,
 				15C313CF1D14F8E10024F9DD /* QuestionAPI.swift in Sources */,
 				151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */,
 				1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */,
+				7CA247B21ECA7F7F00987DCA /* FlowManager.swift in Sources */,
 				159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */,
 				151A761C1D2CB5E50022C9D8 /* ConsumeTag.swift in Sources */,
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,
@@ -618,6 +605,7 @@
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,
 				1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */,
 				159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */,
+				7CA3A5C71ECA8EED00DBD35F /* MainNavigationController.swift in Sources */,
 				15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */,
 				1522F3AA1D1A0DCD005F8626 /* FetchAPI.swift in Sources */,
 				1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */,
@@ -669,15 +657,6 @@
 				151185FE1D18C2CF0031A18B /* Base */,
 			);
 			name = Question.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-		7CA84FBD1CAD7D4000958656 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7CA84FBE1CAD7D4000958656 /* Base */,
-			);
-			name = Main.storyboard;
 			path = .;
 			sourceTree = "<group>";
 		};
@@ -793,7 +772,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
+				PRODUCT_BUNDLE_IDENTIFIER = nsfiction.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -812,7 +791,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Orion.StackOverflow;
+				PRODUCT_BUNDLE_IDENTIFIER = nsfiction.StackOverflow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
