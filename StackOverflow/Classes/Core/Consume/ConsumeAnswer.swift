@@ -1,22 +1,14 @@
-//
-//  ConsumeQuestion.swift
-//  StackOverflow
-//
-//  Created by Bruno da Luz on 6/21/16.
-//  Copyright © 2016 nFiction. All rights reserved.
-//
-
 import Foundation
 
-class ConsumeQuestion {
+class ConsumeAnswer {
 
-    func fetch(_ category: String, callback: @escaping (Result<NSMutableArray>) -> ()) {
+    func fetch(_ question_id: Int, callback: @escaping (Result<NSMutableArray>) -> ()) {
 
-        let questionAPI = QuestionAPI()
-        questionAPI.consume(object: category) { (result) in
+        let answerAPI = AnswerAPI()
+        answerAPI.consume(object: question_id) { (result) in
             switch result {
             case .success(let value):
-                callback(.success(self.validationJSON(value)))
+                callback(.success(self.validation(json: value)))
                 break
 
             case .failure(let error):
@@ -26,30 +18,17 @@ class ConsumeQuestion {
         }
     }
 
-    fileprivate func validationJSON(_ objects: NSArray) -> NSMutableArray {
-
+    fileprivate func validation(json: NSArray) -> NSMutableArray {
         let questions = NSMutableArray()
+        let profile = NSMutableDictionary()
 
-        for (_, value) in objects.enumerated() {
-
-            let profile = NSMutableDictionary()
-
-            let title = (value as AnyObject).value(forKey: "title")
-            let body = (value as AnyObject).value(forKey: "body")
-            let score = (value as AnyObject).value(forKey: "score")
-            let question_id = (value as AnyObject).value(forKey: "question_id")
-
-            profile.setValue(title, forKeyPath: "title")
-            profile.setValue(body, forKeyPath: "body")
-            profile.setValue(score as? Int, forKeyPath: "score")
-            profile.setValue(question_id as? Int, forKeyPath: "question_id")
-
+        for (_, value) in json.enumerated() {
             let owner = (value as AnyObject).value(forKey: "owner") as! NSDictionary
 
             let display_name = self.getDisplayName(owner)
-            profile.setValue(display_name, forKeyPath: "display_name")
-
             let profile_image = self.getProfileName(owner)
+
+            profile.setValue(display_name, forKeyPath: "display_name")
             profile.setValue(profile_image, forKeyPath: "profile_image")
 
             questions.add(profile)

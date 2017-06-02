@@ -1,46 +1,14 @@
-//
-//  ConsumeAnswer.swift
-//  StackOverflow
-//
-//  Created by Bruno da Luz on 6/21/16.
-//  Copyright © 2016 nFiction. All rights reserved.
-//
-
 import Foundation
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
 
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
-}
+class ConsumeQuestion {
 
+    func fetch(_ category: String, callback: @escaping (Result<NSMutableArray>) -> ()) {
 
-class ConsumeAnswer {
-
-    func fetch(_ question_id: Int, callback: @escaping (Result<NSMutableArray>) -> ()) {
-
-        let answerAPI = AnswerAPI()
-        answerAPI.consume(object: question_id) { (result) in
+        let questionAPI = QuestionAPI()
+        questionAPI.consume(object: category) { (result) in
             switch result {
             case .success(let value):
-                callback(.success(self.validation(json: value)))
+                callback(.success(self.validationJSON(value)))
                 break
 
             case .failure(let error):
@@ -50,17 +18,30 @@ class ConsumeAnswer {
         }
     }
 
-    fileprivate func validation(json: NSArray) -> NSMutableArray {
-        let questions = NSMutableArray()
-        let profile = NSMutableDictionary()
+    fileprivate func validationJSON(_ objects: NSArray) -> NSMutableArray {
 
-        for (_, value) in json.enumerated() {
+        let questions = NSMutableArray()
+
+        for (_, value) in objects.enumerated() {
+
+            let profile = NSMutableDictionary()
+
+            let title = (value as AnyObject).value(forKey: "title")
+            let body = (value as AnyObject).value(forKey: "body")
+            let score = (value as AnyObject).value(forKey: "score")
+            let question_id = (value as AnyObject).value(forKey: "question_id")
+
+            profile.setValue(title, forKeyPath: "title")
+            profile.setValue(body, forKeyPath: "body")
+            profile.setValue(score as? Int, forKeyPath: "score")
+            profile.setValue(question_id as? Int, forKeyPath: "question_id")
+
             let owner = (value as AnyObject).value(forKey: "owner") as! NSDictionary
 
             let display_name = self.getDisplayName(owner)
-            let profile_image = self.getProfileName(owner)
-
             profile.setValue(display_name, forKeyPath: "display_name")
+
+            let profile_image = self.getProfileName(owner)
             profile.setValue(profile_image, forKeyPath: "profile_image")
 
             questions.add(profile)

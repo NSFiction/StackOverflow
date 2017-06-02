@@ -1,11 +1,3 @@
-//
-//  QuestionViewController.swift
-//  StackOverflow
-//
-//  Created by Bruno da Luz on 02/04/16.
-//  Copyright © 2016 nFiction. All rights reserved.
-//
-
 import UIKit
 import PKHUD
 
@@ -18,11 +10,6 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         loadQuestions()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

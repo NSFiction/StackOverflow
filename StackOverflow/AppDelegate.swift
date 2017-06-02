@@ -1,23 +1,17 @@
-//
-//  AppDelegate.swift
-//  StackOverflow
-//
-//  Created by Bruno da Luz on 3/31/16.
-//  Copyright © 2016 nFiction. All rights reserved.
-//
-
-import UIKit
 import XCGLogger
 
 let logger = XCGLogger.default
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+    
+    var flowManager: FlowManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        flowManager = FlowManager()
+        flowManager.start()
+        
         logger.setup(level: .debug,
                      showLogIdentifier: false,
                      showFunctionName: false,
@@ -28,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      showDate: false,
                      writeToFile: nil,
                      fileLevel: .debug)
-
+        
         return true
     }
 

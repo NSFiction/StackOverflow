@@ -1,11 +1,3 @@
-//
-//  QuestionCell.swift
-//  StackOverflow
-//
-//  Created by Bruno da Luz on 02/04/16.
-//  Copyright © 2016 nFiction. All rights reserved.
-//
-
 import UIKit
 import AlamofireImage
 import Alamofire
@@ -19,13 +11,10 @@ class QuestionCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     func viewModel(question object: NSDictionary) {
