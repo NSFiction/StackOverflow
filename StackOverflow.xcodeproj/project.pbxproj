@@ -24,6 +24,8 @@
 		1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2EE1CB043A900592EB5 /* Image+Extension.swift */; };
 		15812B231CAE241A00F15CC6 /* ConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B221CAE241A00F15CC6 /* ConnectTests.swift */; };
 		15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */; };
+		158730701F7B52E80079A949 /* Alamofire+Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587306F1F7B52E80079A949 /* Alamofire+Observable.swift */; };
+		158730721F7B53120079A949 /* StackOverflowAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158730711F7B53120079A949 /* StackOverflowAPI.swift */; };
 		159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810A91CB0BD2E00569249 /* AnswerViewController.swift */; };
 		159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159810AB1CB0BD4500569249 /* AnswerCell.swift */; };
 		159FC8B11D346C3E00A1EA2B /* TagAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8B01D346C3E00A1EA2B /* TagAPI.swift */; };
@@ -83,6 +85,8 @@
 		1533C2EE1CB043A900592EB5 /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		15812B221CAE241A00F15CC6 /* ConnectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectTests.swift; sourceTree = "<group>"; };
 		15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
+		1587306F1F7B52E80079A949 /* Alamofire+Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Observable.swift"; sourceTree = "<group>"; };
+		158730711F7B53120079A949 /* StackOverflowAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowAPI.swift; sourceTree = "<group>"; };
 		159810A91CB0BD2E00569249 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		159810AB1CB0BD4500569249 /* AnswerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		159FC8B01D346C3E00A1EA2B /* TagAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagAPI.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				15812B331CAE2B3900F15CC6 /* AnswerAPI.swift */,
 				15C313CE1D14F8E10024F9DD /* QuestionAPI.swift */,
 				159FC8B01D346C3E00A1EA2B /* TagAPI.swift */,
+				158730711F7B53120079A949 /* StackOverflowAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				15C313D21D1500F30024F9DD /* Network.swift */,
 				15C313D01D14FFBB0024F9DD /* Result+Enum.swift */,
 				151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */,
+				1587306F1F7B52E80079A949 /* Alamofire+Observable.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */,
 				151A761C1D2CB5E50022C9D8 /* ConsumeTag.swift in Sources */,
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,
+				158730701F7B52E80079A949 /* Alamofire+Observable.swift in Sources */,
 				15812B341CAE2B3900F15CC6 /* AnswerAPI.swift in Sources */,
 				15C313D31D1500F30024F9DD /* Network.swift in Sources */,
 				159FC8B11D346C3E00A1EA2B /* TagAPI.swift in Sources */,
@@ -633,6 +640,7 @@
 				159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */,
 				7CA3A5C71ECA8EED00DBD35F /* MainNavigationController.swift in Sources */,
 				15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */,
+				158730721F7B53120079A949 /* StackOverflowAPI.swift in Sources */,
 				1522F3AA1D1A0DCD005F8626 /* FetchAPI.swift in Sources */,
 				1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */,
 				1511FAF61D20A7B6008B339F /* TopCell.swift in Sources */,
