@@ -1,5 +1,4 @@
 import UIKit
-import PKHUD
 
 class TagViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -43,12 +42,9 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     private func loadCategories() {
         if Network.hasConnection {
-            HUD.flash(.labeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
             let consume = ConsumeTag()
             consume.fetch({ (result) in
-
-                HUD.hide(animated: true)
 
                 switch result {
                 case .success(let value):

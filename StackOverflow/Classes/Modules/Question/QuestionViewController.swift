@@ -1,5 +1,4 @@
 import UIKit
-import PKHUD
 
 class QuestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -53,12 +52,9 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
 
     func loadQuestions() {
         if Network.hasConnection {
-            HUD.flash(.labeledProgress(title: nil, subtitle: "Please wait..."), delay: 60.0)
 
             let consume = ConsumeQuestion()
             consume.fetch(category, callback: { (result) in
-
-                HUD.hide(animated: true)
 
                 switch result {
                 case .success(let value):
