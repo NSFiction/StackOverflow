@@ -2,6 +2,7 @@ def common_pods
  pod 'Alamofire', '~> 4.0'
  pod 'AlamofireImage', '~> 3.1'
  pod 'XCGLogger', '~> 4.0.0'
+ pod 'ObjectMapper', '~> 2.2'
  pod 'RxSwift',    '~> 3.0'
  pod 'RxCocoa',    '~> 3.0'
 end

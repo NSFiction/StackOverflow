@@ -1,12 +1,33 @@
 import UIKit
+import RxSwift
 
 class TagViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     fileprivate var tableView: UITableView!
-    private var categories = Array<String>()
+    private let disposeBag = DisposeBag()
+    private let service: Service
+    private var viewModel: TagViewModel?
+    private var categories: [Tag] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
 
     struct Cell {
         static let reuseIdentifier = "cellIdentifier"
+    }
+
+    init(service: Service) {
+        self.service = service
+
+        super.init(nibName: nil, bundle: nil)
+
+        let api = TagSyncApi(service: service)
+        viewModel = TagViewModel(api: api)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -27,7 +48,7 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: Cell.reuseIdentifier)
 
-        cell.textLabel?.text = categories[indexPath.item]
+        cell.textLabel?.text = categories[indexPath.item].name
 
         return cell
     }
@@ -42,20 +63,19 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     private func loadCategories() {
         if Network.hasConnection {
-
-            let consume = ConsumeTag()
-            consume.fetch({ (result) in
-
-                switch result {
-                case .success(let value):
-                    self.categories = value
-                    self.tableView.reloadData()
-
-                case .failure(let error):
-                    print("An error occurred: \(error.localizedDescription)")
+            viewModel?.find(url: StackOverflowAPI.tag()!).subscribe { [weak self] event in
+                switch event {
+                case .next(let elements):
+                    self?.categories = elements
+                    break
+                case .error(let error):
+                    print(error)
+                    break
+                case .completed:
+                    print("completed")
+                    break
                 }
-            })
-            
+            }.disposed(by: disposeBag)
         }
     }
 }

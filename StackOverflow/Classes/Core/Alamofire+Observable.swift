@@ -11,7 +11,7 @@ import RxSwift
 
 struct Service {
 
-    static func request(through endPoint: URL) -> Observable<[String:AnyObject]> {
+    func request(through endPoint: URL) -> Observable<[String:AnyObject]> {
         return Observable.create { observer in
             Alamofire.request(endPoint, method: .get)
                 .validate(statusCode: 200..<500)

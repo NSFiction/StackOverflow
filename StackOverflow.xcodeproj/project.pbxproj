@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		150B0CD01D16FC31005D1A7A /* AnswerAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150B0CCF1D16FC31005D1A7A /* AnswerAPITests.swift */; };
+		150E385C1F7C907400570D25 /* TagSynchronizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E385B1F7C907400570D25 /* TagSynchronizing.swift */; };
 		151185FC1D18BE480031A18B /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151185FB1D18BE480031A18B /* Storyboard+Extension.swift */; };
 		151185FF1D18C2CF0031A18B /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151185FD1D18C2CF0031A18B /* Question.storyboard */; };
 		151186011D18C2E80031A18B /* Answer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151186001D18C2E80031A18B /* Answer.storyboard */; };
@@ -15,7 +16,7 @@
 		151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151186051D18CE850031A18B /* UIViewController+Extension.swift */; };
 		1511FAF21D20A48C008B339F /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511FAF11D20A48C008B339F /* TopViewController.swift */; };
 		1511FAF61D20A7B6008B339F /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511FAF51D20A7B6008B339F /* TopCell.swift */; };
-		151A761C1D2CB5E50022C9D8 /* ConsumeTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */; };
+		151A761C1D2CB5E50022C9D8 /* TagSyncApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A761B1D2CB5E50022C9D8 /* TagSyncApi.swift */; };
 		1522F3AC1D1A0EB1005F8626 /* FetchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */; };
 		1522F3AE1D1A1865005F8626 /* ConsumeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */; };
 		1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */; };
@@ -33,6 +34,8 @@
 		15DDFCCC1D12590D00E262B6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DDFCCA1D12590D00E262B6 /* Alamofire.framework */; };
 		15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */; };
 		15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F177211CB00E6B00E463B4 /* QuestionCell.swift */; };
+		15FE1D041F7C891100504E23 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FE1D031F7C891100504E23 /* TagViewModel.swift */; };
+		15FE1D071F7C89F200504E23 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FE1D061F7C89F200504E23 /* Tag.swift */; };
 		67D9581A157D3B65BA72F6C1 /* Pods_StackOverflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7194082825F51EEE205B3789 /* Pods_StackOverflow.framework */; };
 		7CA247B21ECA7F7F00987DCA /* FlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA247B11ECA7F7F00987DCA /* FlowManager.swift */; };
 		7CA3A5C71ECA8EED00DBD35F /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3A5C61ECA8EED00DBD35F /* MainNavigationController.swift */; };
@@ -65,6 +68,7 @@
 /* Begin PBXFileReference section */
 		0FF7EBEB02CAE75E8F9B5B69 /* Pods-StackOverflowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowTests/Pods-StackOverflowTests.release.xcconfig"; sourceTree = "<group>"; };
 		150B0CCF1D16FC31005D1A7A /* AnswerAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerAPITests.swift; sourceTree = "<group>"; };
+		150E385B1F7C907400570D25 /* TagSynchronizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSynchronizing.swift; sourceTree = "<group>"; };
 		151185FB1D18BE480031A18B /* Storyboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
 		151185FE1D18C2CF0031A18B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Question.storyboard; sourceTree = "<group>"; };
 		151186001D18C2E80031A18B /* Answer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Answer.storyboard; sourceTree = "<group>"; };
@@ -72,7 +76,7 @@
 		151186051D18CE850031A18B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1511FAF11D20A48C008B339F /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		1511FAF51D20A7B6008B339F /* TopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
-		151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeTag.swift; sourceTree = "<group>"; };
+		151A761B1D2CB5E50022C9D8 /* TagSyncApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSyncApi.swift; sourceTree = "<group>"; };
 		1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPITests.swift; sourceTree = "<group>"; };
 		1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeAnswer.swift; sourceTree = "<group>"; };
 		1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeQuestion.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 		15DDFCCB1D12590D00E262B6 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = "../../../Library/Developer/Xcode/DerivedData/StackOverflow-dcfqfpuavnrpxqciuogxcafepjld/Build/Products/Debug-iphonesimulator/PKHUD/PKHUD.framework"; sourceTree = "<group>"; };
 		15F1771F1CB00E3B00E463B4 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		15F177211CB00E6B00E463B4 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		15FE1D031F7C891100504E23 /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
+		15FE1D061F7C89F200504E23 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		1F7B605070D1C3D577AF29F9 /* Pods-StackOverflowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowTests/Pods-StackOverflowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		361EE060A2AAD2046D8D49B9 /* Pods-StackOverflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflow.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflow/Pods-StackOverflow.release.xcconfig"; sourceTree = "<group>"; };
 		6A9C112617DF89DCF53060AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +149,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150E385D1F7C90C300570D25 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				150E385B1F7C907400570D25 /* TagSynchronizing.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		151186021D18C2FE0031A18B /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +224,8 @@
 			children = (
 				1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */,
 				1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */,
-				151A761B1D2CB5E50022C9D8 /* ConsumeTag.swift */,
+				151A761B1D2CB5E50022C9D8 /* TagSyncApi.swift */,
+				150E385D1F7C90C300570D25 /* Protocol */,
 			);
 			path = Consume;
 			sourceTree = "<group>";
@@ -241,13 +256,15 @@
 			children = (
 				15164C6C1D13ACFF00EE66F3 /* Core */,
 				1533C2F01CB043B000592EB5 /* Extension */,
-				15B2A9D51CAE214A00E4D493 /* Modules */,
+				15B2A9D51CAE214A00E4D493 /* ViewControllers */,
 				15812B281CAE246A00F15CC6 /* View */,
+				15FE1D051F7C891B00504E23 /* ViewModel */,
+				15FE1D081F7C8A0400504E23 /* Model */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		15B2A9D51CAE214A00E4D493 /* Modules */ = {
+		15B2A9D51CAE214A00E4D493 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				15164C6F1D13AD5500EE66F3 /* Answer */,
@@ -257,7 +274,23 @@
 				7CA247B11ECA7F7F00987DCA /* FlowManager.swift */,
 				7CA3A5C61ECA8EED00DBD35F /* MainNavigationController.swift */,
 			);
-			path = Modules;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		15FE1D051F7C891B00504E23 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				15FE1D031F7C891100504E23 /* TagViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		15FE1D081F7C8A0400504E23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15FE1D061F7C89F200504E23 /* Tag.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		69D9FA44DC1DB5E43637FCD4 /* Frameworks */ = {
@@ -509,6 +542,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-StackOverflowTests/Pods-StackOverflowTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
@@ -517,6 +551,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
@@ -583,6 +618,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-StackOverflow/Pods-StackOverflow-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
@@ -591,6 +627,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
@@ -607,19 +644,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FE1D071F7C89F200504E23 /* Tag.swift in Sources */,
 				1522F3AE1D1A1865005F8626 /* ConsumeAnswer.swift in Sources */,
 				151186041D18CC6F0031A18B /* StoryboardIdentifiable.swift in Sources */,
 				7CA84FBC1CAD7D4000958656 /* TagViewController.swift in Sources */,
 				151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */,
+				15FE1D041F7C891100504E23 /* TagViewModel.swift in Sources */,
 				1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */,
 				7CA247B21ECA7F7F00987DCA /* FlowManager.swift in Sources */,
 				159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */,
-				151A761C1D2CB5E50022C9D8 /* ConsumeTag.swift in Sources */,
+				151A761C1D2CB5E50022C9D8 /* TagSyncApi.swift in Sources */,
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,
 				158730701F7B52E80079A949 /* Alamofire+Observable.swift in Sources */,
 				15C313D31D1500F30024F9DD /* Network.swift in Sources */,
 				151185FC1D18BE480031A18B /* Storyboard+Extension.swift in Sources */,
 				1511FAF21D20A48C008B339F /* TopViewController.swift in Sources */,
+				150E385C1F7C907400570D25 /* TagSynchronizing.swift in Sources */,
 				7CA84FBA1CAD7D4000958656 /* AppDelegate.swift in Sources */,
 				1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */,
 				159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */,
