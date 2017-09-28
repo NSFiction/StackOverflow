@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		150B0CD01D16FC31005D1A7A /* AnswerAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150B0CCF1D16FC31005D1A7A /* AnswerAPITests.swift */; };
 		150E385C1F7C907400570D25 /* TagSynchronizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E385B1F7C907400570D25 /* TagSynchronizing.swift */; };
+		150E385F1F7CA63A00570D25 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E385E1F7CA63A00570D25 /* Question.swift */; };
 		151185FC1D18BE480031A18B /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151185FB1D18BE480031A18B /* Storyboard+Extension.swift */; };
 		151185FF1D18C2CF0031A18B /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151185FD1D18C2CF0031A18B /* Question.storyboard */; };
 		151186011D18C2E80031A18B /* Answer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151186001D18C2E80031A18B /* Answer.storyboard */; };
@@ -69,6 +70,7 @@
 		0FF7EBEB02CAE75E8F9B5B69 /* Pods-StackOverflowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowTests/Pods-StackOverflowTests.release.xcconfig"; sourceTree = "<group>"; };
 		150B0CCF1D16FC31005D1A7A /* AnswerAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerAPITests.swift; sourceTree = "<group>"; };
 		150E385B1F7C907400570D25 /* TagSynchronizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSynchronizing.swift; sourceTree = "<group>"; };
+		150E385E1F7CA63A00570D25 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		151185FB1D18BE480031A18B /* Storyboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
 		151185FE1D18C2CF0031A18B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Question.storyboard; sourceTree = "<group>"; };
 		151186001D18C2E80031A18B /* Answer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Answer.storyboard; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				15FE1D061F7C89F200504E23 /* Tag.swift */,
+				150E385E1F7CA63A00570D25 /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				159810AA1CB0BD2E00569249 /* AnswerViewController.swift in Sources */,
 				7CA3A5C71ECA8EED00DBD35F /* MainNavigationController.swift in Sources */,
 				15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */,
+				150E385F1F7CA63A00570D25 /* Question.swift in Sources */,
 				158730721F7B53120079A949 /* StackOverflowAPI.swift in Sources */,
 				1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */,
 				1511FAF61D20A7B6008B339F /* TopCell.swift in Sources */,
