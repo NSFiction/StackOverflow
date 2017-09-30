@@ -1,17 +1,14 @@
 import UIKit
 import RxSwift
 
-class TagViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TagViewController: UIViewController {
 
     fileprivate var tableView: UITableView!
     private let disposeBag = DisposeBag()
     private let service: Service
     private var viewModel: TagViewModel?
-    private var categories: [Tag] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+
+    private(set) var tags: Variable<[TagViewModel]> = Variable([])
 
     struct Cell {
         static let reuseIdentifier = "cellIdentifier"
@@ -42,41 +39,20 @@ class TagViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        loadCategories()
+        loadContent()
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: Cell.reuseIdentifier)
+    private func loadContent() {
 
-        cell.textLabel?.text = categories[indexPath.item].name
-
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
-    }
-
-    private func loadCategories() {
-        if Network.hasConnection {
-            viewModel?.find(url: StackOverflowAPI.tag()!).subscribe { [weak self] event in
-                switch event {
-                case .next(let elements):
-                    self?.categories = elements
-                    break
-                case .error(let error):
-                    print(error)
-                    break
-                case .completed:
-                    print("completed")
-                    break
-                }
-            }.disposed(by: disposeBag)
+        guard let endPoint = StackOverflowAPI.tag() else {
+            fatalError("[TAG] An error occurred while try get endPoint!!!")
         }
+
+        viewModel?.find(through: endPoint)
+        viewModel?.data.asObservable().bind(to: tableView.rx.items(cellIdentifier: Cell.reuseIdentifier,
+                                                                   cellType: UITableViewCell.self)) { _ , tag, cell in
+                                                                    cell.textLabel?.text = tag.name
+        }.addDisposableTo(disposeBag)
     }
 }
 
@@ -84,8 +60,7 @@ extension TagViewController {
 
     func createLayout() {
         tableView = UITableView(frame: .zero)
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
         self.view.addSubview(tableView)
