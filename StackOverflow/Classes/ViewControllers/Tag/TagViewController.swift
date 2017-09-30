@@ -15,8 +15,6 @@ final class TagViewController: UIViewController {
 
     private weak var delegate: TagDelegate?
 
-    private(set) var tags: Variable<[TagViewModel]> = Variable([])
-
     struct Cell {
         static let reuseIdentifier = "cellIdentifier"
     }
