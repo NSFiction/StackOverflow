@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol TagSynchronizing: class {
+protocol Synchronizing: class {
 
     func sync(through endPoint: URL) -> Observable<[String:AnyObject]>
 
