@@ -1,12 +1,19 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
-class TagViewController: UIViewController {
+protocol TagDelegate: class {
+    func show(question tag: String)
+}
+
+final class TagViewController: UIViewController {
 
     fileprivate var tableView: UITableView!
     private let disposeBag = DisposeBag()
     private let service: Service
     private var viewModel: TagViewModel?
+
+    private weak var delegate: TagDelegate?
 
     private(set) var tags: Variable<[TagViewModel]> = Variable([])
 
@@ -14,8 +21,9 @@ class TagViewController: UIViewController {
         static let reuseIdentifier = "cellIdentifier"
     }
 
-    init(service: Service) {
+    init(service: Service, delegate: TagDelegate) {
         self.service = service
+        self.delegate = delegate
 
         super.init(nibName: nil, bundle: nil)
 
@@ -34,25 +42,35 @@ class TagViewController: UIViewController {
         self.view.backgroundColor = .white
 
         createLayout()
+        loadContent()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        loadContent()
+        setupTableViewCellWhenTapped()
     }
 
     private func loadContent() {
-
         guard let endPoint = StackOverflowAPI.tag() else {
             fatalError("[TAG] An error occurred while try get endPoint!!!")
         }
 
         viewModel?.find(through: endPoint)
-        viewModel?.data.asObservable().bind(to: tableView.rx.items(cellIdentifier: Cell.reuseIdentifier,
-                                                                   cellType: UITableViewCell.self)) { _ , tag, cell in
-                                                                    cell.textLabel?.text = tag.name
-        }.addDisposableTo(disposeBag)
+
+        let observable = viewModel?.data.asObservable()
+        observable?.bind(to: tableView.rx.items(cellIdentifier: Cell.reuseIdentifier,
+                                                cellType: UITableViewCell.self)) { _ , tag, cell in
+                                                    cell.textLabel?.text = tag.name
+            }.addDisposableTo(disposeBag)
+    }
+
+    private func setupTableViewCellWhenTapped() {
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            if let tag = self?.viewModel?.data.value[indexPath.item] {
+                self?.delegate?.show(question: tag.name)
+            }
+        }).addDisposableTo(disposeBag)
     }
 }
 
