@@ -1,8 +1,5 @@
 language: objective-c
 osx_image: xcode9
 
-env:
-  - ACTION=test  PLATFORM=iOS     DESTINATION='platform=iOS Simulator,name=iPhone 6S'
-
 script:
-  - set -o pipefail && xcodebuild -scheme StackOverflow -destination "$DESTINATION" $ACTION | xcpretty
+  - set -o pipefail && xcodebuild -workspace StackOverflow.xcworkspace -scheme StackOverflow -platform='iOS Simulator' -ios_version='10.3.1' -ios_device='iPhone SE' | xcpretty
