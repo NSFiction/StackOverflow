@@ -7,10 +7,12 @@
 //
 
 import RxSwift
+import RxCocoa
 import ObjectMapper
 
 struct TagViewModel {
 
+    var data = Variable<[Tag]>([])
     private let api: TagSynchronizing
     private let disposeBag = DisposeBag()
 
@@ -18,13 +20,18 @@ struct TagViewModel {
         self.api = api
     }
 
-    func find(url: URL) -> Observable<[Tag]> {
-        return api.sync(through: url).map { value -> [Tag] in
+    func find(through url: URL) {
+        let result = api.sync(through: url).map { value -> [Tag] in
             guard let items = value["items"] else {
                 fatalError("An error occurred with sync")
             }
             return try Mapper<Tag>().mapArray(JSONObject: items)
+        }.subscribe { (event) in
+            if case .next(let element) = event {
+                self.data.value = element
+            }
         }
+        result.disposed(by: disposeBag)
     }
 
 }
