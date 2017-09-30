@@ -1,5 +1,4 @@
 import UIKit
-import PKHUD
 import Alamofire
 
 class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -44,12 +43,9 @@ class AnswerViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func loadAnswers(_ question_id: Int) {
         if Network.hasConnection {
-            HUD.flash(.labeledProgress(title: nil, subtitle: "Please wait..."), delay: 999.0)
 
             let consume = ConsumeAnswer()
             consume.fetch(question_id, callback: { (result) in
-
-                HUD.hide(animated: true)
 
                 switch result {
                 case .success(let value):
