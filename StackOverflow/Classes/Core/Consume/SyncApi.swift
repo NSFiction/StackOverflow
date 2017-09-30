@@ -1,6 +1,6 @@
 import RxSwift
 
-final class TagSyncApi: TagSynchronizing {
+final class SyncApi: Synchronizing {
 
     private let service: Service
 
