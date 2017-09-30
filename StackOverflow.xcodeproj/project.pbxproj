@@ -21,6 +21,8 @@
 		1522F3AC1D1A0EB1005F8626 /* FetchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */; };
 		1522F3AE1D1A1865005F8626 /* ConsumeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */; };
 		1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */; };
+		15328C371F7FDDD300BE3CE6 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15328C361F7FDDD300BE3CE6 /* QuestionViewModel.swift */; };
+		15328C391F7FDE8300BE3CE6 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15328C381F7FDE8300BE3CE6 /* Owner.swift */; };
 		1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */; };
 		1533C2EF1CB043A900592EB5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1533C2EE1CB043A900592EB5 /* Image+Extension.swift */; };
 		15812B231CAE241A00F15CC6 /* ConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15812B221CAE241A00F15CC6 /* ConnectTests.swift */; };
@@ -82,6 +84,8 @@
 		1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPITests.swift; sourceTree = "<group>"; };
 		1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeAnswer.swift; sourceTree = "<group>"; };
 		1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeQuestion.swift; sourceTree = "<group>"; };
+		15328C361F7FDDD300BE3CE6 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		15328C381F7FDE8300BE3CE6 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		1533C2E81CB02C8200592EB5 /* AlertAboutConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAboutConnection.swift; sourceTree = "<group>"; };
 		1533C2EE1CB043A900592EB5 /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		15812B221CAE241A00F15CC6 /* ConnectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectTests.swift; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				15FE1D031F7C891100504E23 /* TagViewModel.swift */,
+				15328C361F7FDDD300BE3CE6 /* QuestionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			children = (
 				15FE1D061F7C89F200504E23 /* Tag.swift */,
 				150E385E1F7CA63A00570D25 /* Question.swift */,
+				15328C381F7FDE8300BE3CE6 /* Owner.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -654,7 +660,9 @@
 				151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */,
 				15FE1D041F7C891100504E23 /* TagViewModel.swift in Sources */,
 				1533C2E91CB02C8200592EB5 /* AlertAboutConnection.swift in Sources */,
+				15328C371F7FDDD300BE3CE6 /* QuestionViewModel.swift in Sources */,
 				7CA247B21ECA7F7F00987DCA /* FlowManager.swift in Sources */,
+				15328C391F7FDE8300BE3CE6 /* Owner.swift in Sources */,
 				159810AC1CB0BD4500569249 /* AnswerCell.swift in Sources */,
 				151A761C1D2CB5E50022C9D8 /* TagSyncApi.swift in Sources */,
 				15F177221CB00E6B00E463B4 /* QuestionCell.swift in Sources */,
