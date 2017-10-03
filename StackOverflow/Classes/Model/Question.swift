@@ -26,7 +26,7 @@ protocol QuestionEntity: AnyQuestion {
     var score: Int64 { get }
     var lastActivityDate: Int64 { get }
     var creationDate: Int64 { get }
-    var lastEditDate: Int64 { get }
+    var lastEditDate: Int64? { get }
 
 }
 
@@ -43,7 +43,7 @@ struct Question {
     let score: Int64
     let lastActivityDate: Int64
     let creationDate: Int64
-    let lastEditDate: Int64
+    let lastEditDate: Int64?
 
 }
 
@@ -81,7 +81,7 @@ extension Question: ImmutableMappable {
             score: try map.value("score"),
             lastActivityDate: try map.value("last_activity_date"),
             creationDate: try map.value("creation_date"),
-            lastEditDate: try map.value("last_edit_date")
+            lastEditDate: try? map.value("last_edit_date")
         )
     }
 

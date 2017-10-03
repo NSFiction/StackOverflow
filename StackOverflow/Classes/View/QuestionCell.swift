@@ -1,32 +1,52 @@
 import UIKit
-import AlamofireImage
-import Alamofire
 
-class QuestionCell: UITableViewCell {
+final class QuestionCell: UITableViewCell {
 
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var user: UILabel!
-    @IBOutlet weak var vote: UILabel!
-    @IBOutlet weak var photoUser: UIImageView!
+    let titleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .darkGray
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    let tagsLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        setupViewConfiguration()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension QuestionCell: ViewConfiguration {
+
+    func buildViewHierarchy() {
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(tagsLabel)
     }
 
-    func viewModel(question object: NSDictionary) {
+    func setupConstraints() {
+        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -4).isActive = true
 
-        title.text = object.value(forKey: "title") as? String
-        vote.text  = "\(object.value(forKey: "score")!)"
-        user.text  = object.value(forKey: "display_name") as? String
-
-        let profile = object.value(forKey: "profile_image") as! String
-        
-        let url = URL(string: profile)!
-        photoUser.af_setImage(withURL: url)
+        tagsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
+        tagsLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
+        tagsLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -4).isActive = true
+        tagsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8).isActive = true
     }
 
 }

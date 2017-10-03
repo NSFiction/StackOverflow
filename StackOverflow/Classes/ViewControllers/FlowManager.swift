@@ -23,12 +23,8 @@ final class FlowManager {
             fatalError("ManNavigationController contain some error!!!")
         }
 
-        let storyboard = UIStoryboard.storyboard(.Question)
-        let identifier = QuestionViewController.storyboardIdentifier
-
-        if let storyboard = storyboard.instantiateViewController(withIdentifier: identifier) as? QuestionViewController {
-            navigationController.pushViewController(storyboard, animated: true)
-        }
+        let questionController = QuestionViewController(service: service, tagSelected: element)
+        navigationController.pushViewController(questionController, animated: true)
     }
 }
 
