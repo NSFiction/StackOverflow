@@ -25,7 +25,7 @@ final class TagViewController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
 
-        let api = TagSyncApi(service: service)
+        let api = SyncApi(service: service)
         viewModel = TagViewModel(api: api)
     }
 
@@ -36,16 +36,11 @@ final class TagViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "TAG"
+        self.navigationItem.title = "Tags"
         self.view.backgroundColor = .white
 
         createLayout()
         loadContent()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
         setupTableViewCellWhenTapped()
     }
 
@@ -58,13 +53,20 @@ final class TagViewController: UIViewController {
 
         let observable = viewModel?.data.asObservable()
         observable?.bind(to: tableView.rx.items(cellIdentifier: Cell.reuseIdentifier,
-                                                cellType: UITableViewCell.self)) { _ , tag, cell in
+                                                cellType: UITableViewCell.self)) { row , tag, cell in
                                                     cell.textLabel?.text = tag.name
+                                                    cell.accessoryType = .disclosureIndicator
+                                                    if row % 2 == 0 {
+                                                        cell.backgroundColor = .groupTableViewBackground
+                                                    } else {
+                                                        cell.backgroundColor = .white
+                                                    }
             }.addDisposableTo(disposeBag)
     }
 
     private func setupTableViewCellWhenTapped() {
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            self?.tableView.deselectRow(at: indexPath, animated: true)
             if let tag = self?.viewModel?.data.value[indexPath.item] {
                 self?.delegate?.show(question: tag.name)
             }

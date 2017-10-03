@@ -17,10 +17,6 @@ class AnswerCell: UITableViewCell {
     func viewModel(answer object: NSDictionary) {
         self.user.text = object.value(forKey: "display_name") as? String
         let profileImage = object.value(forKey: "profile_image") as! String
-
-        if let url = URL(string: profileImage) {
-            photoUser.downloadedFrom(url)
-        }
     }
 
 }

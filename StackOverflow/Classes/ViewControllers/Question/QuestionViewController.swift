@@ -1,73 +1,83 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
-class QuestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class QuestionViewController: UIViewController {
 
-    var category: String = ""
-    var arrQuestions = NSArray()
+    fileprivate var tableView: UITableView!
+    private let disposeBag = DisposeBag()
+    private var service: Service
+    private let tagSelected: String
+    private var viewModel: QuestionViewModel?
 
-    @IBOutlet weak var tableViewQuestion: UITableView!
+    struct Cell {
+        static let reuseIdentifier = "cellIdentifier"
+    }
+
+    init(service: Service, tagSelected: String) {
+        self.service = service
+        self.tagSelected = tagSelected
+
+        super.init(nibName: nil, bundle: nil)
+
+        let api = SyncApi(service: service)
+        viewModel = QuestionViewModel(api: api)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationItem.title = "Questions"
+        self.view.backgroundColor = .white
+
+        createLayout()
         loadQuestions()
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: String = "Cell"
-
-        let questionCell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! QuestionCell
-
-        let question = arrQuestions.object(at: indexPath.row) as! NSDictionary
-        questionCell.viewModel(question: question)
-
-        return questionCell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        tableView.deselectRow(at: indexPath, animated: true)
-
-        if Network.hasConnection {
-            callAnswerViewController(indexPath)
-        } else {
-            AboutConnection().alert(viewController: self)
-        }
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrQuestions.count
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func callAnswerViewController(_ indexPath: IndexPath) {
-        let storyboard = UIStoryboard.storyboard(.Answer)
-        let identifier = AnswerViewController.storyboardIdentifier
-        let answerController = storyboard.instantiateViewController(withIdentifier: identifier) as! AnswerViewController
-        let question = arrQuestions.object(at: indexPath.row) as! NSDictionary
-        answerController.dicInfo = question
-        self.navigationController?.pushViewController(answerController, animated: true)
-    }
-
     func loadQuestions() {
-        if Network.hasConnection {
-
-            let consume = ConsumeQuestion()
-            consume.fetch(category, callback: { (result) in
-
-                switch result {
-                case .success(let value):
-                    self.arrQuestions = value
-                    self.tableViewQuestion.reloadData()
-                    break
-
-                case .failure(_):
-                    // test
-                    break
-                }
-            })
-
+        guard let endPoint = StackOverflowAPI.question(through: tagSelected) else {
+            fatalError("[TAG] An error occurred while try get endPoint!!!")
         }
+
+        viewModel?.find(through: endPoint)
+
+        let observable = viewModel?.data.asObservable()
+        observable?.bind(to: tableView.rx.items(cellIdentifier: Cell.reuseIdentifier,
+                                                cellType: QuestionCell.self)) { row , question, cell in
+                                                    cell.titleLabel.text = question.title
+                                                    if row % 2 == 0 {
+                                                        cell.backgroundColor = .groupTableViewBackground
+                                                    } else {
+                                                        cell.backgroundColor = .white
+                                                    }
+        }.addDisposableTo(disposeBag)
     }
 }
+
+extension QuestionViewController {
+
+    func createLayout() {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44.0
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.register(QuestionCell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        self.tableView = tableView
+
+        view.addSubview(tableView)
+
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+
+}
+

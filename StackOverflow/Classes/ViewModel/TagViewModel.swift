@@ -10,13 +10,13 @@ import RxSwift
 import RxCocoa
 import ObjectMapper
 
-struct TagViewModel {
+public final class TagViewModel {
 
     var data = Variable<[Tag]>([])
-    private let api: TagSynchronizing
+    private let api: Synchronizing
     private let disposeBag = DisposeBag()
 
-    init(api: TagSynchronizing) {
+    init(api: Synchronizing) {
         self.api = api
     }
 
