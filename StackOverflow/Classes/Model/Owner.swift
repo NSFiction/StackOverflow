@@ -19,7 +19,7 @@ protocol OwnerEntity: AnyOwner {
 
     var reputation: Int64 { get }
     var type: String { get }
-    var acceptRate: Int64 { get }
+    var acceptRate: Int64? { get }
     var avatar: String { get }
     var link: String { get }
 
@@ -31,7 +31,7 @@ struct Owner {
     let name: String
     let reputation: Int64
     let type: String
-    let acceptRate: Int64
+    let acceptRate: Int64?
     let avatar: String
     let link: String
 
@@ -59,7 +59,7 @@ extension Owner: ImmutableMappable {
             name: try map.value("display_name"),
             reputation: try map.value("reputation"),
             type: try map.value("user_type"),
-            acceptRate: try map.value("accept_rate"),
+            acceptRate: try? map.value("accept_rate"),
             avatar: try map.value("profile_image"),
             link: try map.value("link")
         )
