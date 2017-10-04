@@ -4,18 +4,18 @@ class ConsumeQuestion {
 
     func fetch(_ category: String, callback: @escaping (Result<NSMutableArray>) -> ()) {
 
-        let questionAPI = QuestionAPI()
-        questionAPI.consume(object: category) { (result) in
-            switch result {
-            case .success(let value):
-                callback(.success(self.validationJSON(value)))
-                break
-
-            case .failure(let error):
-                callback(.failure(error))
-                break
-            }
-        }
+//        let questionAPI = QuestionAPI()
+//        questionAPI.consume(object: category) { (result) in
+//            switch result {
+//            case .success(let value):
+//                callback(.success(self.validationJSON(value)))
+//                break
+//
+//            case .failure(let error):
+//                callback(.failure(error))
+//                break
+//            }
+//        }
     }
 
     fileprivate func validationJSON(_ objects: NSArray) -> NSMutableArray {
