@@ -11,7 +11,6 @@
 		150E385C1F7C907400570D25 /* Synchronizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E385B1F7C907400570D25 /* Synchronizing.swift */; };
 		150E385F1F7CA63A00570D25 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E385E1F7CA63A00570D25 /* Question.swift */; };
 		151185FC1D18BE480031A18B /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151185FB1D18BE480031A18B /* Storyboard+Extension.swift */; };
-		151186011D18C2E80031A18B /* Answer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151186001D18C2E80031A18B /* Answer.storyboard */; };
 		151186041D18CC6F0031A18B /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */; };
 		151186061D18CE850031A18B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151186051D18CE850031A18B /* UIViewController+Extension.swift */; };
 		1511FAF21D20A48C008B339F /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511FAF11D20A48C008B339F /* TopViewController.swift */; };
@@ -73,7 +72,6 @@
 		150E385B1F7C907400570D25 /* Synchronizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizing.swift; sourceTree = "<group>"; };
 		150E385E1F7CA63A00570D25 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		151185FB1D18BE480031A18B /* Storyboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
-		151186001D18C2E80031A18B /* Answer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Answer.storyboard; sourceTree = "<group>"; };
 		151186031D18CC6F0031A18B /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
 		151186051D18CE850031A18B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1511FAF11D20A48C008B339F /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
@@ -159,14 +157,6 @@
 				150E385B1F7C907400570D25 /* Synchronizing.swift */,
 			);
 			path = Protocol;
-			sourceTree = "<group>";
-		};
-		151186021D18C2FE0031A18B /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				151186001D18C2E80031A18B /* Answer.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		151186091D18EA590031A18B /* API */ = {
@@ -337,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				15B2A9D41CAE214100E4D493 /* Classes */,
-				151186021D18C2FE0031A18B /* Storyboard */,
 				7CA84FB91CAD7D4000958656 /* AppDelegate.swift */,
 				7CA84FC31CAD7D4000958656 /* Assets.xcassets */,
 				7CA84FC81CAD7D4000958656 /* Info.plist */,
@@ -499,7 +488,6 @@
 			files = (
 				7CA84FC71CAD7D4000958656 /* LaunchScreen.storyboard in Resources */,
 				7CA84FC41CAD7D4000958656 /* Assets.xcassets in Resources */,
-				151186011D18C2E80031A18B /* Answer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
