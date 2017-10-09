@@ -80,6 +80,7 @@ extension TagViewController {
         tableView = UITableView(frame: .zero)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
 
         self.view.addSubview(tableView)
 
