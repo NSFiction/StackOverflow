@@ -15,7 +15,6 @@
 		151A761C1D2CB5E50022C9D8 /* SyncApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A761B1D2CB5E50022C9D8 /* SyncApi.swift */; };
 		1522F3AC1D1A0EB1005F8626 /* FetchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */; };
 		1522F3AE1D1A1865005F8626 /* ConsumeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */; };
-		1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */; };
 		15328C371F7FDDD300BE3CE6 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15328C361F7FDDD300BE3CE6 /* QuestionViewModel.swift */; };
 		15328C391F7FDE8300BE3CE6 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15328C381F7FDE8300BE3CE6 /* Owner.swift */; };
 		15328C3D1F801F3600BE3CE6 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15328C3C1F801F3600BE3CE6 /* ViewConfiguration.swift */; };
@@ -73,7 +72,6 @@
 		151A761B1D2CB5E50022C9D8 /* SyncApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncApi.swift; sourceTree = "<group>"; };
 		1522F3AB1D1A0EB1005F8626 /* FetchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAPITests.swift; sourceTree = "<group>"; };
 		1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeAnswer.swift; sourceTree = "<group>"; };
-		1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeQuestion.swift; sourceTree = "<group>"; };
 		15328C361F7FDDD300BE3CE6 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 		15328C381F7FDE8300BE3CE6 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		15328C3C1F801F3600BE3CE6 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				1522F3AD1D1A1865005F8626 /* ConsumeAnswer.swift */,
-				1522F3AF1D1A2FA8005F8626 /* ConsumeQuestion.swift */,
 				151A761B1D2CB5E50022C9D8 /* SyncApi.swift */,
 				150E385D1F7C90C300570D25 /* Protocol */,
 			);
@@ -634,7 +631,6 @@
 				15F177201CB00E3B00E463B4 /* QuestionViewController.swift in Sources */,
 				150E385F1F7CA63A00570D25 /* Question.swift in Sources */,
 				158730721F7B53120079A949 /* StackOverflowAPI.swift in Sources */,
-				1522F3B01D1A2FA8005F8626 /* ConsumeQuestion.swift in Sources */,
 				1511FAF61D20A7B6008B339F /* TopCell.swift in Sources */,
 				15C313D11D14FFBB0024F9DD /* Result+Enum.swift in Sources */,
 			);
