@@ -2,6 +2,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol QuestionDelegate: class {
+    func show(answer question: Int64)
+}
+
 final class QuestionViewController: UIViewController {
 
     fileprivate var tableView: UITableView!
@@ -10,13 +14,16 @@ final class QuestionViewController: UIViewController {
     private let tagSelected: String
     private var viewModel: QuestionViewModel?
 
+    private weak var delegate: QuestionDelegate?
+
     struct Cell {
         static let reuseIdentifier = "cellIdentifier"
     }
 
-    init(service: Service, tagSelected: String) {
+    init(service: Service, tagSelected: String, delegate: QuestionDelegate) {
         self.service = service
         self.tagSelected = tagSelected
+        self.delegate = delegate
 
         super.init(nibName: nil, bundle: nil)
 
@@ -36,6 +43,7 @@ final class QuestionViewController: UIViewController {
 
         createLayout()
         loadQuestions()
+        setupTableViewCellWhenTapped()
     }
 
     func loadQuestions() {
@@ -55,6 +63,15 @@ final class QuestionViewController: UIViewController {
                                                         cell.backgroundColor = .white
                                                     }
         }.addDisposableTo(disposeBag)
+    }
+
+    private func setupTableViewCellWhenTapped() {
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            self?.tableView.deselectRow(at: indexPath, animated: true)
+            if let question = self?.viewModel?.data.value[indexPath.item] {
+                self?.delegate?.show(answer: question.id)
+            }
+        }).addDisposableTo(disposeBag)
     }
 }
 
